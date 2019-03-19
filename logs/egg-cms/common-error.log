@@ -1,0 +1,16 @@
+2019-03-19 15:27:42,527 ERROR 61098 nodejs.ServerNoResponseError: server 127.0.0.1:49654 no response in 20003ms, maybe the socket is end on the other side. (address: 127.0.0.1:49654)
+    at Timeout._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-cms/node_modules/tcp-base/lib/base.js:427:21)
+    at listOnTimeout (timers.js:324:15)
+    at processTimers (timers.js:268:5)
+name: "ServerNoResponseError"
+pid: 61098
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-03-19 15:29:26,259 ERROR 55916 nodejs.ClusterClientNoResponseError: client no response in 143730ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-cms/node_modules/cluster-client/lib/leader.js:77:23)
+    at listOnTimeout (timers.js:324:15)
+    at processTimers (timers.js:268:5)
+name: "ClusterClientNoResponseError"
+pid: 55916
+hostname: xiaohuangyudeMacBook-Pro.local
+

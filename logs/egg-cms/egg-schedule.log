@@ -1,0 +1,2 @@
+2019-03-19 15:21:22,229 INFO 61098 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-cms/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-03-19 15:21:22,229 INFO 61098 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-cms/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
