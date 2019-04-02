@@ -1,6 +1,7 @@
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
+const path = require('path');
 
 /**
  * @param {Egg.EggAppInfo} appInfo app info
@@ -8,11 +9,14 @@
 module.exports = appInfo => {
     const config = {};
     config.keys = appInfo.name + '_1552628974233_7990';
-    config.middleware = ['auth'];
+    // config.middleware = ['auth'];
     //身份验证中间件
-    config.auth = {
-        ignore: '/api/auth',
-    }
+    // config.auth = {
+    //     ignore: '/api/auth',
+    // }
+    config.multipart = {
+        mode: 'file',
+    };
     config.view = {
         defaultViewEngine: 'nunjucks',
         mapping: {
@@ -42,10 +46,16 @@ module.exports = appInfo => {
         agent: false,
     };
 
+    config.static={
+        dir: path.join(appInfo.baseDir, '/public')
+    }
+
     //配置
     const userConfig = {
-        tablePrefix: 'pme_',                //表前缀
-        tokenSign: 'eggCmsAdmin',           //token签名
+        host: 'http://localhost:7002',
+        tablePrefix: 'pme_',                       //表前缀
+        tokenSign: 'eggCmsAdmin',                  //token签名
+        uploadImgPath: '/public/upload/images'     //图片上传路径
     };
     return {
         ...config,

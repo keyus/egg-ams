@@ -5,8 +5,11 @@ import 'egg';
 import ExportHome = require('../../../app/controller/home');
 import ExportAdminBase = require('../../../app/controller/admin/base');
 import ExportAdminHome = require('../../../app/controller/admin/home');
+import ExportAdminApiArticle = require('../../../app/controller/admin/api/article');
 import ExportAdminApiAuth = require('../../../app/controller/admin/api/auth');
 import ExportAdminApiCat = require('../../../app/controller/admin/api/cat');
+import ExportAdminApiContent = require('../../../app/controller/admin/api/content');
+import ExportAdminApiUpload = require('../../../app/controller/admin/api/upload');
 import ExportAdminApiUser = require('../../../app/controller/admin/api/user');
 
 declare module 'egg' {
@@ -16,8 +19,11 @@ declare module 'egg' {
       base: ExportAdminBase;
       home: ExportAdminHome;
       api: {
+        article: ExportAdminApiArticle;
         auth: ExportAdminApiAuth;
         cat: ExportAdminApiCat;
+        content: ExportAdminApiContent;
+        upload: ExportAdminApiUpload;
         user: ExportAdminApiUser;
       }
     }

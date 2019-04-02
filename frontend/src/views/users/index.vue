@@ -19,7 +19,7 @@
                 {{role | role}}
             </template>
             <template slot="handler" slot-scope="item">
-                <div class="handler">
+                <div class="handler" v-if="!item.role">
                     <a-button shape="circle" icon="edit" @click="openEdit(item)" />
                     <a-button shape="circle" icon="delete" @click="deleteUser(item)" />
                 </div>

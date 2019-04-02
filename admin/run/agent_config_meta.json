@@ -1,325 +1,324 @@
 {
-  "keys": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
-  "middleware": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
-  "auth": {
-    "ignore": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js"
+  "keys": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+  "multipart": {
+    "mode": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+    "autoFields": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "defaultCharset": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "fieldNameSize": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "fieldSize": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "fields": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "fileSize": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "files": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "fileExtensions": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "whitelist": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "tmpdir": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js",
+    "cleanSchedule": {
+      "cron": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/config/config.default.js"
+    }
   },
   "view": {
-    "defaultViewEngine": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
+    "defaultViewEngine": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
     "mapping": {
-      ".html": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js"
+      ".html": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js"
     },
-    "root": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-view/config/config.default.js",
-    "cache": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-view/config/config.local.js",
-    "defaultExtension": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-view/config/config.default.js"
+    "root": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-view/config/config.default.js",
+    "cache": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-view/config/config.local.js",
+    "defaultExtension": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-view/config/config.default.js"
   },
   "security": {
     "csrf": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
-      "useSession": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "ignoreJSON": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "cookieName": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "sessionName": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "headerName": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "bodyName": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "queryName": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+      "useSession": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "ignoreJSON": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "cookieName": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "sessionName": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "headerName": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "bodyName": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "queryName": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
-    "domainWhiteList": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-    "protocolWhiteList": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-    "defaultMiddleware": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
+    "domainWhiteList": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
     "xframe": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "value": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
     "hsts": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.local.js",
-      "maxAge": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "includeSubdomains": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.local.js",
+      "maxAge": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "includeSubdomains": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
     "dta": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
     "methodnoallow": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
     "noopen": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
     "nosniff": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
     "referrerPolicy": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "value": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
     "xssProtection": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "value": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "value": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
     "csp": {
-      "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "policy": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "policy": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     },
     "ssrf": {
-      "ipBlackList": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js",
-      "checkAddress": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+      "ipBlackList": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js",
+      "checkAddress": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
     }
   },
   "cors": {
-    "origin": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
-    "allowMethods": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js"
+    "origin": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+    "allowMethods": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js"
   },
   "mysql": {
     "client": {
-      "host": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
-      "port": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
-      "user": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
-      "password": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
-      "database": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js"
+      "host": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+      "port": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+      "user": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+      "password": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+      "database": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js"
     },
-    "app": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
-    "agent": "/Users/xiaohuangyu/work/egg-cms/config/config.default.js",
+    "app": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+    "agent": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
     "default": {
-      "database": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-mysql/config/config.default.js",
-      "connectionLimit": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-mysql/config/config.default.js"
+      "database": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-mysql/config/config.default.js",
+      "connectionLimit": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-mysql/config/config.default.js"
     }
   },
+  "tablePrefix": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+  "tokenSign": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+  "uploadImgPath": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
   "session": {
-    "maxAge": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-session/config/config.default.js",
-    "key": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-session/config/config.default.js",
-    "httpOnly": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-session/config/config.default.js",
-    "encrypt": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-session/config/config.default.js"
+    "maxAge": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-session/config/config.default.js",
+    "key": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-session/config/config.default.js"
   },
   "helper": {
-    "shtml": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-security/config/config.default.js"
+    "shtml": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-security/config/config.default.js"
   },
   "jsonp": {
-    "limit": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-jsonp/config/config.default.js",
-    "callback": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-jsonp/config/config.default.js",
-    "csrf": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-jsonp/config/config.default.js"
+    "limit": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-jsonp/config/config.default.js",
+    "callback": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-jsonp/config/config.default.js",
+    "csrf": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-jsonp/config/config.default.js"
   },
   "onerror": {
-    "errorPageUrl": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-onerror/config/config.default.js",
-    "appErrorFilter": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-onerror/config/config.default.js",
-    "templatePath": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-onerror/config/config.default.js"
+    "errorPageUrl": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-onerror/config/config.default.js",
+    "appErrorFilter": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-onerror/config/config.default.js",
+    "templatePath": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-onerror/config/config.default.js"
   },
   "i18n": {
-    "defaultLocale": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-i18n/config/config.default.js",
-    "dirs": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-i18n/config/config.default.js",
-    "queryField": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-i18n/config/config.default.js",
-    "cookieField": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-i18n/config/config.default.js",
-    "cookieMaxAge": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-i18n/config/config.default.js"
+    "defaultLocale": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js",
+    "dirs": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js",
+    "queryField": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js",
+    "cookieField": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js",
+    "cookieMaxAge": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js"
   },
   "watcher": {
-    "type": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-watcher/config/config.local.js",
+    "type": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-watcher/config/config.local.js",
     "eventSources": {
-      "default": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-watcher/config/config.default.js",
-      "development": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-watcher/config/config.default.js"
+      "default": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-watcher/config/config.default.js",
+      "development": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-watcher/config/config.default.js"
     }
   },
   "customLogger": {
     "scheduleLogger": {
-      "consoleLevel": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-schedule/config/config.default.js",
-      "file": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-schedule/config/config.default.js"
+      "consoleLevel": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-schedule/config/config.default.js",
+      "file": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-schedule/config/config.default.js"
     }
   },
   "schedule": {
-    "directory": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-schedule/config/config.default.js"
-  },
-  "multipart": {
-    "mode": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "autoFields": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "defaultCharset": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "fieldNameSize": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "fieldSize": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "fields": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "fileSize": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "files": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "fileExtensions": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "whitelist": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "tmpdir": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js",
-    "cleanSchedule": {
-      "cron": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-multipart/config/config.default.js"
-    }
+    "directory": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-schedule/config/config.default.js"
   },
   "development": {
-    "watchDirs": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-development/config/config.default.js",
-    "ignoreDirs": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-development/config/config.default.js",
-    "fastReady": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-development/config/config.default.js",
-    "reloadOnDebug": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-development/config/config.default.js",
-    "overrideDefault": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-development/config/config.default.js"
+    "watchDirs": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-development/config/config.default.js",
+    "ignoreDirs": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-development/config/config.default.js",
+    "fastReady": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-development/config/config.default.js",
+    "reloadOnDebug": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-development/config/config.default.js",
+    "overrideDefault": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-development/config/config.default.js"
   },
   "logrotator": {
-    "filesRotateByHour": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-logrotator/config/config.default.js",
-    "hourDelimiter": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-logrotator/config/config.default.js",
-    "filesRotateBySize": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-logrotator/config/config.default.js",
-    "maxFileSize": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-logrotator/config/config.default.js",
-    "maxFiles": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-logrotator/config/config.default.js",
-    "rotateDuration": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-logrotator/config/config.default.js",
-    "maxDays": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-logrotator/config/config.default.js"
+    "filesRotateByHour": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js",
+    "hourDelimiter": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js",
+    "filesRotateBySize": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js",
+    "maxFileSize": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js",
+    "maxFiles": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js",
+    "rotateDuration": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js",
+    "maxDays": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js"
   },
   "static": {
-    "prefix": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-static/config/config.default.js",
-    "dir": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-static/config/config.default.js",
-    "dynamic": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-static/config/config.default.js",
-    "preload": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-static/config/config.default.js",
-    "buffer": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-static/config/config.default.js",
-    "maxFiles": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-static/config/config.default.js"
+    "prefix": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
+    "dir": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js"
   },
   "nunjucks": {
-    "autoescape": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-view-nunjucks/config/config.default.js",
-    "throwOnUndefined": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-view-nunjucks/config/config.default.js",
-    "trimBlocks": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-view-nunjucks/config/config.default.js",
-    "lstripBlocks": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-view-nunjucks/config/config.default.js",
-    "cache": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-view-nunjucks/config/config.local.js"
+    "autoescape": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-view-nunjucks/config/config.default.js",
+    "throwOnUndefined": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-view-nunjucks/config/config.default.js",
+    "trimBlocks": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-view-nunjucks/config/config.default.js",
+    "lstripBlocks": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-view-nunjucks/config/config.default.js",
+    "cache": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-view-nunjucks/config/config.local.js"
   },
-  "validate": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg-validate/config/config.default.js",
-  "env": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-  "name": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-  "proxy": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-  "protocolHeaders": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-  "ipHeaders": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-  "hostHeaders": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
+  "validate": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-validate/config/config.default.js",
+  "env": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "name": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "proxy": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "protocolHeaders": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "ipHeaders": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "hostHeaders": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
   "pkg": {
-    "name": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "version": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "description": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "private": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
+    "name": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "version": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "description": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "private": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
     "egg": {
-      "declarations": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "declarations": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "dependencies": {
-      "egg": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "egg-view": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "egg-scripts": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "egg-mysql": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "egg-cors": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "egg-validate": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "md5": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "jsonwebtoken": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "egg": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "egg-view": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "egg-scripts": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "egg-mysql": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "egg-cors": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "egg-validate": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "md5": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "jsonwebtoken": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {
-      "autod": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "autod-egg": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "egg-bin": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "egg-view-nunjucks": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "egg-ci": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "egg-mock": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "eslint": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "eslint-config-egg": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "webstorm-disable-index": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "autod": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "autod-egg": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "egg-bin": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "egg-view-nunjucks": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "egg-ci": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "egg-mock": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "eslint": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "eslint-config-egg": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "webstorm-disable-index": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "engines": {
-      "node": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "node": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "scripts": {
-      "start": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "stop": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "dev": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "debug": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "test": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "test-local": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "cov": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "lint": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "ci": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "autod": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "start": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "stop": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "dev": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "debug": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "test": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "test-local": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "cov": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "lint": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "ci": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "autod": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "ci": {
-      "version": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "version": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "repository": {
-      "type": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "url": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "type": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "url": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
-    "author": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "license": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+    "author": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "license": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
   },
-  "baseDir": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-  "HOME": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-  "rundir": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
+  "baseDir": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "HOME": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "rundir": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
   "dump": {
-    "ignore": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+    "ignore": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
   },
   "confusedConfigurations": {
-    "bodyparser": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "notFound": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "sitefile": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "middlewares": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "httpClient": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+    "bodyparser": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "notFound": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "sitefile": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "middlewares": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "httpClient": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
   },
   "notfound": {
-    "pageUrl": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+    "pageUrl": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
   },
   "siteFile": {
-    "/favicon.ico": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+    "/favicon.ico": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
   },
   "bodyParser": {
-    "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "encoding": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "formLimit": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "jsonLimit": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "strict": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
+    "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "formLimit": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "jsonLimit": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "strict": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
     "queryString": {
-      "arrayLimit": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "depth": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "parameterLimit": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "arrayLimit": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "depth": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "parameterLimit": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     }
   },
   "logger": {
-    "dir": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "encoding": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "env": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "level": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "consoleLevel": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "disableConsoleAfterReady": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "outputJSON": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "buffer": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "appLogName": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "coreLogName": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "agentLogName": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "errorLogName": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
+    "dir": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "encoding": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "env": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "level": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "consoleLevel": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "disableConsoleAfterReady": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "outputJSON": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "buffer": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "appLogName": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "coreLogName": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "agentLogName": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "errorLogName": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
     "coreLogger": {
-      "consoleLevel": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.local.js"
+      "consoleLevel": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.local.js"
     },
-    "allowDebugAtProd": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+    "allowDebugAtProd": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
   },
   "httpclient": {
-    "enableDNSCache": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "dnsCacheLookupInterval": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "dnsCacheMaxLength": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
+    "enableDNSCache": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "dnsCacheLookupInterval": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "dnsCacheMaxLength": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
     "request": {
-      "timeout": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "timeout": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "httpAgent": {
-      "keepAlive": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "freeSocketTimeout": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "maxSockets": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "maxFreeSockets": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "keepAlive": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "httpsAgent": {
-      "keepAlive": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "freeSocketTimeout": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "maxSockets": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "maxFreeSockets": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "keepAlive": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "freeSocketTimeout": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "maxSockets": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "maxFreeSockets": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     }
   },
   "meta": {
-    "enable": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "logging": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+    "enable": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "logging": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
   },
-  "coreMiddleware": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-  "workerStartTimeout": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-  "serverTimeout": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
+  "coreMiddleware": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "workerStartTimeout": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "serverTimeout": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
   "cluster": {
     "listen": {
-      "path": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "port": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-      "hostname": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+      "path": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "port": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "hostname": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     }
   },
   "clusterClient": {
-    "maxWaitTime": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js",
-    "responseTimeout": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+    "maxWaitTime": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+    "responseTimeout": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
   },
-  "onClientError": "/Users/xiaohuangyu/work/egg-cms/node_modules/egg/config/config.default.js"
+  "onClientError": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
 }

@@ -33,7 +33,7 @@
                         <template slot="title">
                             <span style="color: #888">用户：{{user.username}}!</span>
                         </template>
-                        <a-avatar :size="39" style="backgroundColor:#22b9ff" icon="user" />
+                        <a-avatar :size="39" style="backgroundColor:#22b9ff">{{user.username.substr(0,1)}}</a-avatar>
                     </a-popover>
                 </div>
             </div>

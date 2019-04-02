@@ -15,7 +15,7 @@ const genToken =(data,sign)=>{
 class AuthService extends BaseService {
     //查询用户是否存在
     async check({username,password}) {
-        const user = await this.sql.get('pme_user',{
+        const user = await this.sql.get(`${this.tablePrefix}user`,{
             username,
             password: md5(password),
             use: 1

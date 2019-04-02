@@ -20,6 +20,7 @@ export const columns = [{
 },{
     title: 'banner',
     dataIndex: 'banner',
+    scopedSlots: {customRender: 'banner'}
 },{
     title: '内容',
     dataIndex: 'content_id',

@@ -2,7 +2,7 @@
     <div class="page">
         <div class="search">
             <a-button-group>
-                <a-button type="primary" icon="plus" />
+                <a-button type="primary" icon="plus" @click="openAdd" />
             </a-button-group>
         </div>
         <a-table :columns="columns"
@@ -22,6 +22,10 @@
                 <a-icon type="check" v-if="item" />
                 <a-icon type="close" v-else/>
             </template>
+            <template slot="banner" slot-scope="item">
+                <a-icon type="check" v-if="item" />
+                <a-icon type="close" v-else/>
+            </template>
             <template slot="content" slot-scope="item">
                 <a-icon type="check" v-if="item" />
                 <a-icon type="close" v-else/>
@@ -33,12 +37,25 @@
                 </div>
             </template>
         </a-table>
+        <!--添加-->
+        <Add :visible.sync="addVisible"
+             @put="update"/>
+        <!--编辑-->
+        <Edit :visible.sync="visible"
+              @put="update"
+              :data="editObject"/>
     </div>
 </template>
 <script>
     import {columns} from './columns'
+    import Add from './add'
+    import Edit from './edit'
     export default {
         name: 'cat',
+        components:{
+            Add,
+            Edit,
+        },
         data() {
             return {
                 data: [],
@@ -46,6 +63,10 @@
                 loading: false,
                 columns,
                 selectedRowKeys: [],
+
+                visible: false,
+                addVisible: false,
+                editObject: {},
             }
         },
         mounted() {
@@ -63,7 +84,14 @@
                 }
             },
             openEdit(item){
-
+                this.visible = true;
+                this.editObject =  item;
+            },
+            openAdd(){
+                this.addVisible = true;
+            },
+            update(){
+                this.fetch();
             },
             async deleteItem(item){
                 const _this = this;

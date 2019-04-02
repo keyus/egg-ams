@@ -1,38 +1,35 @@
 export const columns = [{
     title: '编号',
     dataIndex: 'id',
-    sorter: true,
-    width: '20%',
-    scopedSlots: {customRender: 'name'},
+    width: '120px',
 }, {
     title: '标题',
-    dataIndex: 'title',
     width: '20%',
-}, {
-    title: '作者',
-    dataIndex: 'author',
-},{
-    title: '来源',
-    dataIndex: 'from',
-},{
+    scopedSlots: {customRender: 'title'}
+},
+//     {
+//     title: '作者',
+//     dataIndex: 'author',
+// },
+    {
     title: '分类',
-    dataIndex: 'catId',
+    dataIndex: 'cat_id',
+    scopedSlots: {customRender: 'cat_id'}
 },{
     title: '热门',
     dataIndex: 'hot',
+    scopedSlots: {customRender: 'hot'}
 },{
     title: '置顶',
     dataIndex: 'top',
+    scopedSlots: {customRender: 'top'}
 },{
     title: '排序',
-    dataIndex: 'sortId',
-},{
-    title: '创建时间',
-    dataIndex: 'createTime',
+    dataIndex: 'sorter',
 },{
     title: '更新',
-    dataIndex: 'updateTime',
+    dataIndex: 'update_time',
 },{
-    title: '/',
-
+    title: '操作',
+    scopedSlots: {customRender: 'handler'}
 },];

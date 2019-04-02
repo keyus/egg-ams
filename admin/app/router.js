@@ -5,9 +5,14 @@
  */
 module.exports = app => {
     const {router, controller} = app;
-    router.get('/', controller.home.index);
+    const checkToken = app.middleware.auth();
+    // router.get('/', controller.home.index);
     router.get('/io', controller.admin.home.index);
-    router.resources('auth', '/api/auth',controller.admin.api.auth);    //登陆身份验证
-    router.resources('user', '/api/user',controller.admin.api.user);    //管理员
-    router.resources('cat', '/api/cat',controller.admin.api.cat);      //分类
+    router.resources('auth', '/api/auth',controller.admin.api.auth);                            //登陆身份验证
+    router.resources('content', '/api/content',controller.admin.api.content);                   //内容
+    router.resources('user', '/api/user',checkToken,controller.admin.api.user);                 //管理员
+    router.resources('cat', '/api/cat',checkToken,controller.admin.api.cat);                    //分类
+    router.resources('article', '/api/article',checkToken,controller.admin.api.article);        //文章
+    router.post('/api/articles', checkToken, controller.admin.api.article.destroyMore);               //文章删除多条
+    router.resources('upload', '/api/upload',controller.admin.api.upload);                      //上传
 };

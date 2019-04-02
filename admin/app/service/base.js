@@ -2,6 +2,9 @@
 
 const Service = require('egg').Service;
 class BaseService extends Service {
+    get tablePrefix(){
+        return this.config.tablePrefix;
+    }
     get sql (){
         return this.app.mysql;
     }
@@ -9,7 +12,7 @@ class BaseService extends Service {
         const constructorName = this.constructor.name;
         let serviceName = constructorName.match(/^\w+(?=Service)/i);
         serviceName = serviceName[0].toLocaleLowerCase()
-        return `${this.config.tablePrefix}${serviceName}`;
+        return `${this.tablePrefix}${serviceName}`;
     }
 }
 module.exports = BaseService;

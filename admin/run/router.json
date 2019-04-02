@@ -6,19 +6,6 @@
       "GET"
     ],
     "paramNames": [],
-    "path": "/",
-    "regexp": "/^(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
     "path": "/io",
     "regexp": "/^\\/io(?:\\/(?=$))?$/",
     "stack": [
@@ -38,6 +25,30 @@
     ]
   },
   {
+    "name": "content",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/content/:id",
+    "regexp": "/^\\/api\\/content\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
     "name": "users",
     "methods": [
       "HEAD",
@@ -47,6 +58,7 @@
     "path": "/api/user",
     "regexp": "/^\\/api\\/user(?:\\/(?=$))?$/",
     "stack": [
+      "auth",
       "wrappedController"
     ]
   },
@@ -59,6 +71,7 @@
     "path": "/api/user",
     "regexp": "/^\\/api\\/user(?:\\/(?=$))?$/",
     "stack": [
+      "auth",
       "wrappedController"
     ]
   },
@@ -83,6 +96,7 @@
     "path": "/api/user/:id",
     "regexp": "/^\\/api\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
     "stack": [
+      "auth",
       "wrappedController"
     ]
   },
@@ -106,6 +120,7 @@
     "path": "/api/user/:id",
     "regexp": "/^\\/api\\/user\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
     "stack": [
+      "auth",
       "wrappedController"
     ]
   },
@@ -119,6 +134,7 @@
     "path": "/api/cat",
     "regexp": "/^\\/api\\/cat(?:\\/(?=$))?$/",
     "stack": [
+      "auth",
       "wrappedController"
     ]
   },
@@ -131,6 +147,7 @@
     "path": "/api/cat",
     "regexp": "/^\\/api\\/cat(?:\\/(?=$))?$/",
     "stack": [
+      "auth",
       "wrappedController"
     ]
   },
@@ -155,6 +172,7 @@
     "path": "/api/cat/:id",
     "regexp": "/^\\/api\\/cat\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
     "stack": [
+      "auth",
       "wrappedController"
     ]
   },
@@ -177,6 +195,108 @@
     ],
     "path": "/api/cat/:id",
     "regexp": "/^\\/api\\/cat\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "articles",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/article",
+    "regexp": "/^\\/api\\/article(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "articles",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/article",
+    "regexp": "/^\\/api\\/article(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "article",
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/article/:id",
+    "regexp": "/^\\/api\\/article\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "destroy_article",
+    "methods": [
+      "DELETE"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/article/:id",
+    "regexp": "/^\\/api\\/article\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/articles",
+    "regexp": "/^\\/api\\/articles(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "uploads",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/upload",
+    "regexp": "/^\\/api\\/upload(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]
