@@ -52,7 +52,7 @@ class CatService extends BaseService {
         return await this.sql.update(this.table,data);
     }
     async create(data){
-        let content_id = 0;
+        let content_id = null;
         const content = data.content;
         const contentTable = `${this.tablePrefix}content`
         delete data.content;

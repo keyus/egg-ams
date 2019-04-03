@@ -6,7 +6,11 @@ const BaseService = require('../base');
 class ArticleService extends BaseService {
     async list(query) {
         const keywords = query.keywords;
+        const page = query.page || 1;
+        const size = query.size || 10;
         delete query.keywords;
+        delete query.page;
+        delete query.size;
         if(keywords){
             /^\d+$/.test(keywords) ? query.id = keywords : query.title = keywords;
         }
@@ -19,8 +23,16 @@ class ArticleService extends BaseService {
             }
         })
         if(where) where = `where ${where.substr(4)}`;
-        const sql = `select id,title,author,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from ${this.table} ${where} order by sorter desc`;
-        return await this.sql.query(sql);
+        const count = await this.sql.query(`select count(id) from ${this.table} ${where}`);
+        const limit = `limit ${page * 10 - 10},${size}`
+        const sql = `select id,title,author,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from ${this.table} ${where} order by sorter desc ${limit}`;
+        const res = await this.sql.query(sql);
+        return {
+            list: res,
+            page,
+            size,
+            total: count[0]['count(id)'],
+        };
     }
     //删除
     async deleteRow({id}){

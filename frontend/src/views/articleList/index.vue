@@ -102,7 +102,11 @@
             return {
                 cat: [],
                 data: [],
-                pagination: {},
+                pagination: {
+                    total: 0,
+                    current: 1,
+                    size: '10',
+                },
                 loading: false,
                 columns,
                 selectedRowKeys: [],
@@ -128,16 +132,21 @@
                 }catch (e) {}
             },
             async fetchList(){
+                this.loading = true;
                 try{
                     const res = await this.$http.get('/article',{params: {
                             cat_id: this.cat_id === '' ? undefined : this.cat_id,
                             hot: this.hot === '' ? undefined : this.hot,
                             top: this.top === '' ? undefined : this.top,
                             keywords: this.keywords,
+                            page: this.pagination.current,
+                            size: this.pagination.size,
                         }});
-                    this.data = res.data;
+                    this.data = res.data.list;
+                    this.pagination.total = res.data.total;
+                    this.loading = false;
                 }catch (e) {
-
+                    this.loading = false;
                 }
             },
             async deleteItem(item){
@@ -191,6 +200,7 @@
                 const pager = {...this.pagination};
                 pager.current = pagination.current;
                 this.pagination = pager;
+                this.fetchList();
             },
             catChange(val){
                 this.cat_id = val;

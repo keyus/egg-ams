@@ -18,6 +18,8 @@
                         label="标题"
                 >
                     <a-input
+                            @keyup.enter="handleOk"
+                            autoFocus
                             v-decorator="[
           'title',
           {
@@ -208,13 +210,13 @@
             handleOk() {
                 this.form.validateFields((err, values) => {
                     if (err) return;
+                    values.cat_id = values.cat_id || null;
                     values.content = this.editor.txt.html();
                     values.img = this.fileList.length ? this.fileList[0].url : '';
                     this.fetch(values);
                 });
             },
             async fetch(values) {
-                console.log(values)
                 this.confirmLoading = true;
                 try {
                     await this.$http.post(`/article`, values);
