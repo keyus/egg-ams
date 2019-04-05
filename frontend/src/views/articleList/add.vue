@@ -75,7 +75,9 @@
                         :wrapper-col="formItemLayout.wrapperCol"
                         label="是否热门"
                 >
-                    <a-switch v-decorator="['hot', {
+                    <a-switch checkedChildren="开"
+                              unCheckedChildren="关"
+                              v-decorator="['hot', {
                         valuePropName: 'checked'
                     }]"/>
                 </a-form-item>
@@ -115,7 +117,9 @@
                         :wrapper-col="formItemLayout.wrapperCol"
                         label="是否置顶"
                 >
-                    <a-switch v-decorator="['top', {
+                    <a-switch checkedChildren="开"
+                              unCheckedChildren="关"
+                              v-decorator="['top', {
                         valuePropName: 'checked'
                     }]"/>
                 </a-form-item>

@@ -132,7 +132,7 @@
     },
     "static": {
       "prefix": "/public/",
-      "dir": "/Users/xiaohuangyu/work/egg-ams/admin/app/public",
+      "dir": "/Users/xiaohuangyu/work/egg-ams/admin/public",
       "dynamic": true,
       "preload": false,
       "buffer": false,
@@ -330,9 +330,10 @@
       "responseTimeout": 60000
     },
     "onClientError": null,
+    "host": "http://localhost:7002",
     "tablePrefix": "pme_",
     "tokenSign": "eggCmsAdmin",
-    "uploadImgPath": "/upload/images",
+    "uploadImgPath": "/public/upload/images",
     "coreMiddlewares": "~config~coreMiddleware",
     "appMiddlewares": [],
     "appMiddleware": "~config~appMiddlewares"

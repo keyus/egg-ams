@@ -24,11 +24,13 @@ class UserService extends BaseService {
     }
     //删除用户
     async deleteUser({id}){
+        if(data.id === 1) return false;                             //禁止删除超管
         return await this.sql.delete(this.table,{
             id
         })
     }
     async update(data){
+        if(data.id === 1) return false;                             //禁止修改超管
         const res = await this.sql.get(this.table,{id: data.id});
         if(res && res.username !== data.username){
             return false;

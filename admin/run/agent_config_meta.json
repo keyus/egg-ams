@@ -96,6 +96,15 @@
       "connectionLimit": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-mysql/config/config.default.js"
     }
   },
+  "static": {
+    "dir": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+    "prefix": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
+    "dynamic": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
+    "preload": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
+    "buffer": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
+    "maxFiles": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js"
+  },
+  "host": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
   "tablePrefix": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
   "tokenSign": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
   "uploadImgPath": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
@@ -156,14 +165,6 @@
     "maxFiles": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js",
     "rotateDuration": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js",
     "maxDays": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/config/config.default.js"
-  },
-  "static": {
-    "prefix": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
-    "dir": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
-    "dynamic": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
-    "preload": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
-    "buffer": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js",
-    "maxFiles": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-static/config/config.default.js"
   },
   "nunjucks": {
     "autoescape": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-view-nunjucks/config/config.default.js",

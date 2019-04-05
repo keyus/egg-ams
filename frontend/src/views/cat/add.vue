@@ -32,7 +32,9 @@
                         :wrapper-col="formItemLayout.wrapperCol"
                         label="导航栏"
                 >
-                    <a-switch v-decorator="['is_nav', {
+                    <a-switch checkedChildren="开"
+                              unCheckedChildren="关"
+                              v-decorator="['is_nav', {
                         valuePropName: 'checked'
                     }]" />
                 </a-form-item>
@@ -74,7 +76,9 @@
                             :wrapper-col="formItemLayout.wrapperCol"
                             label="列表显示"
                     >
-                        <a-switch v-decorator="['is_list', {
+                        <a-switch checkedChildren="开"
+                                  unCheckedChildren="关"
+                                  v-decorator="['is_list', {
                         valuePropName: 'checked'
                     }]" />
                     </a-form-item>

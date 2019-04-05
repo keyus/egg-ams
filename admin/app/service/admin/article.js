@@ -25,7 +25,7 @@ class ArticleService extends BaseService {
         if(where) where = `where ${where.substr(4)}`;
         const count = await this.sql.query(`select count(id) from ${this.table} ${where}`);
         const limit = `limit ${page * 10 - 10},${size}`
-        const sql = `select id,title,author,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from ${this.table} ${where} order by sorter desc ${limit}`;
+        const sql = `select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from ${this.table} ${where} order by sorter desc ${limit}`;
         const res = await this.sql.query(sql);
         return {
             list: res,
