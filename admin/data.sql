@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-04-25 10:07:16 +0000
+# Generation Time: 2019-04-25 11:07:06 +0000
 # ************************************************************
 
 
@@ -32,7 +32,7 @@ CREATE TABLE `pme_article` (
   `img` varchar(250) DEFAULT NULL,
   `hot` tinyint(1) NOT NULL DEFAULT '0',
   `author` varchar(45) DEFAULT NULL,
-  `intro` varchar(100) NOT NULL,
+  `intro` varchar(100) DEFAULT NULL,
   `top` tinyint(1) NOT NULL DEFAULT '0',
   `cat_id` int(11) DEFAULT NULL,
   `content_id` int(11) DEFAULT NULL,
@@ -42,8 +42,17 @@ CREATE TABLE `pme_article` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
+LOCK TABLES `pme_article` WRITE;
+/*!40000 ALTER TABLE `pme_article` DISABLE KEYS */;
+
+INSERT INTO `pme_article` (`id`, `title`, `fromto`, `img`, `hot`, `author`, `intro`, `top`, `cat_id`, `content_id`, `keywords`, `sorter`, `update_time`, `create_time`)
+VALUES
+	(1,'fdsafdsa',NULL,'',0,NULL,NULL,0,NULL,4,NULL,50,'2019-04-25 19:03:53','2019-04-25 19:03:53');
+
+/*!40000 ALTER TABLE `pme_article` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table pme_cat
@@ -56,14 +65,23 @@ CREATE TABLE `pme_cat` (
   `name` varchar(11) NOT NULL DEFAULT '50',
   `is_nav` tinyint(1) NOT NULL DEFAULT '0',
   `is_list` tinyint(1) NOT NULL DEFAULT '0',
-  `banner` int(11) DEFAULT NULL,
+  `banner` varchar(200) DEFAULT NULL,
   `content_id` int(11) DEFAULT NULL,
   `sorter` int(11) DEFAULT '50',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
+LOCK TABLES `pme_cat` WRITE;
+/*!40000 ALTER TABLE `pme_cat` DISABLE KEYS */;
+
+INSERT INTO `pme_cat` (`id`, `name`, `is_nav`, `is_list`, `banner`, `content_id`, `sorter`, `create_time`, `update_time`)
+VALUES
+	(1,'rewq',1,0,'',6,50,'2019-04-25 19:04:50','2019-04-25 19:04:50');
+
+/*!40000 ALTER TABLE `pme_cat` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table pme_content
@@ -77,8 +95,22 @@ CREATE TABLE `pme_content` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
+LOCK TABLES `pme_content` WRITE;
+/*!40000 ALTER TABLE `pme_content` DISABLE KEYS */;
+
+INSERT INTO `pme_content` (`id`, `content`, `create_time`, `update_time`)
+VALUES
+	(1,'<p><br></p>','2019-04-25 19:02:31','2019-04-25 19:02:31'),
+	(2,'<p><br></p>','2019-04-25 19:03:10','2019-04-25 19:03:10'),
+	(3,'<p><br></p>','2019-04-25 19:03:22','2019-04-25 19:03:22'),
+	(4,'<p><br></p>','2019-04-25 19:03:53','2019-04-25 19:03:53'),
+	(5,'<p><br></p>','2019-04-25 19:04:03','2019-04-25 19:04:03'),
+	(6,'<p><br></p>','2019-04-25 19:04:50','2019-04-25 19:04:50');
+
+/*!40000 ALTER TABLE `pme_content` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table pme_friendlink
@@ -96,7 +128,7 @@ CREATE TABLE `pme_friendlink` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 
 
@@ -119,7 +151,7 @@ CREATE TABLE `pme_site` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pme_site` WRITE;
 /*!40000 ALTER TABLE `pme_site` DISABLE KEYS */;
@@ -147,7 +179,7 @@ CREATE TABLE `pme_slider` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 
 
@@ -168,7 +200,7 @@ CREATE TABLE `pme_user` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pme_user` WRITE;
 /*!40000 ALTER TABLE `pme_user` DISABLE KEYS */;

@@ -232,3 +232,139 @@ name: "ER_BAD_FIELD_ERRORError"
 pid: 2818
 hostname: xiaohuangyudeMacBook-Pro.local
 
+2019-04-25 19:02:31,434 ERROR 2818 [-/127.0.0.1/-/19ms POST /api/article] nodejs.ER_NO_DEFAULT_FOR_FIELDError: ER_NO_DEFAULT_FOR_FIELD: Field 'intro' doesn't have a default value
+    at Query.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:199:23)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as query] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at RDSClient.proto._query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/client.js:34:20)
+    at RDSClient.proto.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:65:19)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:54:5
+    sql: INSERT INTO `pme_article`(`title`, `cat_id`, `sorter`, `img`, `content_id`) VALUES('fdsafdsa', NULL, 50, '', 1)
+code: "ER_NO_DEFAULT_FOR_FIELD"
+errno: 1364
+sqlMessage: "Field 'intro' doesn't have a default value"
+sqlState: "HY000"
+index: 0
+sql: "INSERT INTO `pme_article`(`title`, `cat_id`, `sorter`, `img`, `content_id`) VALUES('fdsafdsa', NULL, 50, '', 1)"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_NO_DEFAULT_FOR_FIELDError"
+pid: 2818
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-04-25 19:03:10,277 ERROR 2818 [-/127.0.0.1/-/6ms POST /api/article] nodejs.ER_NO_DEFAULT_FOR_FIELDError: ER_NO_DEFAULT_FOR_FIELD: Field 'intro' doesn't have a default value
+    at Query.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:199:23)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as query] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at RDSClient.proto._query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/client.js:34:20)
+    at RDSClient.proto.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:65:19)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:54:5
+    sql: INSERT INTO `pme_article`(`title`, `cat_id`, `sorter`, `img`, `content_id`) VALUES('fdsafdsa', NULL, 50, '', 2)
+code: "ER_NO_DEFAULT_FOR_FIELD"
+errno: 1364
+sqlMessage: "Field 'intro' doesn't have a default value"
+sqlState: "HY000"
+index: 0
+sql: "INSERT INTO `pme_article`(`title`, `cat_id`, `sorter`, `img`, `content_id`) VALUES('fdsafdsa', NULL, 50, '', 2)"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_NO_DEFAULT_FOR_FIELDError"
+pid: 2818
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-04-25 19:03:22,139 ERROR 2818 [-/127.0.0.1/-/3ms POST /api/article] nodejs.ER_NO_DEFAULT_FOR_FIELDError: ER_NO_DEFAULT_FOR_FIELD: Field 'intro' doesn't have a default value
+    at Query.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:199:23)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as query] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at RDSClient.proto._query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/client.js:34:20)
+    at RDSClient.proto.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:65:19)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:54:5
+    sql: INSERT INTO `pme_article`(`title`, `cat_id`, `sorter`, `img`, `content_id`) VALUES('fdsafdsa', NULL, 50, '', 3)
+code: "ER_NO_DEFAULT_FOR_FIELD"
+errno: 1364
+sqlMessage: "Field 'intro' doesn't have a default value"
+sqlState: "HY000"
+index: 0
+sql: "INSERT INTO `pme_article`(`title`, `cat_id`, `sorter`, `img`, `content_id`) VALUES('fdsafdsa', NULL, 50, '', 3)"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_NO_DEFAULT_FOR_FIELDError"
+pid: 2818
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-04-25 19:04:03,223 ERROR 2818 [-/127.0.0.1/-/4ms POST /api/cat] nodejs.ER_TRUNCATED_WRONG_VALUE_FOR_FIELDError: ER_TRUNCATED_WRONG_VALUE_FOR_FIELD: Incorrect integer value: '' for column 'banner' at row 1
+    at Query.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:199:23)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as query] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at RDSClient.proto._query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/client.js:34:20)
+    at RDSClient.proto.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:65:19)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:54:5
+    sql: INSERT INTO `pme_cat`(`name`, `sorter`, `banner`, `content_id`) VALUES('rewq', 50, '', 5)
+code: "ER_TRUNCATED_WRONG_VALUE_FOR_FIELD"
+errno: 1366
+sqlMessage: "Incorrect integer value: '' for column 'banner' at row 1"
+sqlState: "HY000"
+index: 0
+sql: "INSERT INTO `pme_cat`(`name`, `sorter`, `banner`, `content_id`) VALUES('rewq', 50, '', 5)"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_TRUNCATED_WRONG_VALUE_FOR_FIELDError"
+pid: 2818
+hostname: xiaohuangyudeMacBook-Pro.local
+
