@@ -1,0 +1,234 @@
+2019-04-25 16:45:06,828 ERROR 2690 [-/127.0.0.1/-/0ms GET /] nodejs.ER_BAD_DB_ERRORError: ER_BAD_DB_ERROR: Unknown database 'pme'
+    at Handshake.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+code: "ER_BAD_DB_ERROR"
+errno: 1049
+sqlMessage: "Unknown database 'pme'"
+sqlState: "42000"
+fatal: true
+name: "ER_BAD_DB_ERRORError"
+pid: 2690
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-04-25 17:41:11,527 ERROR 2809 [-/127.0.0.1/-/0ms GET /] nodejs.ER_BAD_DB_ERRORError: ER_BAD_DB_ERROR: Unknown database 'pme'
+    at Handshake.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Handshake.js:124:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Protocol._enqueue (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:118:18)
+    at Pool.getConnection (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as getConnection] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:202:8)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    sql: select now() as currentTime;
+code: "ER_BAD_DB_ERROR"
+errno: 1049
+sqlMessage: "Unknown database 'pme'"
+sqlState: "42000"
+fatal: true
+name: "ER_BAD_DB_ERRORError"
+pid: 2809
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-04-25 17:57:55,506 ERROR 2818 [-/127.0.0.1/-/46ms POST /api/auth] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'use' in 'where clause'
+    at Query.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:199:23)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as query] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at RDSClient.proto._query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/client.js:34:20)
+    at RDSClient.proto.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:65:19)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:54:5
+    sql: SELECT * FROM `pme_user` WHERE `username` = 'admin' AND `password` = '96e79218965eb72c92a549dd5a330112' AND `use` = 1 LIMIT 0, 1
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'use' in 'where clause'"
+sqlState: "42S22"
+index: 0
+sql: "SELECT * FROM `pme_user` WHERE `username` = 'admin' AND `password` = '96e79218965eb72c92a549dd5a330112' AND `use` = 1 LIMIT 0, 1"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 2818
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-04-25 17:59:05,984 ERROR 2818 [-/127.0.0.1/-/38ms GET /api/article?keywords=&page=1&size=10] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'intro' in 'field list'
+    at Query.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:199:23)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as query] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at RDSClient.proto._query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/client.js:34:20)
+    at RDSClient.proto.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:65:19)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:54:5
+    sql: select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from pme_article  order by sorter desc limit 0,10
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'intro' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from pme_article  order by sorter desc limit 0,10"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 2818
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-04-25 17:59:31,204 ERROR 2818 [-/127.0.0.1/-/3ms GET /api/article?keywords=&page=1&size=10] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'intro' in 'field list'
+    at Query.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:199:23)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as query] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at RDSClient.proto._query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/client.js:34:20)
+    at RDSClient.proto.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:65:19)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:54:5
+    sql: select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from pme_article  order by sorter desc limit 0,10
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'intro' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from pme_article  order by sorter desc limit 0,10"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 2818
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-04-25 18:00:31,096 ERROR 2818 [-/127.0.0.1/-/8ms GET /api/article?keywords=&page=1&size=10] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'cat_id' in 'field list'
+    at Query.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:199:23)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as query] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at RDSClient.proto._query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/client.js:34:20)
+    at RDSClient.proto.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:65:19)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:54:5
+    sql: select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from pme_article  order by sorter desc limit 0,10
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'cat_id' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from pme_article  order by sorter desc limit 0,10"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 2818
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-04-25 18:00:38,951 ERROR 2818 [-/127.0.0.1/-/20ms GET /api/article?keywords=&page=1&size=10] nodejs.ER_BAD_FIELD_ERRORError: ER_BAD_FIELD_ERROR: Unknown column 'cat_id' in 'field list'
+    at Query.Sequence._packetToError (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Query.ErrorPacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/sequences/Query.js:77:18)
+    at Protocol._parsePacket (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:278:23)
+    at Parser.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Parser.js:76:12)
+    at Protocol.write (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:91:28)
+    at Socket.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Connection.js:502:10)
+    at Socket.emit (events.js:189:13)
+    at addChunk (_stream_readable.js:284:12)
+    at readableAddChunk (_stream_readable.js:265:11)
+    --------------------
+    at Pool.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/mysql/lib/Pool.js:199:23)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:29:7
+    at new Promise (<anonymous>)
+    at Pool.<anonymous> (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:12:10)
+    at Pool.ret [as query] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/node_modules/pify/index.js:56:34)
+    at RDSClient.proto._query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/client.js:34:20)
+    at RDSClient.proto.query (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/ali-rds/lib/operator.js:54:29)
+    at proto.query.next (<anonymous>)
+    at onFulfilled (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:65:19)
+    at /Users/xiaohuangyu/work/egg-ams/admin/node_modules/co/index.js:54:5
+    sql: select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from pme_article  order by sorter desc limit 0,10
+code: "ER_BAD_FIELD_ERROR"
+errno: 1054
+sqlMessage: "Unknown column 'cat_id' in 'field list'"
+sqlState: "42S22"
+index: 0
+sql: "select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from pme_article  order by sorter desc limit 0,10"
+headers: {"Access-Control-Allow-Origin":"*","vary":"Origin"}
+name: "ER_BAD_FIELD_ERRORError"
+pid: 2818
+hostname: xiaohuangyudeMacBook-Pro.local
+

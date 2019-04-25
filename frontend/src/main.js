@@ -8,7 +8,7 @@ import store from './store'
 import 'ant-design-vue/dist/antd.css'
 import './style/home.scss'
 
-const uploadImgServer = 'http://192.168.71.43:7002/api/upload';
+const uploadImgServer = 'http://127.0.0.1:7001/api/upload';
 Vue.use(Antd);
 Vue.prototype.$http = http;
 Vue.prototype.$message = message;

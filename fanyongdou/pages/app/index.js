@@ -1,7 +1,10 @@
+import AdminLayout from '../../components/adminLayout'
 export default function App() {
     return (
-        <div>
-            user
-        </div>
+        <AdminLayout>
+            <div>
+                fdsfds
+            </div>
+        </AdminLayout>
     )
 }

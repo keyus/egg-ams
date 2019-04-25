@@ -1,1 +1,31 @@
 2019-04-06 14:12:55,339 INFO 6112 [egg-logrotator] agent logger reload: got log-reload message
+2019-04-25 16:45:05,134 INFO 2689 [egg:logger] init all loggers with options: {"dir":"/Users/xiaohuangyu/work/egg-ams/admin/logs/egg-cms","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-cms-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-25 16:45:05,311 INFO 2689 [egg:core] dump config after load, 9ms
+2019-04-25 16:45:05,362 INFO 2689 [egg-watcher] Start watching: ["/Users/xiaohuangyu/work/egg-ams/admin/app","/Users/xiaohuangyu/work/egg-ams/admin/config","/Users/xiaohuangyu/work/egg-ams/admin/mocks","/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy","/Users/xiaohuangyu/work/egg-ams/admin/app.js"]
+2019-04-25 16:45:05,362 INFO 2689 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app"
+2019-04-25 16:45:05,362 INFO 2689 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/config"
+2019-04-25 16:45:05,362 INFO 2689 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks"
+2019-04-25 16:45:05,363 INFO 2689 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy"
+2019-04-25 16:45:05,363 INFO 2689 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app.js"
+2019-04-25 16:45:05,363 INFO 2689 [egg-watcher:agent] watcher start success
+2019-04-25 16:45:05,425 INFO 2689 [egg:core] dump config after ready, 4ms
+2019-04-25 17:41:09,978 INFO 2808 [egg:logger] init all loggers with options: {"dir":"/Users/xiaohuangyu/work/egg-ams/admin/logs/egg-cms","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-cms-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-25 17:41:10,188 INFO 2808 [egg:core] dump config after load, 5ms
+2019-04-25 17:41:10,240 INFO 2808 [egg-watcher] Start watching: ["/Users/xiaohuangyu/work/egg-ams/admin/app","/Users/xiaohuangyu/work/egg-ams/admin/config","/Users/xiaohuangyu/work/egg-ams/admin/mocks","/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy","/Users/xiaohuangyu/work/egg-ams/admin/app.js"]
+2019-04-25 17:41:10,240 INFO 2808 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app"
+2019-04-25 17:41:10,241 INFO 2808 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/config"
+2019-04-25 17:41:10,241 INFO 2808 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks"
+2019-04-25 17:41:10,241 INFO 2808 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy"
+2019-04-25 17:41:10,241 INFO 2808 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app.js"
+2019-04-25 17:41:10,241 INFO 2808 [egg-watcher:agent] watcher start success
+2019-04-25 17:41:10,257 INFO 2808 [egg:core] dump config after ready, 3ms
+2019-04-25 17:41:33,918 INFO 2817 [egg:logger] init all loggers with options: {"dir":"/Users/xiaohuangyu/work/egg-ams/admin/logs/egg-cms","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-cms-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-04-25 17:41:34,009 INFO 2817 [egg:core] dump config after load, 6ms
+2019-04-25 17:41:34,044 INFO 2817 [egg-watcher] Start watching: ["/Users/xiaohuangyu/work/egg-ams/admin/app","/Users/xiaohuangyu/work/egg-ams/admin/config","/Users/xiaohuangyu/work/egg-ams/admin/mocks","/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy","/Users/xiaohuangyu/work/egg-ams/admin/app.js"]
+2019-04-25 17:41:34,044 INFO 2817 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app"
+2019-04-25 17:41:34,044 INFO 2817 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/config"
+2019-04-25 17:41:34,044 INFO 2817 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks"
+2019-04-25 17:41:34,044 INFO 2817 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy"
+2019-04-25 17:41:34,044 INFO 2817 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app.js"
+2019-04-25 17:41:34,045 INFO 2817 [egg-watcher:agent] watcher start success
+2019-04-25 17:41:34,061 INFO 2817 [egg:core] dump config after ready, 3ms

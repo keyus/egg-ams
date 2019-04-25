@@ -166,7 +166,7 @@
         "port": "3306",
         "user": "root",
         "password": "<String len: 0>",
-        "database": "pme"
+        "database": "fanyongdou"
       }
     },
     "cors": {

@@ -1,0 +1,12 @@
+2019-04-25 16:45:06,515 INFO 2690 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-04-25 16:45:06,515 INFO 2690 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-25 16:45:06,515 INFO 2690 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-25 17:41:11,194 INFO 2809 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-04-25 17:41:11,194 INFO 2809 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-25 17:41:11,194 INFO 2809 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-04-25 17:41:35,326 INFO 2817 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 38904680ms at 2019-04-26 04:30:00.006
+2019-04-25 17:41:35,326 INFO 2817 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 22704674ms at 2019-04-26 00:00:00.000
+2019-04-25 17:41:35,327 INFO 2817 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 22705674ms at 2019-04-26 00:00:01.001
+2019-04-25 17:41:34,990 INFO 2818 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-04-25 17:41:34,990 INFO 2818 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-04-25 17:41:34,990 INFO 2818 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
