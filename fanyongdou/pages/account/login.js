@@ -20,9 +20,9 @@ export default function Login() {
                     <a href="/" className="logo"/>
                     <div className="swipe-text-box">
                         <div className="swipe-text-item">
-                            <h4>京东来客</h4>
-                            <h5>大数据与用户洞察驱动的营销云</h5>
-                            <h6>低成本获客 / 精准营销 / 归因与洞察 / 效率提升</h6>
+                            <h4>返佣豆</h4>
+                            <h5>大数据与用户洞察驱动精选平台</h5>
+                            <h6>降低交易成本 / 精准选择 / 归因与洞察 / 低风险</h6>
                         </div>
                     </div>
                     <div className="login-box">

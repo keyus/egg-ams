@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "dependencies": {
     "next": "^8.1.0",
+    "antd": "^3.16.5",
+    "babel-plugin-import": "^1.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "classnames": "^2.2.6",

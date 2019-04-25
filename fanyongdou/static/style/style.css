@@ -15187,3 +15187,16 @@ textarea.form-control {
     width: 2em;
     height: 2em;
 }
+.read{
+    padding: 0 20px;
+}
+.read-content{
+    padding: 30px 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.read-content p{
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}

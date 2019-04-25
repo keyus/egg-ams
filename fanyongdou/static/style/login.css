@@ -42,7 +42,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    background: url(img/bgpoint.png)
+    background: url('/static/images/bgpoint.png')
 }
 
 .swipe-box {
@@ -189,7 +189,7 @@ body {
     display: inline-block;
     width: 18px;
     height: 18px;
-    background: url(img/tel-icon.png)
+    background: url('/static/images/tel-icon.png')
 }
 
 .footer .text {
@@ -206,7 +206,7 @@ body {
     display: inline-block;
     width: 18px;
     height: 18px;
-    background: url(img/email-icon.png);
+    background: url('/static/images/email-icon.png');
     margin-left: 20px
 }
 
@@ -296,11 +296,11 @@ body {
     left: 0;
     top: 50%;
     margin-top: -7px;
-    background: url(img/choose.png)
+    background: url('/static/images/choose.png')
 }
 
 .choose-item.checked:before {
-    background: url(img/choose-checked.png)
+    background: url('/static/images/choose-checked.png')
 }
 
 .agreement-box {
@@ -311,14 +311,14 @@ body {
 .confirm-check {
     width: 20px;
     height: 20px;
-    background: url(img/select.png);
+    background: url('/static/images/select.png');
     cursor: pointer;
     float: left;
     margin-right: 10px
 }
 
 .confirm-check.checked {
-    background: url(img/seleted.png)
+    background: url('/static/images/seleted.png');
 }
 
 .agreement-item {
@@ -342,7 +342,7 @@ body {
     top: 2px;
     width: 14px;
     height: 14px;
-    background: url(img/wrong-icon.png)
+    background: url('/static/images/wrong-icon.png')
 }
 
 .register-iframe {

@@ -437,7 +437,7 @@ export default function Home() {
                                                 <section className="bg-board clip-image-container image-scale panel-shadow hover-pointer">
                                                     <div className="field--type-image absolute-fill-full">
                                                         <img
-                                                            src="/sites/default/files/2019-03/%E4%BC%98%E6%83%A0.jpg"
+                                                            src="/static/images/test/testad1.jpg"
                                                             width={2000}
                                                             height={1125}
                                                             typeof="foaf:Image"
@@ -452,7 +452,7 @@ export default function Home() {
                                                                     height={24}
                                                                     alt="Activity"
                                                                     title="Activity"
-                                                                    src="/sites/default/files/2018-02/activity.svg"
+                                                                    src="/static/images/svg/activity.svg"
                                                                 />
                                                                 <span>优惠活动 </span>
                                                                 <span className="more pull-right">
@@ -479,7 +479,7 @@ export default function Home() {
                                                 <section className="bg-board clip-image-container image-scale panel-shadow hover-pointer">
                                                     <div className="field--type-image absolute-fill-full">
                                                         <img
-                                                            src="/sites/default/files/2019-03/%E8%A1%8C%E5%86%85%E9%A3%8E%E9%87%87_0.jpg"
+                                                            src="/static/images/test/testad2.jpg"
                                                             width={600}
                                                             height={337}
                                                             typeof="foaf:Image"
@@ -494,7 +494,7 @@ export default function Home() {
                                                                     height={24}
                                                                     alt="Phylogeny"
                                                                     title="Phylogeny"
-                                                                    src="/sites/default/files/2018-02/phylogeny.svg"
+                                                                    src="/static/images/svg/phylogeny.svg"
                                                                 />
                                                                 <span>行内风采 </span>
                                                                 <span className="more pull-right">
@@ -524,7 +524,7 @@ export default function Home() {
                                                 <section className="bg-board clip-image-container image-scale panel-shadow hover-pointer">
                                                     <div className="field--type-image absolute-fill-full">
                                                         <img
-                                                            src="/sites/default/files/2018-01/%E6%85%88%E5%96%84%E5%9F%BA%E9%87%91.jpg"
+                                                            src="/static/images/test/testad3.jpg"
                                                             width={600}
                                                             height={449}
                                                             typeof="foaf:Image"
@@ -539,7 +539,7 @@ export default function Home() {
                                                                     height={24}
                                                                     alt="Architecture"
                                                                     title="Architecture"
-                                                                    src="/sites/default/files/2018-02/architecture.svg"
+                                                                    src="/static/images/svg/architecture.svg"
                                                                 />
                                                                 <span>慈善基金 </span>
                                                                 <span className="more pull-right">
