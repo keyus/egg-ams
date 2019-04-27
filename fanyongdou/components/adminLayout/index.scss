@@ -51,9 +51,24 @@
   left: 0;
   bottom: 0;
   width: 240px;
-  background-color: #fff;
+  background-color: #f5f7fc;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.21);
+  padding-top: 20px;
+  li{
+    padding-left: 30px;
+    line-height: 45px;
+    font-size: 14px;
+    a{
+      color: #676b77;
+      &:hover,
+      &.active{
+        color: #232a32;
+      }
+      i{
+        margin-right: 10px;
+      }
+    }
+  }
 }
 .ff-main{
   padding: 80px 20px 20px 260px;

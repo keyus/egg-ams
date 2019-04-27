@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import Head from 'next/head';
-import {Avatar, Popover, Icon, Menu} from 'antd'
+import {Avatar, Popover, Icon,} from 'antd'
 import './index.scss'
 
 export default class AdminLayout extends Component {
     static defaultProps = {
         title: '用户中心'
     }
+
     render() {
         const {
             title,
@@ -14,9 +15,9 @@ export default class AdminLayout extends Component {
         } = this.props;
         const menus = (
             <ul className='user-menu'>
-                <li><Icon type="user" /> 个人信息</li>
-                <li><Icon type="credit-card" /> 银行卡资料</li>
-                <li><Icon type="logout" /> 退出登录</li>
+                <li><Icon type="user"/> 个人信息</li>
+                <li><Icon type="credit-card"/> 银行卡资料</li>
+                <li><Icon type="logout"/> 退出登录</li>
             </ul>
         )
         return (
@@ -32,20 +33,28 @@ export default class AdminLayout extends Component {
                     <div className='ff-header-user'>
                         <Popover placement="bottomRight"
                                  content={menus} trigger="click">
-                            <Avatar icon="user" />
+                            <Avatar icon="user"/>
                             <span className='ml10'>爱尅人人要</span>
-                            <Icon type="down" />
+                            <Icon type="down"/>
                         </Popover>
                     </div>
                 </div>
                 <div className='ff-side'>
                     <ul>
                         <li>
-                            <a href="#">控制台</a>
-                        </li><li>
-                            <a href="#">成交明细</a>
-                        </li><li>
-                            <a href="#">控制台</a>
+                            <a href="#"><Icon type="global"/>账号总览</a>
+                        </li>
+                        <li>
+                            <a href="#"><Icon type="pay-circle" />我的佣金豆</a>
+                        </li>
+                        <li>
+                            <a href="#"><Icon type="fork"/>资金明细</a>
+                        </li>
+                        <li>
+                            <a href="#"><Icon type="team" />交易账号</a>
+                        </li>
+                        <li>
+                            <a href="#"><Icon type="credit-card" />付款方式</a>
                         </li>
                     </ul>
                 </div>
