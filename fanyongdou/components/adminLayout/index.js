@@ -1,16 +1,22 @@
 import React, {Component} from 'react'
-import Head from 'next/head';
-import {Avatar, Popover, Icon,} from 'antd'
+import Head from 'next/head'
+import Link from 'next/link'
+import {Icon,Avatar, Popover} from 'antd'
+import classnames from 'classnames'
+import side from './side'
 import './index.scss'
+
 
 export default class AdminLayout extends Component {
     static defaultProps = {
-        title: '用户中心'
+        title: '用户中心',
+        active: 1,
     }
 
     render() {
         const {
             title,
+            active,
             children,
         } = this.props;
         const menus = (
@@ -41,21 +47,18 @@ export default class AdminLayout extends Component {
                 </div>
                 <div className='ff-side'>
                     <ul>
-                        <li>
-                            <a href="#"><Icon type="global"/>账号总览</a>
-                        </li>
-                        <li>
-                            <a href="#"><Icon type="pay-circle" />我的佣金豆</a>
-                        </li>
-                        <li>
-                            <a href="#"><Icon type="fork"/>资金明细</a>
-                        </li>
-                        <li>
-                            <a href="#"><Icon type="team" />交易账号</a>
-                        </li>
-                        <li>
-                            <a href="#"><Icon type="credit-card" />付款方式</a>
-                        </li>
+                        {
+                            side.map((it,key)=>(
+                                <li key={key}>
+                                    <Link href={it.path}>
+                                        <a className={classnames({
+                                                active: it.index === active,
+                                           })}
+                                        ><Icon type={it.icon}/>{it.name}</a>
+                                    </Link>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
                 <div className='ff-main'>
