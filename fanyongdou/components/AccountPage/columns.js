@@ -18,8 +18,15 @@ export default [
         key: 'bi',
     },
     {
+        title: '返佣类型',
+        dataIndex: 'type',
+        key: 'type',
+        align: 'center'
+    },
+    {
         title: '账号状态',
         dataIndex: 'status',
         key: 'status',
     },
+
 ]

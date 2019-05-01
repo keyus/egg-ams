@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link'
 import '../../scss/reg.scss'
 
 export default function Reg() {
@@ -27,15 +26,8 @@ export default function Reg() {
                 <div className="reg-wrap">
                     <div className="item-phone-wrap">
                         <div className="form-item form-item-phone">
-                            <label className="select-country"
-                                   style={{
-                                       "border-top": "1px solid rgb(221, 221, 221)",
-                                       "border-right": "none rgb(221, 221, 221)",
-                                       "border-bottom": "1px solid rgb(221, 221, 221)",
-                                       "border-left": "1px solid rgb(221, 221, 221)",
-                                       "border-image": "initial"
-                                   }}>中国
-                                0086
+                            <label className="select-country">中国
+                                + 86
                                 <a href="javascript:void(0) " className="arrow"/>
                             </label>
                             <div className="item-input-wrap form-item-error"

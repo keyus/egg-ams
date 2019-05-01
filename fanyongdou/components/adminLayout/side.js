@@ -22,7 +22,7 @@ export default [
         index: 4,
     },{
         name: '实名认证',
-        path: '/app',
+        path: '/app/idCard',
         icon: 'global',
         index: 5,
 

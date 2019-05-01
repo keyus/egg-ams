@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
-import {Icon,Avatar, Popover} from 'antd'
+import {Icon, Avatar, Popover} from 'antd'
 import classnames from 'classnames'
 import side from './side'
 import './index.scss'
@@ -48,14 +47,12 @@ export default class AdminLayout extends Component {
                 <div className='ff-side'>
                     <ul>
                         {
-                            side.map((it,key)=>(
+                            side.map((it, key) => (
                                 <li key={key}>
-                                    <Link href={it.path}>
-                                        <a className={classnames({
-                                                active: it.index === active,
-                                           })}
-                                        ><Icon type={it.icon}/>{it.name}</a>
-                                    </Link>
+                                    <a href={it.path} className={classnames({
+                                        active: it.index === active,
+                                    })}
+                                    ><Icon type={it.icon}/>{it.name}</a>
                                 </li>
                             ))
                         }
