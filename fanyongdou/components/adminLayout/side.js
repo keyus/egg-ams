@@ -25,6 +25,11 @@ export default [
         path: '/app/idCard',
         icon: 'global',
         index: 5,
-
+    },
+    {
+        name: '在线开户',
+        path: '/app/openAccount',
+        icon: 'safety-certificate',
+        index: 6,
     },
 ]

@@ -4,6 +4,7 @@ import util from './util'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Cat from './views/cat/Cat'
+import Platform from './views/platform/Platform'
 import ArticleList from './views/articleList'
 import Users from './views/users'
 import Set from './views/set'
@@ -20,6 +21,10 @@ export const menus = [
         path: '/cat',
         name: '分类',
         icon: 'project'
+    },{
+        path: '/platform',
+        name: '平台',
+        icon: 'shop'
     },
     {
         path: '/users',
@@ -61,6 +66,10 @@ const router =  new Router({
                     path: '/set',
                     name: 'set',
                     component: Set
+                },{
+                    path: '/platform',
+                    name: 'platform',
+                    component: Platform
                 },
             ]
         },

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<script>
+    const data = [
+        {
+            id:1,
+            name :"一级分类：1",
+            pid :0,
+        },
+        {
+            id:2,
+            name :"二级分类：1",
+            pid :1,
+        },
+        {
+            id:3,
+            name :"三级分类：3",
+            pid :2,
+        },
+        {
+            id:4,
+            name :"一级分类：2",
+            pid :0,
+        },
+        {
+            id:7,
+            name :"f级分类：2",
+            pid :4,
+        },
+        {
+            id:10,
+            name :"f级分类：2",
+            pid :7,
+        },
+        {
+            id:9,
+            name :"f级分类：2",
+            pid :10,
+        },
+        {
+            id:12,
+            name :"f级分类：2",
+            pid :9,
+        },
+        {
+            id:15,
+            name :"f级分类：2",
+            pid :12,
+        },
+        {
+            id:13,
+            name :"f级分类：2",
+            pid :15,
+        },
+    ]
+
+    function tree(data) {
+        let map = {};
+        let val = [];
+        data.forEach(it=>{
+            map[it.id] = it;
+        })
+        data.forEach(it=>{
+            //找到map数据项，这里是引用类型，就是一个指针
+            const parent = map[it.pid];
+            if(parent){
+                if(!Array.isArray(parent.children)) parent.children = [];
+                parent.children.push(it);
+            }else{
+                val.push(it);
+            }
+        })
+        return val;
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>
+

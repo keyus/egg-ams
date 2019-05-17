@@ -29,3 +29,123 @@
 2019-04-25 17:41:34,044 INFO 2817 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app.js"
 2019-04-25 17:41:34,045 INFO 2817 [egg-watcher:agent] watcher start success
 2019-04-25 17:41:34,061 INFO 2817 [egg:core] dump config after ready, 3ms
+2019-05-13 15:45:30,782 INFO 61707 [egg:logger] init all loggers with options: {"dir":"/Users/xiaohuangyu/work/egg-ams/admin/logs/egg-cms","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-cms-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-05-13 15:45:30,952 INFO 61707 [egg:core] dump config after load, 5ms
+2019-05-13 15:45:31,006 INFO 61707 [egg-watcher] Start watching: ["/Users/xiaohuangyu/work/egg-ams/admin/app","/Users/xiaohuangyu/work/egg-ams/admin/config","/Users/xiaohuangyu/work/egg-ams/admin/mocks","/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy","/Users/xiaohuangyu/work/egg-ams/admin/app.js"]
+2019-05-13 15:45:31,006 INFO 61707 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app"
+2019-05-13 15:45:31,006 INFO 61707 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/config"
+2019-05-13 15:45:31,006 INFO 61707 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks"
+2019-05-13 15:45:31,007 INFO 61707 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy"
+2019-05-13 15:45:31,007 INFO 61707 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app.js"
+2019-05-13 15:45:31,007 INFO 61707 [egg-watcher:agent] watcher start success
+2019-05-13 15:45:31,031 INFO 61707 [egg:core] dump config after ready, 6ms
+2019-05-13 23:40:10,888 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 2391932ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-14 00:19:47,587 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 2336678ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-14 02:18:35,003 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 7107397ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-14 02:51:04,305 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 1908595ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-14 03:28:52,052 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 2107764ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-14 04:18:35,741 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 2943645ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-14 06:19:32,442 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 7216663ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-14 08:20:09,288 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 7216829ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-14 09:00:48,789 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 2399658ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-14 10:00:58,439 ERROR 61707 nodejs.ClusterClientNoResponseError: client no response in 3569622ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout.Leader._heartbeatTimer.setInterval [as _onTimeout] (/Users/xiaohuangyu/work/egg-ams/admin/node_modules/cluster-client/lib/leader.js:77:23)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+name: "ClusterClientNoResponseError"
+pid: 61707
+hostname: xiaohuangyudeMacBook-Pro.local
+
+2019-05-17 14:04:13,500 INFO 6725 [egg:logger] init all loggers with options: {"dir":"/Users/xiaohuangyu/work/egg-ams/admin/logs/egg-cms","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"egg-cms-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"agent"}
+2019-05-17 14:04:13,733 INFO 6725 [egg:core] dump config after load, 21ms
+2019-05-17 14:04:13,794 INFO 6725 [egg-watcher] Start watching: ["/Users/xiaohuangyu/work/egg-ams/admin/app","/Users/xiaohuangyu/work/egg-ams/admin/config","/Users/xiaohuangyu/work/egg-ams/admin/mocks","/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy","/Users/xiaohuangyu/work/egg-ams/admin/app.js"]
+2019-05-17 14:04:13,794 INFO 6725 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app"
+2019-05-17 14:04:13,795 INFO 6725 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/config"
+2019-05-17 14:04:13,795 INFO 6725 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks"
+2019-05-17 14:04:13,795 INFO 6725 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/mocks_proxy"
+2019-05-17 14:04:13,795 INFO 6725 [egg-watcher] Start watching: "/Users/xiaohuangyu/work/egg-ams/admin/app.js"
+2019-05-17 14:04:13,795 INFO 6725 [egg-watcher:agent] watcher start success
+2019-05-17 14:04:13,823 INFO 6725 [egg:core] dump config after ready, 4ms

@@ -6,7 +6,7 @@ export default function Home() {
             <>
                 <div className="default-banner">
                     <div className="default-banner-size">
-                        <h1>为合作伙伴链接优秀大宗交易平台</h1>
+                        <h1 style={{color: '#fff'}}>为合作伙伴链接优秀大宗交易平台</h1>
                         <h2>立即成为返佣豆会员，交易佣金轻松享不停</h2>
                         <p className="join-btn"><a href="javascript:void(0);">立即加入</a></p>
                     </div>
