@@ -12,6 +12,8 @@ module.exports = app => {
     router.resources('content', '/api/content',controller.admin.api.content);                   //内容
     router.resources('user', '/api/user',checkToken,controller.admin.api.user);                 //管理员
     router.resources('cat', '/api/cat',checkToken,controller.admin.api.cat);                    //分类
+    router.resources('platform', '/api/platform',checkToken,controller.admin.api.platform);     //交易商
+    router.resources('member', '/api/member',checkToken,controller.admin.api.member);           //会员
     router.resources('article', '/api/article',checkToken,controller.admin.api.article);        //文章
     router.post('/api/articles', checkToken, controller.admin.api.article.destroyMore);         //文章删除多条
     router.resources('upload', '/api/upload',controller.admin.api.upload);                      //上传

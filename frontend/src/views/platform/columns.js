@@ -2,17 +2,19 @@ export const columns = [{
     title: '编号',
     dataIndex: 'id',
     width: '100px',
+    fixed: 'left',
 }, {
-    title: '平台名称',
+    title: '交易商名称',
     dataIndex: 'name',
     width: '150px',
+    fixed: 'left',
 }, {
-    title: '平台LOGO',
+    title: '交易商LOGO',
     dataIndex: 'logo',
     width: '200px',
     scopedSlots: {customRender: 'nav'}
 }, {
-    title: '平台网址',
+    title: '交易商网址',
     dataIndex: 'net',
     width: '200px',
 },{
@@ -51,6 +53,10 @@ export const columns = [{
     title: '开户资料',
     dataIndex: 'openFile',
     width: '300px',
+},{
+    title: '排序',
+    dataIndex: 'sorter',
+    width: '100px',
 },{
     title: '操作',
     width: '200px',

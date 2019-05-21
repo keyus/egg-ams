@@ -1,11 +1,11 @@
 <template>
     <a-modal
-            title="编辑分类"
+            title="编辑交易商"
             cancelText="取消"
             okText="确认"
             destroyOnClose
             :visible="visible"
-            width="95%"
+            width="45%"
             @ok="handleOk"
             :confirmLoading="confirmLoading"
             @cancel="handleCancel"
@@ -20,95 +20,184 @@
         ]"
                     />
                 </a-form-item>
-                <a-form-item>
-                    <a-input
-                            type="hidden"
-                            v-decorator="[
-          'content_id',{initialValue: data.content_id},
-        ]"
-                    />
-                </a-form-item>
                 <a-form-item
                         :label-col="formItemLayout.labelCol"
                         :wrapper-col="formItemLayout.wrapperCol"
-                        label="名称"
+                        label="交易商名称"
                 >
                     <a-input
                             v-decorator="[
           'name',
           {
             initialValue: data.name,
-            rules: [{ required: true, message: '请输入分类名称' }]
+            rules: [{ required: true, message: '请输入交易商名称' }]
           },
         ]"
-                            placeholder="请输入分类名称"
+                            placeholder="请输入交易商名称"
                     />
                 </a-form-item>
                 <a-form-item
                         :label-col="formItemLayout.labelCol"
                         :wrapper-col="formItemLayout.wrapperCol"
-                        label="导航栏"
+                        label="交易商logo"
                 >
-                    <a-switch checkedChildren="开"
-                              unCheckedChildren="关"
-                              v-decorator="['is_nav', {
-                        initialValue: Boolean(data.is_nav),
-                        valuePropName: 'checked'
-                    }]" />
+                    <a-upload
+                            :action="uploadImgServer"
+                            listType="picture"
+                            :fileList="fileList"
+                            class="upload-list-inline"
+                            @preview="handlePreview"
+                            @change="handleChange"
+                    >
+                        <a-button>
+                            <a-icon type="upload"/>
+                            上传
+                        </a-button>
+                    </a-upload>
                 </a-form-item>
-                <a-row>
-                    <a-col :span="4"></a-col>
-                    <a-col :span="20">
-                        <a href="javascript:;"
-                           style="display: inline-block;padding: 0 15px 15px 0"
-                           @click="showMore = !showMore">
-                            {{
-                                showMore ? '收起配置' : '更多设置'
-                            }}
-                            <a-icon type="caret-up" v-if="showMore" />
-                            <a-icon type="caret-down" v-else />
-                        </a>
-                    </a-col>
-                </a-row>
-                <div v-show="showMore">
-                    <a-form-item
-                            :label-col="formItemLayout.labelCol"
-                            :wrapper-col="formItemLayout.wrapperCol"
-                            label="分类图"
-                    >
-                        <a-upload
-                                :action="uploadImgServer"
-                                listType="picture"
-                                :fileList="fileList"
-                                class="upload-list-inline"
-                                @preview="handlePreview"
-                                @change="handleChange"
-                        >
-                            <a-button>
-                                <a-icon type="upload" /> 上传
-                            </a-button>
-                        </a-upload>
-                    </a-form-item>
-                    <a-form-item
-                            :label-col="formItemLayout.labelCol"
-                            :wrapper-col="formItemLayout.wrapperCol"
-                            label="列表显示"
-                    >
-                        <a-switch checkedChildren="开"
-                                  unCheckedChildren="关"
-                                  v-decorator="['is_list', {
-                        initialValue: Boolean(data.is_list),
-                        valuePropName: 'checked'
-                    }]" />
-                    </a-form-item>
-                    <a-form-item
-                            :label-col="formItemLayout.labelCol"
-                            :wrapper-col="formItemLayout.wrapperCol"
-                            label="内容"
-                    >
-                        <div class="editor"
-                             ref="editor"></div>
-                    </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="交易商网址"
+                >
+                    <a-input
+                            v-decorator="[
+          'net',{
+            initialValue: data.net,
+          }]"
+                            placeholder="请输入交易商名称"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="交易商简介"
+                >
+                    <a-textarea placeholder="交易商简介"
+                                v-decorator="[
+          'intro',{
+            initialValue: data.intro,
+          }
+        ]"
+                                :rows="4"/>
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="返佣周期"
+                >
+                    <a-input
+                            v-decorator="[
+          'rebateWeek',{
+            initialValue: data.rebateWeek,
+          }]"
+                            placeholder="请输入交易商返佣周期"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="出入金方式"
+                >
+                    <a-input
+                            v-decorator="[
+          'joinMoneyType',{
+            initialValue: data.joinMoneyType,
+          }]"
+                            placeholder="出入金方式"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="入金到账时间"
+                >
+                    <a-input
+                            v-decorator="[
+          'joinMoneyTime',{
+            initialValue: data.joinMoneyTime,
+          }]"
+                            placeholder="入金到账时间"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="出金到账时间"
+                >
+                    <a-input
+                            v-decorator="[
+          'drawMoneyTime',{
+            initialValue: data.drawMoneyTime,
+          }]"
+                            placeholder="出金到账时间"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="交易品种"
+                >
+                    <a-input
+                            v-decorator="[
+          'product',{
+            initialValue: data.product,
+          }]"
+                            placeholder="交易品种"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="最小入金金额"
+                >
+                    <a-input
+                            v-decorator="[
+          'joinMinMoney',{
+            initialValue: data.joinMinMoney,
+          }]"
+                            placeholder="最小入金金额"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="爆仓比例"
+                >
+                    <a-input
+                            v-decorator="[
+          'burstRate',{
+            initialValue: data.burstRate,
+          }]"
+                            placeholder="爆仓比例"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="最大杠杆"
+                >
+                    <a-input
+                            v-decorator="[
+          'maxLever',{
+            initialValue: data.maxLever,
+          }]"
+                            placeholder="最大杠杆"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="开户资料"
+                >
+                    <a-input
+                            v-decorator="[
+          'openFile',{
+            initialValue: data.openFile,
+          },]"
+                    />
+                </a-form-item>
+
                     <a-form-item
                             :label-col="formItemLayout.labelCol"
                             :wrapper-col="formItemLayout.wrapperCol"
@@ -129,8 +218,6 @@
                                 placeholder="排序"
                         />
                     </a-form-item>
-                </div>
-
             </a-form>
         </div>
     </a-modal>
@@ -182,18 +269,15 @@
         watch: {
             visible(val){
                 if(val){
-                    this.fileList = this.data.banner ? [
+                    this.fileList = this.data.logo ? [
                         {
                             uid: -1,
                             name: '图片',
                             status: 'done',
-                            url: this.data.banner,
+                            url: this.data.logo,
                         }
                     ] : [];
-                    this.$nextTick(()=>{
-                        this.editor = this.$initEditor(this.$refs.editor);
-                        this.editor.txt.html(this.data.content)
-                    })
+
                 }
             }
         },
@@ -201,8 +285,7 @@
             handleOk() {
                 this.form.validateFields((err, values) => {
                     if (err) return;
-                    values.content =  this.editor.txt.html();
-                    values.banner =  this.fileList.length ? this.fileList[0].url : '';
+                    values.logo =  this.fileList.length ? this.fileList[0].url : '';
                     this.fetch(values);
                 });
             },
@@ -212,7 +295,7 @@
             async fetch(values) {
                 this.confirmLoading = true;
                 try {
-                    await this.$http.put(`/cat/${values.id}`, values);
+                    await this.$http.put(`/platform/${values.id}`, values);
                     this.$message.success('修改成功')
                     this.handleCancel();
                     this.$emit('put')

@@ -10,6 +10,8 @@ import ExportAdminApiAuth = require('../../../app/controller/admin/api/auth');
 import ExportAdminApiCat = require('../../../app/controller/admin/api/cat');
 import ExportAdminApiContent = require('../../../app/controller/admin/api/content');
 import ExportAdminApiFriendlink = require('../../../app/controller/admin/api/friendlink');
+import ExportAdminApiMember = require('../../../app/controller/admin/api/member');
+import ExportAdminApiPlatform = require('../../../app/controller/admin/api/platform');
 import ExportAdminApiSite = require('../../../app/controller/admin/api/site');
 import ExportAdminApiSlider = require('../../../app/controller/admin/api/slider');
 import ExportAdminApiUpload = require('../../../app/controller/admin/api/upload');
@@ -27,6 +29,8 @@ declare module 'egg' {
         cat: ExportAdminApiCat;
         content: ExportAdminApiContent;
         friendlink: ExportAdminApiFriendlink;
+        member: ExportAdminApiMember;
+        platform: ExportAdminApiPlatform;
         site: ExportAdminApiSite;
         slider: ExportAdminApiSlider;
         upload: ExportAdminApiUpload;

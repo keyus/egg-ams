@@ -5,6 +5,7 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Cat from './views/cat/Cat'
 import Platform from './views/platform/Platform'
+import Member from './views/member/Member'
 import ArticleList from './views/articleList'
 import Users from './views/users'
 import Set from './views/set'
@@ -23,13 +24,33 @@ export const menus = [
         icon: 'project'
     },{
         path: '/platform',
-        name: '平台',
-        icon: 'shop'
+        name: '交易商',
+        icon: 'deployment-unit'
+    },
+    {
+        path: '/member',
+        name: '会员',
+        icon: 'team'
+    },
+    {
+        path: '/memberTraderAccount',
+        name: '交易账号',
+        icon: 'tags'
+    },
+    {
+        path: '/memberMoneyDetails',
+        name: '资金明细',
+        icon: 'pay-circle'
+    },
+    {
+        path: '/memberPayment',
+        name: '收款方式',
+        icon: 'credit-card'
     },
     {
         path: '/users',
-        name: '管理',
-        icon: 'usergroup-delete'
+        name: '管理员',
+        icon: 'robot'
     },
     {
         path: '/set',
@@ -70,6 +91,10 @@ const router =  new Router({
                     path: '/platform',
                     name: 'platform',
                     component: Platform
+                },{
+                    path: '/member',
+                    name: 'member',
+                    component: Member
                 },
             ]
         },

@@ -1,6 +1,6 @@
 <template>
     <a-modal
-            title="添加平台"
+            title="添加交易商"
             cancelText="取消"
             okText="确认"
             destroyOnClose
@@ -15,118 +15,193 @@
                 <a-form-item
                         :label-col="formItemLayout.labelCol"
                         :wrapper-col="formItemLayout.wrapperCol"
-                        label="名称"
+                        label="交易商名称"
                 >
                     <a-input
                             v-decorator="[
           'name',
           {
-            rules: [{ required: true, message: '请输入分类名称' }]
+            rules: [{ required: true, message: '请输入交易商名称' }]
           },
         ]"
-                            placeholder="请输入分类名称"
+                            placeholder="请输入交易商名称"
                     />
                 </a-form-item>
                 <a-form-item
                         :label-col="formItemLayout.labelCol"
                         :wrapper-col="formItemLayout.wrapperCol"
-                        label="导航栏"
+                        label="交易商logo"
                 >
-                    <a-switch checkedChildren="开"
-                              unCheckedChildren="关"
-                              v-decorator="['is_nav', {
-                        valuePropName: 'checked'
-                    }]" />
+                    <a-upload
+                            :action="uploadImgServer"
+                            listType="picture"
+                            :fileList="fileList"
+                            class="upload-list-inline"
+                            @preview="handlePreview"
+                            @change="handleChange"
+                    >
+                        <a-button>
+                            <a-icon type="upload"/>
+                            上传
+                        </a-button>
+                    </a-upload>
                 </a-form-item>
-                <a-row>
-                    <a-col :span="4"></a-col>
-                    <a-col :span="20">
-                        <a href="javascript:;"
-                           style="display: inline-block;padding: 0 15px 15px 0"
-                           @click="showMore = !showMore">
-                            {{
-                            showMore ? '收起配置' : '更多设置'
-                            }}
-                            <a-icon type="caret-up" v-if="showMore" />
-                            <a-icon type="caret-down" v-else />
-                        </a>
-                    </a-col>
-                </a-row>
-                <div v-show="showMore">
-                    <a-form-item
-                            :label-col="formItemLayout.labelCol"
-                            :wrapper-col="formItemLayout.wrapperCol"
-                            label="分类图"
-                    >
-                        <a-upload
-                                :action="uploadImgServer"
-                                listType="picture"
-                                :fileList="fileList"
-                                class="upload-list-inline"
-                                @preview="handlePreview"
-                                @change="handleChange"
-                        >
-                            <a-button>
-                                <a-icon type="upload" /> 上传
-                            </a-button>
-                        </a-upload>
-                    </a-form-item>
-                    <a-form-item
-                            :label-col="formItemLayout.labelCol"
-                            :wrapper-col="formItemLayout.wrapperCol"
-                            label="列表显示"
-                    >
-                        <a-switch checkedChildren="开"
-                                  unCheckedChildren="关"
-                                  v-decorator="['is_list', {
-                        valuePropName: 'checked'
-                    }]" />
-                    </a-form-item>
-                    <a-form-item
-                            :label-col="formItemLayout.labelCol"
-                            :wrapper-col="formItemLayout.wrapperCol"
-                            label="内容"
-                    >
-                        <div class="editor"
-                             ref="editor"></div>
-                    </a-form-item>
-                    <a-form-item
-                            :label-col="formItemLayout.labelCol"
-                            :wrapper-col="formItemLayout.wrapperCol"
-                            label="排序"
-                    >
-                        <a-input
-                                maxlength="9"
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="交易商网址"
+                >
+                    <a-input
+                            v-decorator="[
+          'net']"
+                            placeholder="请输入交易商名称"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="交易商简介"
+                >
+                    <a-textarea placeholder="交易商简介"
                                 v-decorator="[
+          'intro',
+        ]"
+                                :rows="4"/>
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="返佣周期"
+                >
+                    <a-input
+                            v-decorator="[
+          'rebateWeek']"
+                            placeholder="请输入交易商返佣周期"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="出入金方式"
+                >
+                    <a-input
+                            v-decorator="[
+          'joinMoneyType']"
+                            placeholder="出入金方式"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="入金到账时间"
+                >
+                    <a-input
+                            v-decorator="[
+          'joinMoneyTime']"
+                            placeholder="入金到账时间"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="出金到账时间"
+                >
+                    <a-input
+                            v-decorator="[
+          'drawMoneyTime']"
+                            placeholder="出金到账时间"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="交易品种"
+                >
+                    <a-input
+                            v-decorator="[
+          'product']"
+                            placeholder="交易品种"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="最小入金金额"
+                >
+                    <a-input
+                            v-decorator="[
+          'joinMinMoney']"
+                            placeholder="最小入金金额"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="爆仓比例"
+                >
+                    <a-input
+                            v-decorator="[
+          'burstRate']"
+                            placeholder="爆仓比例"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="最大杠杆"
+                >
+                    <a-input
+                            v-decorator="[
+          'maxLever']"
+                            placeholder="最大杠杆"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="开户资料"
+                >
+                    <a-input
+                            v-decorator="[
+          'openFile']"
+                    />
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="排序"
+                >
+                    <a-input
+                            maxlength="9"
+                            v-decorator="[
           'sorter',
           {
-            initialValue: 50,
             rules: [
             { required: true, message: '请输入排序' },
             { pattern:  /^\d+$/, message: '排序为整数' },
             ]
           },
         ]"
-                                placeholder="排序"
-                        />
-                    </a-form-item>
-                </div>
-
+                            placeholder="排序"
+                    />
+                </a-form-item>
             </a-form>
         </div>
     </a-modal>
 
 </template>
 <style>
-    .upload-list-inline  .ant-upload-list-item {
+    .upload-list-inline .ant-upload-list-item {
         float: left;
         width: 200px;
         margin-right: 8px;
     }
-    .upload-list-inline  .ant-upload-animate-enter {
+
+    .upload-list-inline .ant-upload-animate-enter {
         animation-name: uploadAnimateInlineIn;
     }
-    .upload-list-inline  .ant-upload-animate-leave {
+
+    .upload-list-inline .ant-upload-animate-leave {
         animation-name: uploadAnimateInlineOut;
     }
 </style>
@@ -152,7 +227,6 @@
                 formItemLayout,
                 form: this.$form.createForm(this),
                 editorContent: '',
-                showMore: false,
 
                 uploadImgServer: this.$uploadImgServer,
                 previewVisible: false,
@@ -160,21 +234,11 @@
                 fileList: [],
             }
         },
-        watch: {
-            visible(val){
-                if(val){
-                    this.$nextTick(()=>{
-                        this.editor = this.$initEditor(this.$refs.editor);
-                    })
-                }
-            }
-        },
         methods: {
             handleOk() {
                 this.form.validateFields((err, values) => {
                     if (err) return;
-                    values.content =  this.editor.txt.html();
-                    values.banner =  this.fileList.length ? this.fileList[0].url : '';
+                    values.logo = this.fileList.length ? this.fileList[0].url : '';
                     this.fetch(values);
                 });
             },
@@ -184,7 +248,7 @@
             async fetch(values) {
                 this.confirmLoading = true;
                 try {
-                    await this.$http.post(`/cat`, values);
+                    await this.$http.post(`/platform`, values);
                     this.$message.success('添加成功')
                     this.handleCancel();
                     this.$emit('put')
@@ -193,22 +257,22 @@
                     this.confirmLoading = false;
                 }
             },
-            handlePreview (file) {
+            handlePreview(file) {
                 this.previewImage = file.url || file.thumbUrl
                 this.previewVisible = true
             },
-            handleChange ({ fileList }) {
+            handleChange({fileList}) {
                 let status = true;
-                fileList.forEach(it=>{
-                    if(it.status === 'done' && it.response){
+                fileList.forEach(it => {
+                    if (it.status === 'done' && it.response) {
                         status = false;
-                        this.fileList =  [{
+                        this.fileList = [{
                             ...it,
                             url: it.response.data[0],
                         }]
                     }
                 })
-                if(status) this.fileList = fileList;
+                if (status) this.fileList = fileList;
             },
         },
     }

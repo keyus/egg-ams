@@ -87,7 +87,7 @@
             async fetch() {
                 this.loading = true;
                 try{
-                    const res = await this.$http.get('/cat');
+                    const res = await this.$http.get('/platform');
                     this.data = res.data;
                     this.loading = false;
                 }catch (e) {
@@ -113,7 +113,7 @@
                     cancelText: '取消',
                     async onOk() {
                         try{
-                            await _this.$http.delete(`/cat/${item.id}`);
+                            await _this.$http.delete(`/platform/${item.id}`);
                             _this.fetch();
                         }catch (e) {
                             _this.loading = false;

@@ -1,24 +1,18 @@
-2019-04-25 16:45:06,515 INFO 2690 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
-2019-04-25 16:45:06,515 INFO 2690 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
-2019-04-25 16:45:06,515 INFO 2690 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
-2019-04-25 17:41:11,194 INFO 2809 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
-2019-04-25 17:41:11,194 INFO 2809 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
-2019-04-25 17:41:11,194 INFO 2809 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
-2019-04-25 17:41:35,326 INFO 2817 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 38904680ms at 2019-04-26 04:30:00.006
-2019-04-25 17:41:35,326 INFO 2817 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 22704674ms at 2019-04-26 00:00:00.000
-2019-04-25 17:41:35,327 INFO 2817 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 22705674ms at 2019-04-26 00:00:01.001
-2019-04-25 17:41:34,990 INFO 2818 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
-2019-04-25 17:41:34,990 INFO 2818 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
-2019-04-25 17:41:34,990 INFO 2818 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
-2019-05-13 15:45:32,701 INFO 61707 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 45867305ms at 2019-05-14 04:30:00.006
-2019-05-13 15:45:32,701 INFO 61707 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 29667299ms at 2019-05-14 00:00:00.000
-2019-05-13 15:45:32,701 INFO 61707 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 29668299ms at 2019-05-14 00:00:01.000
-2019-05-13 15:45:32,185 INFO 61708 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
-2019-05-13 15:45:32,185 INFO 61708 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
-2019-05-13 15:45:32,185 INFO 61708 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
-2019-05-17 14:04:15,229 INFO 6725 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 51944775ms at 2019-05-18 04:30:00.004
-2019-05-17 14:04:15,230 INFO 6725 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 35744770ms at 2019-05-18 00:00:00.000
-2019-05-17 14:04:15,230 INFO 6725 [Timer] /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 35745770ms at 2019-05-18 00:00:01.000
-2019-05-17 14:04:14,830 INFO 6726 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
-2019-05-17 14:04:14,830 INFO 6726 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
-2019-05-17 14:04:14,830 INFO 6726 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-05-21 13:08:08,025 INFO 12727 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-05-21 13:08:08,025 INFO 12727 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-05-21 13:08:08,025 INFO 12727 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-05-21 13:08:16,287 INFO 12729 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-05-21 13:08:16,287 INFO 12729 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-05-21 13:08:16,287 INFO 12729 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-05-21 13:08:29,647 INFO 12732 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-05-21 13:08:29,647 INFO 12732 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-05-21 13:08:29,647 INFO 12732 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-05-21 13:08:44,272 INFO 12733 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-05-21 13:08:44,272 INFO 12733 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-05-21 13:08:44,272 INFO 12733 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-05-21 13:09:16,902 INFO 12734 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-05-21 13:09:16,902 INFO 12734 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-05-21 13:09:16,902 INFO 12734 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2019-05-21 13:09:19,134 INFO 12735 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2019-05-21 13:09:19,134 INFO 12735 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/clean_log.js
+2019-05-21 13:09:19,134 INFO 12735 [egg-schedule]: register schedule /Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator/app/schedule/rotate_by_file.js

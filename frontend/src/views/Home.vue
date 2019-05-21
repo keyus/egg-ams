@@ -1,7 +1,9 @@
 <template>
     <div class="home">
         <div class="side">
-            <h1><img src="../assets/logo.png"></h1>
+            <h1>
+                fan <span>佣豆</span>
+            </h1>
             <ul>
                 <li v-for="it in menus">
                     <router-link active-class="active"
