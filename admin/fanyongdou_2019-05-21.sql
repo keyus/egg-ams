@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-04-25 11:07:06 +0000
+# Generation Time: 2019-05-21 09:22:10 +0000
 # ************************************************************
 
 
@@ -42,7 +42,7 @@ CREATE TABLE `pme_article` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pme_article` WRITE;
 /*!40000 ALTER TABLE `pme_article` DISABLE KEYS */;
@@ -71,7 +71,7 @@ CREATE TABLE `pme_cat` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pme_cat` WRITE;
 /*!40000 ALTER TABLE `pme_cat` DISABLE KEYS */;
@@ -95,7 +95,7 @@ CREATE TABLE `pme_content` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pme_content` WRITE;
 /*!40000 ALTER TABLE `pme_content` DISABLE KEYS */;
@@ -128,7 +128,115 @@ CREATE TABLE `pme_friendlink` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table pme_member
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pme_member`;
+
+CREATE TABLE `pme_member` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `phone` varchar(11) DEFAULT NULL COMMENT '手机号',
+  `password` varchar(100) NOT NULL DEFAULT '' COMMENT '密码',
+  `idCard` varchar(18) DEFAULT NULL COMMENT '身份证号',
+  `isBindPay` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否绑定支付信息',
+  `hasAccount` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已有交易商账号',
+  `idcard_img1` varchar(200) DEFAULT NULL COMMENT '身份证正面照片链接',
+  `idcard_img2` varchar(200) DEFAULT NULL COMMENT '身份证反面照片链接',
+  `name` varchar(11) DEFAULT NULL COMMENT '真实姓名',
+  `money` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '返佣账户余额',
+  `status` tinyint(11) NOT NULL DEFAULT '1' COMMENT '账号状态，是否正常0,禁用，1启用',
+  `sorter` int(11) NOT NULL DEFAULT '50',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `pme_member` WRITE;
+/*!40000 ALTER TABLE `pme_member` DISABLE KEYS */;
+
+INSERT INTO `pme_member` (`id`, `phone`, `password`, `idCard`, `isBindPay`, `hasAccount`, `idcard_img1`, `idcard_img2`, `name`, `money`, `status`, `sorter`, `create_time`, `update_time`)
+VALUES
+	(1,'15802816168','kjfkdal','518377282899991918',0,0,NULL,NULL,'中不中',18873.00,1,50,'2019-05-21 13:13:34','2019-05-21 13:13:34'),
+	(2,'15802817170','111111',NULL,0,0,NULL,NULL,NULL,0.00,1,50,'2019-05-21 15:21:39','2019-05-21 15:21:39'),
+	(4,'15802816169','96e79218965eb72c92a549dd5a330112',NULL,0,0,NULL,NULL,NULL,0.00,1,50,'2019-05-21 15:28:43','2019-05-21 15:28:43'),
+	(5,'13679282828','96e79218965eb72c92a549dd5a330112',NULL,0,0,NULL,NULL,NULL,0.00,0,50,'2019-05-21 15:59:26','2019-05-21 15:59:26');
+
+/*!40000 ALTER TABLE `pme_member` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table pme_member_account
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pme_member_account`;
+
+CREATE TABLE `pme_member_account` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `account` varchar(30) NOT NULL DEFAULT '' COMMENT '交易账号',
+  `pme_id` int(11) NOT NULL COMMENT '交易商ID',
+  `member_id` int(11) NOT NULL COMMENT '会员ID',
+  `account_name` int(11) DEFAULT NULL COMMENT '账号姓名',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table pme_platform
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pme_platform`;
+
+CREATE TABLE `pme_platform` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL DEFAULT '' COMMENT '交易所名称',
+  `logo` varchar(200) DEFAULT NULL COMMENT '交易所logo',
+  `net` varchar(100) DEFAULT NULL COMMENT '交易所网址',
+  `intro` varchar(100) DEFAULT NULL COMMENT '交易所介绍',
+  `rebateWeek` varchar(11) DEFAULT NULL COMMENT '返佣周期',
+  `joinMoneyType` varchar(100) DEFAULT NULL COMMENT '出入金方式',
+  `joinMoneyTime` varchar(50) DEFAULT NULL COMMENT '入金到账时间',
+  `drawMoneyTime` varchar(50) DEFAULT NULL COMMENT '出金到账时间',
+  `product` varchar(100) DEFAULT NULL COMMENT '交易品种，简介',
+  `joinMinMoney` varchar(50) DEFAULT NULL COMMENT '最小入金金额',
+  `burstRate` varchar(50) DEFAULT NULL COMMENT '爆仓比例',
+  `maxLever` varchar(10) DEFAULT NULL COMMENT '最大杠杆',
+  `openFile` varchar(100) DEFAULT NULL COMMENT '开户资料',
+  `sorter` int(11) NOT NULL DEFAULT '50' COMMENT '排序',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建日期',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新日期',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `pme_platform` WRITE;
+/*!40000 ALTER TABLE `pme_platform` DISABLE KEYS */;
+
+INSERT INTO `pme_platform` (`id`, `name`, `logo`, `net`, `intro`, `rebateWeek`, `joinMoneyType`, `joinMoneyTime`, `drawMoneyTime`, `product`, `joinMinMoney`, `burstRate`, `maxLever`, `openFile`, `sorter`, `create_time`, `update_time`)
+VALUES
+	(1,'中进大宗',NULL,'www.zj.com',NULL,'5','中国 ','即时',NULL,NULL,NULL,NULL,NULL,NULL,50,'2019-05-20 14:29:39','2019-05-20 14:29:39'),
+	(4,'kissabc','http://localhost:7002/public/upload/images/5b6bd5ea5b99328efaf30f1e8144257e.gif','fds','gfds','gf','eg','trew','trew','trew','trw','tr','tre','ter',4343,'2019-05-20 19:33:48','2019-05-20 19:33:48');
+
+/*!40000 ALTER TABLE `pme_platform` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table pme_platform_product
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pme_platform_product`;
+
+CREATE TABLE `pme_platform_product` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '平台产品名称',
+  `pme_id` int(11) NOT NULL COMMENT '交易商ID',
+  `diff` int(11) DEFAULT NULL COMMENT '点差',
+  `maxTrade` int(11) DEFAULT NULL COMMENT '最大交易量',
+  `handlingFree` varchar(11) DEFAULT NULL COMMENT '交易手续费',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -151,7 +259,7 @@ CREATE TABLE `pme_site` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pme_site` WRITE;
 /*!40000 ALTER TABLE `pme_site` DISABLE KEYS */;
@@ -179,7 +287,7 @@ CREATE TABLE `pme_slider` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -200,7 +308,7 @@ CREATE TABLE `pme_user` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pme_user` WRITE;
 /*!40000 ALTER TABLE `pme_user` DISABLE KEYS */;

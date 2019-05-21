@@ -18,12 +18,16 @@ class MemberController extends BaseController {
     async create(){
         const {ctx} = this;
         const body = ctx.request.body;
-        const res = await this.myService.create(body);
-        ctx.body = {
-            data: res ? true : false,
-            code: res ? 200 : -1,
-            message: res ? '添加成功' : '添加失败',
-        }
+        ctx.validate({
+            phone: 'string',
+            password: 'string',
+        },body);
+        const res = await this.myService.create({
+            phone: body.phone,
+            password: body.password,
+            status: body.status,
+        });
+        ctx.body = res;
         ctx.status = 200;
     }
     async update(){

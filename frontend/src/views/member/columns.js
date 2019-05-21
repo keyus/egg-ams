@@ -3,14 +3,10 @@ export const columns = [{
     dataIndex: 'id',
     width: '80px',
 }, {
-    title: '会员账号',
-    dataIndex: 'username',
-    width: '120px',
-}, {
     title: '手机号',
     dataIndex: 'phone',
     width: '100px',
-}, {
+},{
     title: '身份证号',
     dataIndex: 'idCard',
     width: '130px',
@@ -38,4 +34,8 @@ export const columns = [{
     title: '注册时间',
     dataIndex: 'create_time',
     width: '100px',
+},{
+    title: '操作',
+    width: '200px',
+    scopedSlots: {customRender: 'handler'}
 },];
