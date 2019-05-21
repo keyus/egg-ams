@@ -106,6 +106,7 @@
                     total: 0,
                     current: 1,
                     size: '10',
+                    showTotal: (total)=>`共${total}条记录`,
                 },
                 loading: false,
                 columns,

@@ -8,7 +8,8 @@ const BaseController = require('../base');
 class MemberController extends BaseController {
     async index() {
         const {ctx} = this;
-        const data = await this.myService.list();
+        const query = ctx.request.query;
+        const data = await this.myService.list(query);
         ctx.body = {
             data,
             code: 200,

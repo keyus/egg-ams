@@ -14,10 +14,14 @@ export const columns = [{
     title: '收款账户',
     dataIndex: 'isBindPay',
     width: '100px',
+    align: 'center',
+    scopedSlots: {customRender: 'isBindPay'}
 },{
     title: '交易账号',
     dataIndex: 'hasAccount',
     width: '100px',
+    align: 'center',
+    scopedSlots: {customRender: 'hasAccount'}
 },{
     title: '真实姓名',
     dataIndex: 'name',
@@ -30,6 +34,8 @@ export const columns = [{
     title: '账号状态',
     dataIndex: 'status',
     width: '100px',
+    align: 'center',
+    scopedSlots: {customRender: 'status'}
 },{
     title: '注册时间',
     dataIndex: 'create_time',

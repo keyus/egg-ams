@@ -4,10 +4,37 @@ const BaseService = require('../base');
 const md5 = require('md5');
 
 class MemberService extends BaseService {
-    async list() {
-        return await this.sql.select(this.table,{
-            orders: [['create_time','desc']]
+    async list(query) {
+        const {
+            phone,
+            status,
+            page,
+            size,
+        } = query;
+        const where = {};
+        let whereStr = "";
+        if(phone) {
+            where.phone = phone;
+            whereStr = `where phone = ${phone}`
+        }
+        if(status) {
+            where.status = status;
+            if(whereStr)
+            whereStr += `and status = ${status}`;
+            else
+            whereStr = `where status = ${status}`;
+        }
+        const count = await this.sql.query(`select count(id) from ${this.table} ${whereStr}`);
+        const list =  await this.sql.select(this.table,{
+            where,
+            orders: [['create_time','desc']],
         });
+        return {
+            list,
+            page,
+            size,
+            total: count[0]['count(id)'],
+        }
     }
     async update(data){
         if(data.hasOwnProperty('password')){
