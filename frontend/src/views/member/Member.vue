@@ -28,22 +28,57 @@
                  :dataSource="data"
                  :pagination="pagination"
                  :loading="loading"
+                 @change="handleTableChange"
                  :locale="{
                     emptyText: '暂无记录',
                  }"
         >
+            <template slot="phone" slot-scope="item">
+
+                <a href="javascript:;"
+                   v-if="item.hasAccount"
+                   @click="openTrader(item)">{{item.phone}}</a>
+                <span v-else>{{item.phone}}</span>
+            </template>
             <template slot="handler" slot-scope="item">
                 <div class="handler">
-                    <a-button shape="circle" icon="edit" @click="openEdit(item)"/>
+                    <a href="javascript:;"  @click="openEdit(item)">编辑</a>
+                    <a href="javascript:;"
+                       v-if="item.idCard"
+                       @click="openAddTradeAccount(item)"
+                       style="margin-left: 15px">绑定交易账号</a>
+                    <a href="javascript:;"
+                       v-if="item.idCard && !item.withdrawSuccess"
+                       @click="openAddPay(item)"
+                       style="margin-left: 15px">编辑收款信息</a>
                 </div>
             </template>
             <template slot="isBindPay" slot-scope="item">
-                <a-icon type="check" v-if="item"/>
-                <span v-else>--</span>
+                <span v-if="item">
+                    <a-icon type="check" />
+                </span>
+                <span v-else>
+                    --
+                </span>
+            </template>
+            <template slot="withdrawSuccess" slot-scope="item">
+                <span v-if="item">
+                    <a-icon type="check" />
+                </span>
+                <span v-else>
+                    --
+                </span>
             </template>
             <template slot="hasAccount" slot-scope="item">
-                <a-icon type="check" v-if="item"/>
-                <span v-else>--</span>
+                <span v-if="item">
+                    <a-icon type="check" />
+                </span>
+                <span v-else>
+                    <label style="margin-right: 15px">--</label>
+                </span>
+            </template>
+            <template slot="create_time" slot-scope="item">
+                {{item | format}}
             </template>
             <template slot="status" slot-scope="item">
                 <span v-if="item" style="color: forestgreen">正常</span>
@@ -53,6 +88,14 @@
         <!--添加-->
         <Add :visible.sync="addVisible"
              @put="fetch"/>
+        <!--添加交易账号-->
+        <AddTradeAccount :visible.sync="addTradeAccountVisible"
+                         :data="editObject"
+                         @put="fetch"/>
+        <!--编辑收款账号-->
+        <AddPay :visible.sync="addPayVisible"
+                         :data="editObject"
+                         @put="fetch"/>
         <!--编辑-->
         <Edit :visible.sync="visible"
               @put="fetch"
@@ -62,12 +105,17 @@
 <script>
     import {columns} from './columns'
     import Add from './add'
+    import AddTradeAccount from './addTradeAccount'
+    import AddPay from './addPay'
     import Edit from './edit'
+    import moment from 'moment'
 
     export default {
         name: 'member',
         components: {
             Add,
+            AddTradeAccount,
+            AddPay,
             Edit,
         },
         data() {
@@ -77,7 +125,7 @@
                     total: 0,
                     current: 1,
                     size: '10',
-                    showTotal: (total)=>`共${total}条记录`,
+                    showTotal: (total) => `共${total}条记录`,
                 },
                 loading: false,
                 columns,
@@ -85,8 +133,11 @@
 
                 visible: false,
                 addVisible: false,
+                addPayVisible: false,
+                addTradeAccountVisible: false,
                 editObject: {},
                 total: 0,
+
                 phone: undefined,
                 status: ''
             }
@@ -100,10 +151,12 @@
                     return a + parseInt(b.width)
                 })
             },
-            query(){
+            query() {
                 return {
                     phone: this.phone,
                     status: this.status,
+                    page: this.pagination.current,
+                    size: this.pagination.size,
                 }
             }
         },
@@ -114,7 +167,7 @@
             async fetch() {
                 this.loading = true;
                 try {
-                    const res = await this.$http.get('/member',{
+                    const res = await this.$http.get('/member', {
                         params: this.query,
                     });
                     this.data = res.data.list;
@@ -124,18 +177,44 @@
                     this.loading = false;
                 }
             },
-            openEdit(item){
-                this.visible = true;
-                this.editObject =  item;
+            handleTableChange(pagination) {
+                const pager = {...this.pagination};
+                pager.current = pagination.current;
+                this.pagination = pager;
+                this.fetch();
             },
-            openAdd(){
+            openEdit(item) {
+                this.visible = true;
+                this.editObject = item;
+            },
+            openAdd() {
                 this.addVisible = true;
             },
-            reset(){
+            openAddTradeAccount(item) {
+                this.editObject = item;
+                this.addTradeAccountVisible = true;
+            },
+            openAddPay(item) {
+                this.editObject = item;
+                this.addPayVisible = true;
+            },
+            reset() {
                 this.phone = '';
                 this.status = '';
                 this.fetch();
+            },
+            async openTrader(item){
+                const res = await this.$http.get('/memberTraderAccount',{
+                    params: {
+                        id: item.id,
+                    }
+                })
             }
         },
+        filters: {
+            format(val) {
+                return moment(val).format('YYYY-MM-DD HH:mm:ss')
+            }
+        }
     }
 </script>

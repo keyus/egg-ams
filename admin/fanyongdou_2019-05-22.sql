@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-05-21 09:22:10 +0000
+# Generation Time: 2019-05-22 09:43:54 +0000
 # ************************************************************
 
 
@@ -49,7 +49,18 @@ LOCK TABLES `pme_article` WRITE;
 
 INSERT INTO `pme_article` (`id`, `title`, `fromto`, `img`, `hot`, `author`, `intro`, `top`, `cat_id`, `content_id`, `keywords`, `sorter`, `update_time`, `create_time`)
 VALUES
-	(1,'fdsafdsa',NULL,'',0,NULL,NULL,0,NULL,4,NULL,50,'2019-04-25 19:03:53','2019-04-25 19:03:53');
+	(1,'fdsafdsa',NULL,'',0,NULL,NULL,0,NULL,4,NULL,50,'2019-04-25 19:03:53','2019-04-25 19:03:53'),
+	(2,'sfas',NULL,'',0,NULL,NULL,0,NULL,7,NULL,50,'2019-05-22 11:01:50','2019-05-22 11:01:50'),
+	(3,'fdafdsa',NULL,'',0,NULL,NULL,0,NULL,8,NULL,50,'2019-05-22 11:01:53','2019-05-22 11:01:53'),
+	(4,'rewqerq',NULL,'',0,NULL,NULL,0,NULL,9,NULL,50,'2019-05-22 11:01:55','2019-05-22 11:01:55'),
+	(5,'vavdaz',NULL,'',0,NULL,NULL,0,NULL,10,NULL,50,'2019-05-22 11:01:58','2019-05-22 11:01:58'),
+	(6,'sgf',NULL,'',0,NULL,NULL,0,NULL,11,NULL,50,'2019-05-22 11:02:00','2019-05-22 11:02:00'),
+	(7,'fdsafda',NULL,'',0,NULL,NULL,0,NULL,12,NULL,50,'2019-05-22 11:02:02','2019-05-22 11:02:02'),
+	(8,'fdafdas',NULL,'',0,NULL,NULL,0,NULL,13,NULL,50,'2019-05-22 11:02:04','2019-05-22 11:02:04'),
+	(9,'fdafdsa',NULL,'',0,NULL,NULL,0,NULL,14,NULL,50,'2019-05-22 11:02:06','2019-05-22 11:02:06'),
+	(10,'fdsafdas',NULL,'',0,NULL,NULL,0,NULL,15,NULL,50,'2019-05-22 11:02:08','2019-05-22 11:02:08'),
+	(11,'fafdsafda',NULL,'',0,NULL,NULL,0,NULL,16,NULL,50,'2019-05-22 11:02:10','2019-05-22 11:02:10'),
+	(12,'rewqrewq',NULL,'',0,NULL,NULL,0,NULL,17,NULL,50,'2019-05-22 11:02:35','2019-05-22 11:02:35');
 
 /*!40000 ALTER TABLE `pme_article` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -107,7 +118,18 @@ VALUES
 	(3,'<p><br></p>','2019-04-25 19:03:22','2019-04-25 19:03:22'),
 	(4,'<p><br></p>','2019-04-25 19:03:53','2019-04-25 19:03:53'),
 	(5,'<p><br></p>','2019-04-25 19:04:03','2019-04-25 19:04:03'),
-	(6,'<p><br></p>','2019-04-25 19:04:50','2019-04-25 19:04:50');
+	(6,'<p><br></p>','2019-04-25 19:04:50','2019-04-25 19:04:50'),
+	(7,'<p><br></p>','2019-05-22 11:01:50','2019-05-22 11:01:50'),
+	(8,'<p><br></p>','2019-05-22 11:01:53','2019-05-22 11:01:53'),
+	(9,'<p><br></p>','2019-05-22 11:01:55','2019-05-22 11:01:55'),
+	(10,'<p><br></p>','2019-05-22 11:01:58','2019-05-22 11:01:58'),
+	(11,'<p><br></p>','2019-05-22 11:02:00','2019-05-22 11:02:00'),
+	(12,'<p><br></p>','2019-05-22 11:02:02','2019-05-22 11:02:02'),
+	(13,'<p><br></p>','2019-05-22 11:02:04','2019-05-22 11:02:04'),
+	(14,'<p><br></p>','2019-05-22 11:02:06','2019-05-22 11:02:06'),
+	(15,'<p><br></p>','2019-05-22 11:02:08','2019-05-22 11:02:08'),
+	(16,'<p><br></p>','2019-05-22 11:02:10','2019-05-22 11:02:10'),
+	(17,'<p><br></p>','2019-05-22 11:02:35','2019-05-22 11:02:35');
 
 /*!40000 ALTER TABLE `pme_content` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -142,14 +164,19 @@ CREATE TABLE `pme_member` (
   `phone` varchar(11) DEFAULT NULL COMMENT '手机号',
   `password` varchar(100) NOT NULL DEFAULT '' COMMENT '密码',
   `idCard` varchar(18) DEFAULT NULL COMMENT '身份证号',
-  `isBindPay` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否绑定支付信息',
   `hasAccount` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已有交易商账号',
   `idcard_img1` varchar(200) DEFAULT NULL COMMENT '身份证正面照片链接',
   `idcard_img2` varchar(200) DEFAULT NULL COMMENT '身份证反面照片链接',
   `name` varchar(11) DEFAULT NULL COMMENT '真实姓名',
   `money` decimal(18,2) NOT NULL DEFAULT '0.00' COMMENT '返佣账户余额',
+  `alipay` varchar(50) DEFAULT NULL COMMENT '支付宝收款方式',
+  `bankName` varchar(50) DEFAULT NULL COMMENT '银行名称',
+  `bankCode` varchar(50) DEFAULT NULL COMMENT '银行卡代码',
+  `bankAddress` varchar(100) DEFAULT NULL COMMENT '银行卡开户行地址',
+  `bankAccount` varchar(50) DEFAULT NULL COMMENT '银行卡号',
   `status` tinyint(11) NOT NULL DEFAULT '1' COMMENT '账号状态，是否正常0,禁用，1启用',
   `sorter` int(11) NOT NULL DEFAULT '50',
+  `withdrawSuccess` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否提现成功',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -158,31 +185,49 @@ CREATE TABLE `pme_member` (
 LOCK TABLES `pme_member` WRITE;
 /*!40000 ALTER TABLE `pme_member` DISABLE KEYS */;
 
-INSERT INTO `pme_member` (`id`, `phone`, `password`, `idCard`, `isBindPay`, `hasAccount`, `idcard_img1`, `idcard_img2`, `name`, `money`, `status`, `sorter`, `create_time`, `update_time`)
+INSERT INTO `pme_member` (`id`, `phone`, `password`, `idCard`, `hasAccount`, `idcard_img1`, `idcard_img2`, `name`, `money`, `alipay`, `bankName`, `bankCode`, `bankAddress`, `bankAccount`, `status`, `sorter`, `withdrawSuccess`, `create_time`, `update_time`)
 VALUES
-	(1,'15802816168','kjfkdal','518377282899991918',0,0,NULL,NULL,'中不中',18873.00,1,50,'2019-05-21 13:13:34','2019-05-21 13:13:34'),
-	(2,'15802817170','111111',NULL,0,0,NULL,NULL,NULL,0.00,1,50,'2019-05-21 15:21:39','2019-05-21 15:21:39'),
-	(4,'15802816169','96e79218965eb72c92a549dd5a330112',NULL,0,0,NULL,NULL,NULL,0.00,1,50,'2019-05-21 15:28:43','2019-05-21 15:28:43'),
-	(5,'13679282828','96e79218965eb72c92a549dd5a330112',NULL,0,0,NULL,NULL,NULL,0.00,0,50,'2019-05-21 15:59:26','2019-05-21 15:59:26');
+	(1,'15802816168','kjfkdal','518377282899991918',0,NULL,NULL,'中不中',18873.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-21 13:13:34','2019-05-21 13:13:34'),
+	(2,'15802817170','111111',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,0,50,0,'2019-05-21 15:21:39','2019-05-21 15:21:39'),
+	(4,'15802816169','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-21 15:28:43','2019-05-21 15:28:43'),
+	(5,'13679282828','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-21 15:59:26','2019-05-21 15:59:26'),
+	(6,'17827272772','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:53:31','2019-05-22 10:53:31'),
+	(7,'18597328978','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:53:41','2019-05-22 10:53:41'),
+	(8,'17846378567','96e79218965eb72c92a549dd5a330112','518377282899991911',0,NULL,NULL,NULL,0.00,NULL,'中国银行','BOC','叶不要嚅嚅老大哥','62170038182839728',1,50,0,'2019-05-22 10:53:50','2019-05-22 10:53:50'),
+	(9,'15438975849','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:54:00','2019-05-22 10:54:00'),
+	(10,'18758375843','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:54:08','2019-05-22 10:54:08'),
+	(11,'13678645788','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:54:17','2019-05-22 10:54:17'),
+	(12,'15743654836','96e79218965eb72c92a549dd5a330112','518377282899991911',1,NULL,NULL,'刘不齐',1221.00,'fdsfda@163.com','中国银行','BOC','中国银行北京朝阳区支行','61270038288928719376',1,50,1,'2019-05-22 10:54:28','2019-05-22 10:54:28');
 
 /*!40000 ALTER TABLE `pme_member` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
-# Dump of table pme_member_account
+# Dump of table pme_memberTraderAccount
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `pme_member_account`;
+DROP TABLE IF EXISTS `pme_memberTraderAccount`;
 
-CREATE TABLE `pme_member_account` (
+CREATE TABLE `pme_memberTraderAccount` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `account` varchar(30) NOT NULL DEFAULT '' COMMENT '交易账号',
-  `pme_id` int(11) NOT NULL COMMENT '交易商ID',
-  `member_id` int(11) NOT NULL COMMENT '会员ID',
-  `account_name` int(11) DEFAULT NULL COMMENT '账号姓名',
+  `account` varchar(100) NOT NULL DEFAULT '' COMMENT '交易账号',
+  `platformId` int(11) NOT NULL COMMENT '交易商ID',
+  `memberId` int(11) NOT NULL COMMENT '会员ID',
+  `accountName` varchar(20) NOT NULL DEFAULT '' COMMENT '账号姓名',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `pme_memberTraderAccount` WRITE;
+/*!40000 ALTER TABLE `pme_memberTraderAccount` DISABLE KEYS */;
+
+INSERT INTO `pme_memberTraderAccount` (`id`, `account`, `platformId`, `memberId`, `accountName`, `create_time`, `update_time`)
+VALUES
+	(3,'893724832',1,12,'刘不齐','2019-05-22 17:37:27','2019-05-22 17:37:27');
+
+/*!40000 ALTER TABLE `pme_memberTraderAccount` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table pme_platform

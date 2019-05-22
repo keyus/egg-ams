@@ -132,6 +132,7 @@
     "dirs": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js",
     "queryField": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js",
     "cookieField": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js",
+    "cookieDomain": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js",
     "cookieMaxAge": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n/config/config.default.js"
   },
   "watcher": {
@@ -177,6 +178,7 @@
   "env": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
   "name": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
   "proxy": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+  "maxProxyCount": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
   "protocolHeaders": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
   "ipHeaders": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
   "hostHeaders": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",

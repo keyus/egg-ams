@@ -91,7 +91,7 @@
         wrapperCol: {span: 18},
     };
     export default {
-        name: 'Edit',
+        name: 'add',
         props: {
             visible: {
                 type: Boolean,

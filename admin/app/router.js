@@ -14,6 +14,7 @@ module.exports = app => {
     router.resources('cat', '/api/cat',checkToken,controller.admin.api.cat);                    //分类
     router.resources('platform', '/api/platform',checkToken,controller.admin.api.platform);     //交易商
     router.resources('member', '/api/member',checkToken,controller.admin.api.member);           //会员
+    router.resources('memberTraderAccount', '/api/memberTraderAccount',checkToken,controller.admin.api.memberTraderAccount);           //会员交易账号
     router.resources('article', '/api/article',checkToken,controller.admin.api.article);        //文章
     router.post('/api/articles', checkToken, controller.admin.api.article.destroyMore);         //文章删除多条
     router.resources('upload', '/api/upload',controller.admin.api.upload);                      //上传

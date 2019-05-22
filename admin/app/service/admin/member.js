@@ -8,10 +8,12 @@ class MemberService extends BaseService {
         const {
             phone,
             status,
-            page,
-            size,
         } = query;
+        const page = Number(query.page || 1);
+        const size = Number(query.size || 10);
         const where = {};
+        const limit = size;
+        const offset = page * size - size;
         let whereStr = "";
         if(phone) {
             where.phone = phone;
@@ -28,6 +30,8 @@ class MemberService extends BaseService {
         const list =  await this.sql.select(this.table,{
             where,
             orders: [['create_time','desc']],
+            limit,
+            offset,
         });
         return {
             list,
@@ -40,7 +44,23 @@ class MemberService extends BaseService {
         if(data.hasOwnProperty('password')){
             data.password = md5(data.password);
         }
-        return await this.sql.update(this.table,data);
+        if(data.bankAccount || data.alipay){
+            const find = await this.sql.get(this.table,{
+                id: data.id,
+            })
+            if(find.withdrawSuccess){
+                return {
+                    code: -1,
+                    message: '该用户已有成功提现记录，禁止修改收款账号',
+                }
+            }
+        }
+        const res = await this.sql.update(this.table,data);
+        return {
+            code: 200,
+            data: res,
+            message: '修改成功'
+        }
     }
     async create(data){
         const find = await this.sql.get(this.table,{

@@ -9,7 +9,8 @@ class BaseController extends Controller {
     get myService(){
         const constructorName = this.constructor.name;
         let serviceName = constructorName.match(/^\w+(?=Controller)/i);
-        serviceName = serviceName[0].toLocaleLowerCase()
+        let firstLetter = serviceName[0].substr(0,1).toLocaleLowerCase();
+        serviceName = firstLetter + serviceName[0].substr(1);
         return this.ctx.service.admin[serviceName];
     }
 }

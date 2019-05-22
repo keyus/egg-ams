@@ -33,19 +33,9 @@ export const menus = [
         icon: 'team'
     },
     {
-        path: '/memberTraderAccount',
-        name: '交易账号',
-        icon: 'tags'
-    },
-    {
         path: '/memberMoneyDetails',
         name: '资金明细',
         icon: 'pay-circle'
-    },
-    {
-        path: '/memberPayment',
-        name: '收款方式',
-        icon: 'credit-card'
     },
     {
         path: '/users',

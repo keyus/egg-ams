@@ -353,6 +353,82 @@
     ]
   },
   {
+    "name": "memberTraderAccounts",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/memberTraderAccount",
+    "regexp": "/^\\/api\\/memberTraderAccount(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "memberTraderAccounts",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/memberTraderAccount",
+    "regexp": "/^\\/api\\/memberTraderAccount(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "memberTraderAccount",
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/memberTraderAccount/:id",
+    "regexp": "/^\\/api\\/memberTraderAccount\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "destroy_memberTraderAccount",
+    "methods": [
+      "DELETE"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/memberTraderAccount/:id",
+    "regexp": "/^\\/api\\/memberTraderAccount\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
     "name": "articles",
     "methods": [
       "HEAD",

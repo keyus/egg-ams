@@ -3,30 +3,30 @@
 const BaseController = require('../base');
 
 /**
- * 会员
+ * 交易账号
  */
-class MemberController extends BaseController {
+class MemberTraderAccountController extends BaseController {
     async index() {
         const {ctx} = this;
         const query = ctx.request.query;
-        const data = await this.myService.list(query);
-        ctx.body = {
-            data,
-            code: 200,
-        }
+        const res = await this.myService.getOne(query);
+        ctx.body = res;
         ctx.status = 200;
     }
+    //添加交易账号
     async create(){
         const {ctx} = this;
         const body = ctx.request.body;
         ctx.validate({
-            phone: 'string',
-            password: 'string',
+            memberId: 'number',
+            platformId: 'number',
+            accountName: 'string',
         },body);
         const res = await this.myService.create({
-            phone: body.phone,
-            password: body.password,
-            status: body.status,
+            memberId: body.memberId,
+            platformId: body.platformId,
+            account: body.account,
+            accountName: body.accountName,
         });
         ctx.body = res;
         ctx.status = 200;
@@ -37,7 +37,11 @@ class MemberController extends BaseController {
         const body = ctx.request.body;
         ctx.validate({id: 'string'},{...body,id: params.id});
         const res = await this.myService.update(body);
-        ctx.body = res;
+        ctx.body = {
+            data: res ? true : false,
+            code: res ? 200 : -1,
+            message: res ? '更新成功' : '更新失败',
+        }
         ctx.status = 200;
     }
     //删除
@@ -52,7 +56,6 @@ class MemberController extends BaseController {
         }
         ctx.status = 200;
     }
-
 }
 
-module.exports = MemberController;
+module.exports = MemberTraderAccountController;

@@ -10,7 +10,7 @@
       "autoCommit": true,
       "encode": "<Function encode>",
       "decode": "<Function decode>",
-      "genid": "<Function anonymous>"
+      "genid": "<Function v4>"
     },
     "security": {
       "domainWhiteList": [],
@@ -111,6 +111,7 @@
       ],
       "queryField": "locale",
       "cookieField": "locale",
+      "cookieDomain": "",
       "cookieMaxAge": "1y",
       "functionName": "__"
     },
@@ -124,7 +125,7 @@
     "customLogger": {
       "scheduleLogger": {
         "consoleLevel": "NONE",
-        "file": "/Users/xiaohuangyu/work/egg-ams/admin/logs/egg-cms/egg-schedule.log"
+        "file": "egg-schedule.log"
       }
     },
     "schedule": {
@@ -212,6 +213,7 @@
     "name": "egg-cms",
     "keys": "<String len: 26>",
     "proxy": false,
+    "maxProxyCount": 0,
     "protocolHeaders": "x-forwarded-proto",
     "ipHeaders": "x-forwarded-for",
     "hostHeaders": "",
@@ -224,7 +226,7 @@
         "declarations": true
       },
       "dependencies": {
-        "egg": "^2.15.1",
+        "egg": "^2.22.2",
         "egg-view": "^2.1.2",
         "egg-scripts": "^2.11.0",
         "egg-mysql": "^3.0.0",
@@ -452,7 +454,7 @@
       "env": [],
       "from": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/plugin.js",
       "path": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-i18n",
-      "version": "2.0.0"
+      "version": "2.1.1"
     },
     "watcher": {
       "enable": true,
@@ -474,7 +476,7 @@
       "env": [],
       "from": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/plugin.js",
       "path": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-schedule",
-      "version": "3.6.0"
+      "version": "3.6.2"
     },
     "multipart": {
       "enable": true,
@@ -487,7 +489,7 @@
       "env": [],
       "from": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/plugin.js",
       "path": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-multipart",
-      "version": "2.4.0"
+      "version": "2.7.0"
     },
     "development": {
       "enable": true,
@@ -502,7 +504,7 @@
       ],
       "from": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/plugin.js",
       "path": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-development",
-      "version": "2.4.2"
+      "version": "2.4.3"
     },
     "logrotator": {
       "enable": true,
@@ -515,7 +517,7 @@
       "env": [],
       "from": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/plugin.js",
       "path": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-logrotator",
-      "version": "3.0.7"
+      "version": "3.1.0"
     },
     "static": {
       "enable": true,
