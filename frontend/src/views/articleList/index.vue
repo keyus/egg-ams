@@ -5,10 +5,8 @@
                 <a-button type="primary"
                           icon="delete"
                           :disabled="Boolean(!selectedRowKeys.length)"
-                          @click="deleteMore" />
-                <a-button type="primary"
-                          icon="plus"
-                          @click="openAdd" />
+                          @click="deleteMore" >批量删除</a-button>
+                <a-button type="primary" icon="plus" @click="openAdd" >新增文章</a-button>
             </a-button-group>
             <div class="search-form">
                 <a-input placeholder="文章ID/标题"

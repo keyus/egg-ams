@@ -2,7 +2,7 @@
     <div class="page">
         <div class="search">
             <a-button-group>
-                <a-button type="primary" icon="plus" @click="openAdd"/>
+                <a-button type="primary" icon="plus" @click="openAdd" >注册会员</a-button>
             </a-button-group>
             <div class="search-form">
                 <span>手机号：</span>
@@ -88,6 +88,9 @@
         <!--添加-->
         <Add :visible.sync="addVisible"
              @put="fetch"/>
+        <!--交易账号-->
+        <Trader :visible.sync="traderVisible"
+                :data="editObject"/>
         <!--添加交易账号-->
         <AddTradeAccount :visible.sync="addTradeAccountVisible"
                          :data="editObject"
@@ -105,6 +108,7 @@
 <script>
     import {columns} from './columns'
     import Add from './add'
+    import Trader from './trader'
     import AddTradeAccount from './addTradeAccount'
     import AddPay from './addPay'
     import Edit from './edit'
@@ -113,6 +117,7 @@
     export default {
         name: 'member',
         components: {
+            Trader,
             Add,
             AddTradeAccount,
             AddPay,
@@ -132,6 +137,7 @@
                 selectedRowKeys: [],
 
                 visible: false,
+                traderVisible: false,
                 addVisible: false,
                 addPayVisible: false,
                 addTradeAccountVisible: false,
@@ -139,7 +145,7 @@
                 total: 0,
 
                 phone: undefined,
-                status: ''
+                status: '',
             }
         },
         computed: {
@@ -204,11 +210,8 @@
                 this.fetch();
             },
             async openTrader(item){
-                const res = await this.$http.get('/memberTraderAccount',{
-                    params: {
-                        id: item.id,
-                    }
-                })
+                this.editObject = item;
+                this.traderVisible = true;
             }
         },
         filters: {

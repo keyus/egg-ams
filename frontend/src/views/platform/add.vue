@@ -176,6 +176,7 @@
                             v-decorator="[
           'sorter',
           {
+            initialValue: 50,
             rules: [
             { required: true, message: '请输入排序' },
             { pattern:  /^\d+$/, message: '排序为整数' },

@@ -4,13 +4,10 @@ const BaseService = require('../base');
 const md5 = require('md5');
 
 class MemberTraderAccountService extends BaseService {
-    async getOne(query){
+    async getData(query){
         if(query && query.id){
-            const data = await this.sql.select(this.table,{
-                where: {
-                    memberId: query.id,
-                }
-            })
+            const sql = `select a.*, b.name as platformName from ${this.table} as a left join ${this.tablePrefix}platform as b on a.platformId = b.id where a.memberId = ${query.id}`;
+            const data = await this.sql.query(sql);
             return {
                 code: 200,
                 data,
@@ -22,12 +19,27 @@ class MemberTraderAccountService extends BaseService {
             }
         }
     }
-
     async update(data){
-        if(data.hasOwnProperty('password')){
-            data.password = md5(data.password);
+        const {id,account} = data;
+        if(id && account){
+            const res = await this.sql.update(this.table,{
+                account,
+            },{
+                where: {
+                    id,
+                }
+            });
+            if(res.affectedRows === 1){
+                return {
+                    code: 200,
+                    data: res,
+                }
+            }
         }
-        return await this.sql.update(this.table,data);
+        return {
+            code: -1,
+            message: '更新失败'
+        }
     }
     async create(data){
         const find = await this.sql.get(this.table,{

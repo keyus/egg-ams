@@ -2,7 +2,7 @@
     <div class="page">
         <div class="search">
             <a-button-group>
-                <a-button type="primary" icon="plus" @click="openAdd" />
+                <a-button type="primary" icon="plus" @click="openAdd">新增管理</a-button>
             </a-button-group>
         </div>
         <a-table :columns="columns"

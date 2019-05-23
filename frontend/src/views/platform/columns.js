@@ -5,9 +5,9 @@ export const columns = [{
     fixed: 'left',
 }, {
     title: '交易商名称',
-    dataIndex: 'name',
     width: '150px',
     fixed: 'left',
+    scopedSlots: {customRender: 'name'}
 }, {
     title: '交易商LOGO',
     dataIndex: 'logo',
@@ -59,6 +59,6 @@ export const columns = [{
     width: '100px',
 },{
     title: '操作',
-    width: '200px',
+    width: '270px',
     scopedSlots: {customRender: 'handler'}
 },];

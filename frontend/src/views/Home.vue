@@ -22,7 +22,7 @@
                             <a-icon type="home" />
                         </a-breadcrumb-item>
                         <a-breadcrumb-item>
-                            文章列表
+                            主面板
                         </a-breadcrumb-item>
                     </a-breadcrumb>
                 </div>

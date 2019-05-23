@@ -12,7 +12,25 @@ class PlatformService extends BaseService {
 
     //删除
     async deleteRow({id}){
-        return await this.sql.delete(this.table,{id});
+        const conn = await this.sql.beginTransaction(); // 初始化事务
+        try {
+            await conn.delete(`${this.tablePrefix}platformProduct`, {
+                platformId: id,
+            });
+            await conn.delete(this.table, {id });
+            await conn.commit(); // 提交事务
+            return {
+                code: 200,
+            };
+        } catch (err) {
+            // error, rollback
+            await conn.rollback(); // 一定记得捕获异常后回滚事务！！
+            throw err;
+        }
+        return {
+            code: -1,
+            message: '删除失败'
+        };
     }
     async update(data){
         const content = data.content;

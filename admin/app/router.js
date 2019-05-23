@@ -13,6 +13,7 @@ module.exports = app => {
     router.resources('user', '/api/user',checkToken,controller.admin.api.user);                 //管理员
     router.resources('cat', '/api/cat',checkToken,controller.admin.api.cat);                    //分类
     router.resources('platform', '/api/platform',checkToken,controller.admin.api.platform);     //交易商
+    router.resources('platformProduct', '/api/platformProduct',checkToken,controller.admin.api.platformProduct);     //交易品种
     router.resources('member', '/api/member',checkToken,controller.admin.api.member);           //会员
     router.resources('memberTraderAccount', '/api/memberTraderAccount',checkToken,controller.admin.api.memberTraderAccount);           //会员交易账号
     router.resources('article', '/api/article',checkToken,controller.admin.api.article);        //文章

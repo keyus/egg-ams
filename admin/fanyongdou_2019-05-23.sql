@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-05-22 09:43:54 +0000
+# Generation Time: 2019-05-23 08:19:00 +0000
 # ************************************************************
 
 
@@ -193,7 +193,7 @@ VALUES
 	(5,'13679282828','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-21 15:59:26','2019-05-21 15:59:26'),
 	(6,'17827272772','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:53:31','2019-05-22 10:53:31'),
 	(7,'18597328978','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:53:41','2019-05-22 10:53:41'),
-	(8,'17846378567','96e79218965eb72c92a549dd5a330112','518377282899991911',0,NULL,NULL,NULL,0.00,NULL,'中国银行','BOC','叶不要嚅嚅老大哥','62170038182839728',1,50,0,'2019-05-22 10:53:50','2019-05-22 10:53:50'),
+	(8,'17846378567','96e79218965eb72c92a549dd5a330112','518377282899991911',1,NULL,NULL,'中不有',0.00,NULL,'中国银行','BOC','叶不要嚅嚅老大哥','62170038182839728',1,50,0,'2019-05-22 10:53:50','2019-05-22 10:53:50'),
 	(9,'15438975849','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:54:00','2019-05-22 10:54:00'),
 	(10,'18758375843','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:54:08','2019-05-22 10:54:08'),
 	(11,'13678645788','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:54:17','2019-05-22 10:54:17'),
@@ -224,7 +224,9 @@ LOCK TABLES `pme_memberTraderAccount` WRITE;
 
 INSERT INTO `pme_memberTraderAccount` (`id`, `account`, `platformId`, `memberId`, `accountName`, `create_time`, `update_time`)
 VALUES
-	(3,'893724832',1,12,'刘不齐','2019-05-22 17:37:27','2019-05-22 17:37:27');
+	(3,'8937248',1,12,'刘不齐','2019-05-22 17:37:27','2019-05-22 17:37:27'),
+	(4,'435342523542',4,8,'中不有','2019-05-23 12:05:32','2019-05-23 12:05:32'),
+	(5,'525454543',1,8,'中不有','2019-05-23 12:05:37','2019-05-23 12:05:37');
 
 /*!40000 ALTER TABLE `pme_memberTraderAccount` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -261,28 +263,38 @@ LOCK TABLES `pme_platform` WRITE;
 
 INSERT INTO `pme_platform` (`id`, `name`, `logo`, `net`, `intro`, `rebateWeek`, `joinMoneyType`, `joinMoneyTime`, `drawMoneyTime`, `product`, `joinMinMoney`, `burstRate`, `maxLever`, `openFile`, `sorter`, `create_time`, `update_time`)
 VALUES
-	(1,'中进大宗',NULL,'www.zj.com',NULL,'5','中国 ','即时',NULL,NULL,NULL,NULL,NULL,NULL,50,'2019-05-20 14:29:39','2019-05-20 14:29:39'),
-	(4,'kissabc','http://localhost:7002/public/upload/images/5b6bd5ea5b99328efaf30f1e8144257e.gif','fds','gfds','gf','eg','trew','trew','trew','trw','tr','tre','ter',4343,'2019-05-20 19:33:48','2019-05-20 19:33:48');
+	(7,'中进大宗','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'2019-05-23 16:08:46','2019-05-23 16:08:46'),
+	(8,'湖南大宗','','hulan.com','fdsafdsafs','1',NULL,NULL,NULL,NULL,NULL,'5%','50','身份证、银行卡、',50,'2019-05-23 16:17:48','2019-05-23 16:17:48');
 
 /*!40000 ALTER TABLE `pme_platform` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
-# Dump of table pme_platform_product
+# Dump of table pme_platformProduct
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `pme_platform_product`;
+DROP TABLE IF EXISTS `pme_platformProduct`;
 
-CREATE TABLE `pme_platform_product` (
+CREATE TABLE `pme_platformProduct` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '平台产品名称',
-  `pme_id` int(11) NOT NULL COMMENT '交易商ID',
+  `productName` varchar(50) NOT NULL DEFAULT '' COMMENT '交易品种名称',
+  `platformId` int(11) NOT NULL COMMENT '交易商ID',
   `diff` int(11) DEFAULT NULL COMMENT '点差',
-  `maxTrade` int(11) DEFAULT NULL COMMENT '最大交易量',
-  `handlingFree` varchar(11) DEFAULT NULL COMMENT '交易手续费',
+  `maxNums` int(11) DEFAULT NULL COMMENT '最大交易量',
+  `buyFree` varchar(50) DEFAULT NULL COMMENT '买入手续费',
+  `sellFree` varchar(50) DEFAULT NULL COMMENT '卖出手续费',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `pme_platformProduct` WRITE;
+/*!40000 ALTER TABLE `pme_platformProduct` DISABLE KEYS */;
+
+INSERT INTO `pme_platformProduct` (`id`, `productName`, `platformId`, `diff`, `maxNums`, `buyFree`, `sellFree`)
+VALUES
+	(2,'铜',1,5,12,NULL,NULL);
+
+/*!40000 ALTER TABLE `pme_platformProduct` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table pme_site

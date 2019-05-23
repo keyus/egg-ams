@@ -2,7 +2,7 @@
     <div class="page">
         <div class="search">
             <a-button-group>
-                <a-button type="primary" icon="plus" @click="openAdd" />
+                <a-button type="primary" icon="plus" @click="openAdd">新增交易商</a-button>
             </a-button-group>
         </div>
         <a-table :columns="columns"
@@ -15,32 +15,43 @@
                     emptyText: '暂无记录',
                  }"
         >
+            <template slot="name" slot-scope="item">
+                <a href="javascript:;" @click="openProduct(item)">{{item.name}}</a>
+            </template>
             <template slot="nav" slot-scope="item">
-                <a-icon type="check" v-if="item" />
-                <a-icon type="close" v-else />
+                <a-icon type="check" v-if="item"/>
+                <a-icon type="close" v-else/>
             </template>
             <template slot="list" slot-scope="item">
-                <a-icon type="check" v-if="item" />
+                <a-icon type="check" v-if="item"/>
                 <a-icon type="close" v-else/>
             </template>
             <template slot="banner" slot-scope="item">
-                <a-icon type="check" v-if="item" />
+                <a-icon type="check" v-if="item"/>
                 <a-icon type="close" v-else/>
             </template>
             <template slot="content" slot-scope="item">
-                <a-icon type="check" v-if="item" />
+                <a-icon type="check" v-if="item"/>
                 <a-icon type="close" v-else/>
             </template>
             <template slot="handler" slot-scope="item">
                 <div class="handler">
-                    <a-button shape="circle" icon="edit" @click="openEdit(item)" />
-                    <a-button shape="circle" icon="delete" @click="deleteItem(item)" />
+                    <a href="javascript:;" @click="openEdit(item)" style="margin-right: 15px">编辑</a>
+                    <a href="javascript:;" @click="openAddProduct(item)" style="margin-right: 15px">添加交易品种</a>
+                    <a href="javascript:;" @click="deleteItem(item)">删除</a>
                 </div>
             </template>
         </a-table>
+        <!--交易品种-->
+        <Product :visible.sync="productVisible"
+                 :data="editObject"/>
         <!--添加-->
         <Add :visible.sync="addVisible"
              @put="update"/>
+        <!--添加交易品种-->
+        <AddProduct :visible.sync="addProductVisible"
+                    :data="editObject"
+                    @put="update"/>
         <!--编辑-->
         <Edit :visible.sync="visible"
               @put="update"
@@ -49,12 +60,17 @@
 </template>
 <script>
     import {columns} from './columns'
+    import Product from './product'
     import Add from './add'
+    import AddProduct from './addProduct'
     import Edit from './edit'
+
     export default {
         name: 'platform',
-        components:{
+        components: {
+            Product,
             Add,
+            AddProduct,
             Edit,
         },
         data() {
@@ -66,12 +82,14 @@
                 selectedRowKeys: [],
 
                 visible: false,
+                productVisible: false,
                 addVisible: false,
+                addProductVisible: false,
                 editObject: {},
             }
         },
         computed: {
-            x(){
+            x() {
                 return this.columns.reduce((a, b) => {
                     if (typeof a === 'object' && a.width) {
                         return parseInt(a.width) + parseInt(b.width)
@@ -86,25 +104,33 @@
         methods: {
             async fetch() {
                 this.loading = true;
-                try{
+                try {
                     const res = await this.$http.get('/platform');
                     this.data = res.data;
                     this.loading = false;
-                }catch (e) {
+                } catch (e) {
                     this.loading = false;
                 }
             },
-            openEdit(item){
+            openEdit(item) {
+                this.editObject = item;
                 this.visible = true;
-                this.editObject =  item;
             },
-            openAdd(){
+            openAddProduct(item) {
+                this.editObject = item;
+                this.addProductVisible = true;
+            },
+            openProduct(item) {
+                this.editObject = item;
+                this.productVisible = true;
+            },
+            openAdd() {
                 this.addVisible = true;
             },
-            update(){
+            update() {
                 this.fetch();
             },
-            async deleteItem(item){
+            async deleteItem(item) {
                 const _this = this;
                 this.$confirm({
                     title: '确认删除?',
@@ -112,10 +138,10 @@
                     okType: 'danger',
                     cancelText: '取消',
                     async onOk() {
-                        try{
+                        try {
                             await _this.$http.delete(`/platform/${item.id}`);
                             _this.fetch();
-                        }catch (e) {
+                        } catch (e) {
                             _this.loading = false;
                         }
                     },
