@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-05-23 08:19:00 +0000
+# Generation Time: 2019-05-24 07:19:45 +0000
 # ************************************************************
 
 
@@ -226,9 +226,59 @@ INSERT INTO `pme_memberTraderAccount` (`id`, `account`, `platformId`, `memberId`
 VALUES
 	(3,'8937248',1,12,'刘不齐','2019-05-22 17:37:27','2019-05-22 17:37:27'),
 	(4,'435342523542',4,8,'中不有','2019-05-23 12:05:32','2019-05-23 12:05:32'),
-	(5,'525454543',1,8,'中不有','2019-05-23 12:05:37','2019-05-23 12:05:37');
+	(5,'525454543',1,8,'中不有','2019-05-23 12:05:37','2019-05-23 12:05:37'),
+	(6,'121432',8,12,'刘不齐','2019-05-24 13:51:00','2019-05-24 13:51:00'),
+	(7,'423432',7,12,'刘不齐','2019-05-24 13:51:05','2019-05-24 13:51:05');
 
 /*!40000 ALTER TABLE `pme_memberTraderAccount` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table pme_moneyDetails
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pme_moneyDetails`;
+
+CREATE TABLE `pme_moneyDetails` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `memberId` int(11) NOT NULL COMMENT '会员ID',
+  `memberPhone` varchar(11) NOT NULL DEFAULT '' COMMENT '会员手机号',
+  `money` decimal(11,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
+  `platformId` int(11) DEFAULT NULL COMMENT '交易商ID',
+  `account` varchar(50) DEFAULT '' COMMENT '交易账号',
+  `type` tinyint(1) NOT NULL DEFAULT '1' COMMENT '类型  0： 支出    1:收入 ',
+  `entryType` tinyint(1) DEFAULT NULL COMMENT '0: 系统派送   1:佣金',
+  `moneyDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '产生交易佣金的日期',
+  `tradeProduct` varchar(200) DEFAULT NULL COMMENT '交易品种合集',
+  `note` varchar(200) DEFAULT NULL COMMENT '备注,明细备注',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT ' 状态 1：正常记录    0：冻结，不计入返佣余额',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `pme_moneyDetails` WRITE;
+/*!40000 ALTER TABLE `pme_moneyDetails` DISABLE KEYS */;
+
+INSERT INTO `pme_moneyDetails` (`id`, `memberId`, `memberPhone`, `money`, `platformId`, `account`, `type`, `entryType`, `moneyDate`, `tradeProduct`, `note`, `status`, `create_time`, `update_time`)
+VALUES
+	(1,2,'8',5.00,7,'001817',1,NULL,'2019-05-24 10:43:58',NULL,NULL,1,'2019-05-23 19:37:33','2019-05-23 19:37:33'),
+	(2,1,'8277',3.00,6,'874324',1,NULL,'2019-05-24 10:43:56',NULL,NULL,1,'2019-05-23 20:55:41','2019-05-23 20:55:41'),
+	(3,4,'23232',0.00,0,'',1,NULL,'2019-05-24 10:44:00',NULL,NULL,1,'2019-05-23 20:57:05','2019-05-23 20:57:05'),
+	(4,3,'3242',0.00,0,'',1,NULL,'2019-05-24 10:43:59',NULL,NULL,1,'2019-05-23 20:57:12','2019-05-23 20:57:12'),
+	(5,1,'432432',0.00,0,'',1,NULL,'2019-05-24 10:44:05',NULL,NULL,1,'2019-05-23 20:57:15','2019-05-23 20:57:15'),
+	(6,1,'12121',0.00,0,'',1,NULL,'2019-05-24 10:44:01',NULL,NULL,1,'2019-05-23 20:57:31','2019-05-23 20:57:31'),
+	(7,1,'5464',0.00,0,'',1,NULL,'2019-05-24 10:44:02',NULL,NULL,1,'2019-05-23 20:57:35','2019-05-23 20:57:35'),
+	(8,1,'213213',0.00,0,'',1,NULL,'2019-05-24 10:44:04',NULL,NULL,1,'2019-05-23 20:57:39','2019-05-23 20:57:39'),
+	(9,1,'845435',0.00,0,'',1,NULL,'2019-05-24 10:44:03',NULL,NULL,1,'2019-05-23 20:57:47','2019-05-23 20:57:47'),
+	(10,1,'456743',0.00,0,'',1,NULL,'2019-05-24 10:44:06',NULL,NULL,1,'2019-05-23 20:57:51','2019-05-23 20:57:51'),
+	(11,1,'54325432',0.00,0,'',1,NULL,'2019-05-24 10:44:07',NULL,NULL,1,'2019-05-23 20:57:53','2019-05-23 20:57:53'),
+	(12,1,'5425432',0.00,0,'',1,NULL,'2019-05-24 10:44:07',NULL,NULL,1,'2019-05-23 20:57:58','2019-05-23 20:57:58'),
+	(13,12,'15743654836',453.00,NULL,'',1,0,'2019-05-25 00:00:00',NULL,'gfbvsda',1,'2019-05-24 15:04:40','2019-05-24 15:04:40'),
+	(14,12,'15743654836',432.00,7,'7',1,1,'2019-05-25 00:00:00',NULL,'gsfgewretre',1,'2019-05-24 15:10:18','2019-05-24 15:10:18'),
+	(15,11,'13678645788',50.00,NULL,'',1,0,'2019-05-24 00:00:00',NULL,'kd',1,'2019-05-24 15:14:53','2019-05-24 15:14:53');
+
+/*!40000 ALTER TABLE `pme_moneyDetails` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
