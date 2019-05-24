@@ -6,8 +6,8 @@ const BaseService = require('../base');
 class ArticleService extends BaseService {
     async list(query) {
         const keywords = query.keywords;
-        const page = query.page || 1;
-        const size = query.size || 10;
+        const page = Number(query.page || 1);
+        const size = Number(query.size || 10);
         delete query.keywords;
         delete query.page;
         delete query.size;
@@ -24,7 +24,7 @@ class ArticleService extends BaseService {
         })
         if(where) where = `where ${where.substr(4)}`;
         const count = await this.sql.query(`select count(id) from ${this.table} ${where}`);
-        const limit = `limit ${page * 10 - 10},${size}`
+        const limit = `limit ${page * size - size},${size}`
         const sql = `select id,title,author,img,fromto,intro,cat_id,content_id,hot,top,keywords,sorter,update_time from ${this.table} ${where} order by create_time desc ${limit}`;
         const res = await this.sql.query(sql);
         return {

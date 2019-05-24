@@ -95,8 +95,12 @@
                 type: Object,
             }
         },
-        created(){
-            this.fetchPlatform();
+        watch:{
+            visible(val){
+                if(val){
+                    this.fetchPlatform();
+                }
+            }
         },
         data() {
             return {

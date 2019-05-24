@@ -201,6 +201,33 @@
     ]
   },
   {
+    "name": "moneyDetails",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/moneyDetails",
+    "regexp": "/^\\/api\\/moneyDetails(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "moneyDetails",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/moneyDetails",
+    "regexp": "/^\\/api\\/moneyDetails(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
     "name": "platforms",
     "methods": [
       "HEAD",

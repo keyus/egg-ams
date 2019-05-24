@@ -44,6 +44,9 @@
                 <div class="handler">
                     <a href="javascript:;"  @click="openEdit(item)">编辑</a>
                     <a href="javascript:;"
+                       @click="openAddMoneyDetails(item)"
+                       style="margin-left: 15px">入账</a>
+                    <a href="javascript:;"
                        v-if="item.idCard"
                        @click="openAddTradeAccount(item)"
                        style="margin-left: 15px">绑定交易账号</a>
@@ -95,6 +98,9 @@
         <AddTradeAccount :visible.sync="addTradeAccountVisible"
                          :data="editObject"
                          @put="fetch"/>
+        <!--添加资金明细-->
+        <AddMoneyDetails :visible.sync="addMoneyDetailsVisible"
+                         :data="editObject"/>
         <!--编辑收款账号-->
         <AddPay :visible.sync="addPayVisible"
                          :data="editObject"
@@ -108,6 +114,7 @@
 <script>
     import {columns} from './columns'
     import Add from './add'
+    import AddMoneyDetails from './addMoneyDetails'
     import Trader from './trader'
     import AddTradeAccount from './addTradeAccount'
     import AddPay from './addPay'
@@ -119,6 +126,7 @@
         components: {
             Trader,
             Add,
+            AddMoneyDetails,
             AddTradeAccount,
             AddPay,
             Edit,
@@ -139,6 +147,7 @@
                 visible: false,
                 traderVisible: false,
                 addVisible: false,
+                addMoneyDetailsVisible: false,
                 addPayVisible: false,
                 addTradeAccountVisible: false,
                 editObject: {},
@@ -203,6 +212,10 @@
             openAddPay(item) {
                 this.editObject = item;
                 this.addPayVisible = true;
+            },
+            openAddMoneyDetails(item) {
+                this.editObject = item;
+                this.addMoneyDetailsVisible = true;
             },
             reset() {
                 this.phone = '';

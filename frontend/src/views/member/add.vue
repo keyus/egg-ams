@@ -1,6 +1,6 @@
 <template>
     <a-modal
-            title="添加会员"
+            title="注册会员"
             cancelText="取消"
             okText="确认"
             destroyOnClose

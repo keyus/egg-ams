@@ -5,6 +5,7 @@ export const reg = {
     bank: /^\d{9,19}$/,
     text: /^[\u4e00-\u9fa5]+$/,
     alipay: /(^1[3-9]\d{9}$)|(^\w{1,30}@\w{1,30}\.[a-zA-Z0-9]{2,10}$)/,
+    money: /^-?(0|[1-9][0-9]*)(\.[0-9]*)?$/,
 }
 export default {
     isLogin(){

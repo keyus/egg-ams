@@ -4,6 +4,7 @@ import util from './util'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Cat from './views/cat/Cat'
+import MoneyDetails from './views/moneyDetails/MoneyDetails'
 import Platform from './views/platform/Platform'
 import Member from './views/member/Member'
 import ArticleList from './views/articleList'
@@ -33,9 +34,24 @@ export const menus = [
         icon: 'team'
     },
     {
-        path: '/memberMoneyDetails',
+        path: '/moneyDetails',
         name: '资金明细',
         icon: 'pay-circle'
+    },
+    {
+        path: '/openAccount',
+        name: '开户处理',
+        icon: 'security-scan'
+    },
+    {
+        path: '/verified',
+        name: '实名认证处理',
+        icon: 'idcard'
+    },
+    {
+        path: '/withdraw',
+        name: '提现处理',
+        icon: 'money-collect'
     },
     {
         path: '/users',
@@ -85,6 +101,10 @@ const router =  new Router({
                     path: '/member',
                     name: 'member',
                     component: Member
+                },{
+                    path: '/moneyDetails',
+                    name: 'moneyDetails',
+                    component: MoneyDetails
                 },
             ]
         },

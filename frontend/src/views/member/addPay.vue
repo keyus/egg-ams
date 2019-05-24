@@ -157,9 +157,7 @@
                 type: Object,
             }
         },
-        created(){
-            this.fetchPlatform();
-        },
+
         data() {
             return {
                 confirmLoading: false,
@@ -168,7 +166,6 @@
                 payType: 0,
                 reg,
                 bank,
-                platform: [],
             }
         },
         methods: {
@@ -186,14 +183,6 @@
             },
             handleCancel() {
                 this.$emit('update:visible', false);
-            },
-            async fetchPlatform(){
-                try{
-                    const res = await this.$http.get('/platform');
-                    this.platform = res.data;
-                }catch (e) {
-
-                }
             },
             async fetch(values) {
                 this.confirmLoading = true;

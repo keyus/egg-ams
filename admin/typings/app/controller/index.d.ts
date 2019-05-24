@@ -12,6 +12,7 @@ import ExportAdminApiContent = require('../../../app/controller/admin/api/conten
 import ExportAdminApiFriendlink = require('../../../app/controller/admin/api/friendlink');
 import ExportAdminApiMember = require('../../../app/controller/admin/api/member');
 import ExportAdminApiMemberTraderAccount = require('../../../app/controller/admin/api/memberTraderAccount');
+import ExportAdminApiMoneyDetails = require('../../../app/controller/admin/api/moneyDetails');
 import ExportAdminApiPlatform = require('../../../app/controller/admin/api/platform');
 import ExportAdminApiPlatformProduct = require('../../../app/controller/admin/api/platformProduct');
 import ExportAdminApiSite = require('../../../app/controller/admin/api/site');
@@ -33,6 +34,7 @@ declare module 'egg' {
         friendlink: ExportAdminApiFriendlink;
         member: ExportAdminApiMember;
         memberTraderAccount: ExportAdminApiMemberTraderAccount;
+        moneyDetails: ExportAdminApiMoneyDetails;
         platform: ExportAdminApiPlatform;
         platformProduct: ExportAdminApiPlatformProduct;
         site: ExportAdminApiSite;
