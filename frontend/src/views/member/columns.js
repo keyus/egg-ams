@@ -26,6 +26,7 @@ export const columns = [{
     title: '当前佣金',
     dataIndex: 'money',
     width: '150px',
+    scopedSlots: {customRender: 'money'}
 },{
     title: '支付宝收款账号',
     dataIndex: 'alipay',

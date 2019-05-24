@@ -33,7 +33,7 @@
                         :wrapper-col="formItemLayout.wrapperCol"
                         label="手机号"
                 >
-                    {{data.phone}}
+                    {{data.phone}} (当前余额：<span style="font-size: 18px;font-weight: bold">{{data.money|money}}</span>)
                 </a-form-item>
                 <a-form-item
                         :label-col="formItemLayout.labelCol"
@@ -54,6 +54,7 @@
                     >
                         <a-select-option :value="0">系统派送</a-select-option>
                         <a-select-option :value="1">佣金入账</a-select-option>
+                        <a-select-option :value="2">提现</a-select-option>
                     </a-select>
                 </a-form-item>
                 <a-form-item
@@ -84,7 +85,7 @@
                                     }
                                 ]"/>
                 </a-form-item>
-                <div v-if="entryType">
+                <div v-if="entryType === 1">
                     <a-form-item
                             :label-col="formItemLayout.labelCol"
                             :wrapper-col="formItemLayout.wrapperCol"
@@ -250,6 +251,7 @@
                     await this.$http.post('/moneyDetails', values);
                     this.$message.success('入账成功')
                     this.handleCancel();
+                    this.$emit('put')
                     this.confirmLoading = false;
                 } catch (e) {
                     this.confirmLoading = false;

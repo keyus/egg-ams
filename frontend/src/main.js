@@ -5,6 +5,7 @@ import http from './util/http'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import './filter'
 import 'ant-design-vue/dist/antd.css'
 import './style/home.scss'
 

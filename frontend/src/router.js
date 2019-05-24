@@ -7,6 +7,7 @@ import Cat from './views/cat/Cat'
 import MoneyDetails from './views/moneyDetails/MoneyDetails'
 import Platform from './views/platform/Platform'
 import Member from './views/member/Member'
+import MemberTraderAccount from './views/memberTraderAccount'
 import ArticleList from './views/articleList'
 import Users from './views/users'
 import Set from './views/set'
@@ -32,6 +33,11 @@ export const menus = [
         path: '/member',
         name: '会员',
         icon: 'team'
+    },
+    {
+        path: '/memberTraderAccount',
+        name: '交易账号',
+        icon: 'bulb'
     },
     {
         path: '/moneyDetails',
@@ -101,6 +107,10 @@ const router =  new Router({
                     path: '/member',
                     name: 'member',
                     component: Member
+                },{
+                    path: '/memberTraderAccount',
+                    name: 'memberTraderAccount',
+                    component: MemberTraderAccount
                 },{
                     path: '/moneyDetails',
                     name: 'moneyDetails',

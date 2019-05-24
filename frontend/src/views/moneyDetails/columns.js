@@ -8,6 +8,11 @@ export const columns = [{
     width: '150px',
     scopedSlots: {customRender: 'moneyDate'}
 },{
+    title: '类型',
+    dataIndex: 'type',
+    width: '100px',
+    scopedSlots: {customRender: 'type'}
+}, {
     title: '会员手机号',
     width: '180px',
     dataIndex: 'memberPhone',
@@ -19,8 +24,8 @@ export const columns = [{
 },{
     title: '金额',
     width: '150px',
-    dataIndex: 'money',
-}, {
+    scopedSlots: {customRender: 'money'}
+},{
     title: '交易商',
     dataIndex: 'platformName',
     width: '200px',
@@ -28,11 +33,6 @@ export const columns = [{
     title: '交易账号',
     dataIndex: 'account',
     width: '150px',
-},{
-    title: '类型',
-    dataIndex: 'type',
-    width: '150px',
-    scopedSlots: {customRender: 'type'}
 },{
     title: '状态',
     dataIndex: 'status',

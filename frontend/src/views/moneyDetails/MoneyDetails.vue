@@ -37,16 +37,23 @@
                     emptyText: '暂无记录',
                  }"
         >
+            <template slot="type" slot-scope="item">
+                <span v-if="item">收入</span>
+                <span v-else>支出</span>
+            </template>
             <template slot="entryType" slot-scope="item">
-                <span v-if="item">佣金入账</span>
-                <span v-else>系统派送</span>
+                <span v-if="item === 0">系统派送</span>
+                <span v-if="item === 1">佣金入账</span>
+                <span v-if="item === 2">提现</span>
             </template>
             <template slot="moneyDate" slot-scope="item">
                 {{item | format}}
             </template>
-            <template slot="type" slot-scope="item">
-                <span v-if="item">收入</span>
-                <span v-else>支出</span>
+            <template slot="money" slot-scope="item">
+                <span v-if="item.entryType === 0 || item.entryType === 1" style="color: red">
+                    +{{item.money|money}}
+                </span>
+                <span v-if="item.entryType === 2" style="color: forestgreen">-{{item.money|money}}</span>
             </template>
             <template slot="status" slot-scope="item">
                 <span v-if="item">正常记账</span>

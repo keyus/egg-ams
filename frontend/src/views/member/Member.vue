@@ -33,6 +33,9 @@
                     emptyText: '暂无记录',
                  }"
         >
+            <template slot="money" slot-scope="item">
+                <span>{{item|money}}</span>
+            </template>
             <template slot="phone" slot-scope="item">
 
                 <a href="javascript:;"
@@ -100,6 +103,7 @@
                          @put="fetch"/>
         <!--添加资金明细-->
         <AddMoneyDetails :visible.sync="addMoneyDetailsVisible"
+                         @put="fetch"
                          :data="editObject"/>
         <!--编辑收款账号-->
         <AddPay :visible.sync="addPayVisible"
