@@ -584,6 +584,57 @@
     ]
   },
   {
+    "name": "openAccounts",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/openAccount",
+    "regexp": "/^\\/api\\/openAccount(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "openAccounts",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/openAccount",
+    "regexp": "/^\\/api\\/openAccount(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "destroy_openAccount",
+    "methods": [
+      "DELETE"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/openAccount/:id",
+    "regexp": "/^\\/api\\/openAccount\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
     "name": null,
     "methods": [
       "POST"

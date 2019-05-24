@@ -18,6 +18,7 @@
                           @change="catChange">
                     <a-select-option value="">选择分类</a-select-option>
                     <a-select-option :value="it.id"
+                                     :key="it.id"
                                      v-for="it in cat">{{it.name}}</a-select-option>
                 </a-select>
                 <a-select defaultValue=""
@@ -34,7 +35,7 @@
                     <a-select-option value="1">置顶</a-select-option>
                     <a-select-option value="0">未置顶</a-select-option>
                 </a-select>
-                <a-button icon="search" @click="fetchList">搜索</a-button>
+                <a-button type="primary" @click="fetchList">搜索</a-button>
             </div>
         </div>
         <a-table :columns="columns"

@@ -11,6 +11,7 @@ import ExportAdminFriendlink = require('../../../app/service/admin/friendlink');
 import ExportAdminMember = require('../../../app/service/admin/member');
 import ExportAdminMemberTraderAccount = require('../../../app/service/admin/memberTraderAccount');
 import ExportAdminMoneyDetails = require('../../../app/service/admin/moneyDetails');
+import ExportAdminOpenAccount = require('../../../app/service/admin/openAccount');
 import ExportAdminPlatform = require('../../../app/service/admin/platform');
 import ExportAdminPlatformProduct = require('../../../app/service/admin/platformProduct');
 import ExportAdminSite = require('../../../app/service/admin/site');
@@ -29,6 +30,7 @@ declare module 'egg' {
       member: ExportAdminMember;
       memberTraderAccount: ExportAdminMemberTraderAccount;
       moneyDetails: ExportAdminMoneyDetails;
+      openAccount: ExportAdminOpenAccount;
       platform: ExportAdminPlatform;
       platformProduct: ExportAdminPlatformProduct;
       site: ExportAdminSite;

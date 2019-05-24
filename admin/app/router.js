@@ -18,6 +18,7 @@ module.exports = app => {
     router.resources('member', '/api/member',checkToken,controller.admin.api.member);           //会员
     router.resources('memberTraderAccount', '/api/memberTraderAccount',checkToken,controller.admin.api.memberTraderAccount);           //会员交易账号
     router.resources('article', '/api/article',checkToken,controller.admin.api.article);        //文章
+    router.resources('openAccount', '/api/openAccount',checkToken,controller.admin.api.openAccount);        //开户记录
     router.post('/api/articles', checkToken, controller.admin.api.article.destroyMore);         //文章删除多条
     router.resources('upload', '/api/upload',controller.admin.api.upload);                      //上传
     router.resources('site', '/api/site',controller.admin.api.site);                            //设置

@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-05-24 09:11:18 +0000
+# Generation Time: 2019-05-24 12:31:15 +0000
 # ************************************************************
 
 
@@ -18,6 +18,18 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table pme_idCardAuth
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pme_idCardAuth`;
+
+CREATE TABLE `pme_idCardAuth` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 # Dump of table pme_article
@@ -296,6 +308,45 @@ VALUES
 UNLOCK TABLES;
 
 
+# Dump of table pme_openAccount
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pme_openAccount`;
+
+CREATE TABLE `pme_openAccount` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '' COMMENT '开户姓名',
+  `platformId` int(11) NOT NULL COMMENT '交易商ID',
+  `memberId` int(11) DEFAULT NULL COMMENT '开户会员账号ID',
+  `memberPhone` varchar(11) DEFAULT NULL COMMENT '会员手机号',
+  `status` tinyint(1) DEFAULT NULL COMMENT '0：未处理     1：已处理',
+  `idcardImg1` varchar(100) DEFAULT NULL COMMENT '身份证照片1',
+  `idcardImg2` varchar(100) DEFAULT NULL COMMENT '身份证照片2',
+  `idcardHandImg` varchar(100) DEFAULT NULL COMMENT '手持身份证照片',
+  `bankImg1` varchar(100) DEFAULT NULL COMMENT '银行卡照片1',
+  `bankImg2` varchar(100) DEFAULT NULL COMMENT '银行卡照片2',
+  `img1` varchar(100) DEFAULT NULL COMMENT '补充资料1',
+  `img2` varchar(100) DEFAULT NULL COMMENT '补充资料2',
+  `img3` varchar(100) DEFAULT NULL COMMENT '补充资料3',
+  `img4` varchar(100) DEFAULT NULL COMMENT '补充资料4',
+  `img5` varchar(100) DEFAULT NULL COMMENT '补充资料5',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `pme_openAccount` WRITE;
+/*!40000 ALTER TABLE `pme_openAccount` DISABLE KEYS */;
+
+INSERT INTO `pme_openAccount` (`id`, `name`, `platformId`, `memberId`, `memberPhone`, `status`, `idcardImg1`, `idcardImg2`, `idcardHandImg`, `bankImg1`, `bankImg2`, `img1`, `img2`, `img3`, `img4`, `img5`, `create_time`, `update_time`)
+VALUES
+	(1,'吵右地',8,1,'15802816168',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-05-24 19:39:32','2019-05-24 19:39:32'),
+	(2,'吵不地',8,1,'15802816168',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-05-24 19:39:38','2019-05-24 19:39:38');
+
+/*!40000 ALTER TABLE `pme_openAccount` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
 # Dump of table pme_platform
 # ------------------------------------------------------------
 
@@ -443,6 +494,18 @@ VALUES
 
 /*!40000 ALTER TABLE `pme_user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+# Dump of table pme_withdraw
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pme_withdraw`;
+
+CREATE TABLE `pme_withdraw` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 

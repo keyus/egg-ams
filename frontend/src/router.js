@@ -9,6 +9,7 @@ import Platform from './views/platform/Platform'
 import Member from './views/member/Member'
 import MemberTraderAccount from './views/memberTraderAccount'
 import ArticleList from './views/articleList'
+import OpenAccount from './views/openAccount'
 import Users from './views/users'
 import Set from './views/set'
 
@@ -115,6 +116,10 @@ const router =  new Router({
                     path: '/moneyDetails',
                     name: 'moneyDetails',
                     component: MoneyDetails
+                },{
+                    path: '/openAccount',
+                    name: 'openAccount',
+                    component: OpenAccount
                 },
             ]
         },
