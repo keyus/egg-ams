@@ -21,7 +21,7 @@
                           style="width: 180px;margin-right: 20px"
                           @change="fetch">
                     <a-select-option value="">全部</a-select-option>
-                    <a-select-option :value="it.id" v-for="it in platform">{{it.name}}</a-select-option>
+                    <a-select-option :value="it.id" v-for="it in platform" :key="it.id">{{it.name}}</a-select-option>
                 </a-select>
                 <a-button type="primary" @click="fetch()">搜索</a-button>
                 <a-button @click="reset()" style="margin-left: 15px">重置</a-button>

@@ -102,7 +102,9 @@
         ]"
                                 placeholder="选择交易商"
                         >
-                            <a-select-option :value="it.id" v-for="it in platform">{{it.name}}</a-select-option>
+                            <a-select-option :value="it.id"
+                                             :key="it.id"
+                                             v-for="it in platform">{{it.name}}</a-select-option>
                         </a-select>
                     </a-form-item>
                     <a-form-item
@@ -121,7 +123,9 @@
                                 ]"
                                 placeholder="请选择交易账号"
                         >
-                            <a-select-option :value="it.id" v-for="it in accountList">{{it.account}}</a-select-option>
+                            <a-select-option :value="it.id"
+                                             :key="it.id"
+                                             v-for="it in accountList">{{it.account}}</a-select-option>
                         </a-select>
                     </a-form-item>
                     <a-form-item
