@@ -1,10 +1,12 @@
 <template>
     <div class="page">
         <div class="search-form" style="margin-bottom: 20px">
+            <span>交易账号：</span>
             <a-input placeholder="搜索交易账号"
                      v-model="account"
                      @keyup.enter="fetch"
                      style="width: 180px;margin-right: 20px"/>
+            <span>交易商：</span>
             <a-select v-model="platformId"
                       @change="fetch"
                       style="width: 180px;margin-right: 20px">

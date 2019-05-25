@@ -27,9 +27,11 @@ class MemberTraderAccountService extends BaseService {
             })
             const count = await this.sql.query(`select count(id) from ${this.table} ${where}`);
             const sql = `
-                select a.*, b.name as platformName from ${this.table} as a 
+                select a.*, b.name as platformName, c.phone as memberPhone from ${this.table} as a 
                 left join ${this.tablePrefix}platform as b
                 on a.platformId = b.id
+                left join ${this.tablePrefix}member as c
+                on a.memberId = c.id
                 ${where}
                 limit ${page * size - size},${size}
              `;

@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-05-24 12:31:15 +0000
+# Generation Time: 2019-05-25 04:27:41 +0000
 # ************************************************************
 
 
@@ -18,18 +18,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump of table pme_idCardAuth
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `pme_idCardAuth`;
-
-CREATE TABLE `pme_idCardAuth` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 
 # Dump of table pme_article
@@ -72,7 +60,8 @@ VALUES
 	(9,'fdafdsa',NULL,'',0,NULL,NULL,0,NULL,14,NULL,50,'2019-05-22 11:02:06','2019-05-22 11:02:06'),
 	(10,'fdsafdas',NULL,'',0,NULL,NULL,0,NULL,15,NULL,50,'2019-05-22 11:02:08','2019-05-22 11:02:08'),
 	(11,'fafdsafda',NULL,'',0,NULL,NULL,0,NULL,16,NULL,50,'2019-05-22 11:02:10','2019-05-22 11:02:10'),
-	(12,'rewqrewq',NULL,'',0,NULL,NULL,0,NULL,17,NULL,50,'2019-05-22 11:02:35','2019-05-22 11:02:35');
+	(12,'rewqrewq',NULL,'',0,NULL,NULL,0,NULL,17,NULL,50,'2019-05-22 11:02:35','2019-05-22 11:02:35'),
+	(13,'kisskbka',NULL,'/public/upload/images/04592876f21fba1a22cf227368c1f7a2.jpg',0,NULL,NULL,0,NULL,19,NULL,50,'2019-05-25 11:56:24','2019-05-25 11:56:24');
 
 /*!40000 ALTER TABLE `pme_article` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -101,7 +90,8 @@ LOCK TABLES `pme_cat` WRITE;
 
 INSERT INTO `pme_cat` (`id`, `name`, `is_nav`, `is_list`, `banner`, `content_id`, `sorter`, `create_time`, `update_time`)
 VALUES
-	(1,'rewq',1,0,'',6,50,'2019-04-25 19:04:50','2019-04-25 19:04:50');
+	(1,'rewq',1,0,'',6,50,'2019-04-25 19:04:50','2019-04-25 19:04:50'),
+	(2,'kiss',0,0,'/public/upload/images/fbccc656451e975188b6ab8dd55d3bf2.gif',18,50,'2019-05-25 11:54:43','2019-05-25 11:54:43');
 
 /*!40000 ALTER TABLE `pme_cat` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -141,7 +131,9 @@ VALUES
 	(14,'<p><br></p>','2019-05-22 11:02:06','2019-05-22 11:02:06'),
 	(15,'<p><br></p>','2019-05-22 11:02:08','2019-05-22 11:02:08'),
 	(16,'<p><br></p>','2019-05-22 11:02:10','2019-05-22 11:02:10'),
-	(17,'<p><br></p>','2019-05-22 11:02:35','2019-05-22 11:02:35');
+	(17,'<p><br></p>','2019-05-22 11:02:35','2019-05-22 11:02:35'),
+	(18,'<p><br></p>','2019-05-25 11:54:43','2019-05-25 11:54:43'),
+	(19,'<p><br></p>','2019-05-25 11:56:24','2019-05-25 11:56:24');
 
 /*!40000 ALTER TABLE `pme_content` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -161,6 +153,27 @@ CREATE TABLE `pme_friendlink` (
   `sorter` int(11) NOT NULL DEFAULT '50',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `pme_friendlink` WRITE;
+/*!40000 ALTER TABLE `pme_friendlink` DISABLE KEYS */;
+
+INSERT INTO `pme_friendlink` (`id`, `name`, `url`, `img`, `refollow`, `sorter`, `create_time`, `update_time`)
+VALUES
+	(1,'kissabc','kfs','/public/upload/images/0a4fc431fc301604e0e75edabe740fef.gif',0,50,'2019-05-25 11:25:59','2019-05-25 11:25:59');
+
+/*!40000 ALTER TABLE `pme_friendlink` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table pme_idCardAuth
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pme_idCardAuth`;
+
+CREATE TABLE `pme_idCardAuth` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -280,18 +293,18 @@ LOCK TABLES `pme_moneyDetails` WRITE;
 
 INSERT INTO `pme_moneyDetails` (`id`, `memberId`, `memberPhone`, `money`, `platformId`, `account`, `type`, `entryType`, `moneyDate`, `tradeProduct`, `note`, `status`, `create_time`, `update_time`)
 VALUES
-	(1,2,'8',5.00,7,'001817',1,NULL,'2019-05-24 10:43:58',NULL,NULL,1,'2019-05-23 19:37:33','2019-05-23 19:37:33'),
-	(2,1,'8277',3.00,6,'874324',1,NULL,'2019-05-24 10:43:56',NULL,NULL,1,'2019-05-23 20:55:41','2019-05-23 20:55:41'),
-	(3,4,'23232',0.00,0,'',1,NULL,'2019-05-24 10:44:00',NULL,NULL,1,'2019-05-23 20:57:05','2019-05-23 20:57:05'),
-	(4,3,'3242',0.00,0,'',1,NULL,'2019-05-24 10:43:59',NULL,NULL,1,'2019-05-23 20:57:12','2019-05-23 20:57:12'),
-	(5,1,'432432',0.00,0,'',1,NULL,'2019-05-24 10:44:05',NULL,NULL,1,'2019-05-23 20:57:15','2019-05-23 20:57:15'),
-	(6,1,'12121',0.00,0,'',1,NULL,'2019-05-24 10:44:01',NULL,NULL,1,'2019-05-23 20:57:31','2019-05-23 20:57:31'),
-	(7,1,'5464',0.00,0,'',1,NULL,'2019-05-24 10:44:02',NULL,NULL,1,'2019-05-23 20:57:35','2019-05-23 20:57:35'),
-	(8,1,'213213',0.00,0,'',1,NULL,'2019-05-24 10:44:04',NULL,NULL,1,'2019-05-23 20:57:39','2019-05-23 20:57:39'),
-	(9,1,'845435',0.00,0,'',1,NULL,'2019-05-24 10:44:03',NULL,NULL,1,'2019-05-23 20:57:47','2019-05-23 20:57:47'),
-	(10,1,'456743',0.00,0,'',1,NULL,'2019-05-24 10:44:06',NULL,NULL,1,'2019-05-23 20:57:51','2019-05-23 20:57:51'),
-	(11,1,'54325432',0.00,0,'',1,NULL,'2019-05-24 10:44:07',NULL,NULL,1,'2019-05-23 20:57:53','2019-05-23 20:57:53'),
-	(12,1,'5425432',0.00,0,'',1,NULL,'2019-05-24 10:44:07',NULL,NULL,1,'2019-05-23 20:57:58','2019-05-23 20:57:58'),
+	(1,2,'8',5.00,7,'001817',1,1,'2019-05-25 10:57:43',NULL,NULL,1,'2019-05-23 19:37:33','2019-05-23 19:37:33'),
+	(2,1,'8277',3.00,6,'874324',1,1,'2019-05-25 10:57:41',NULL,NULL,1,'2019-05-23 20:55:41','2019-05-23 20:55:41'),
+	(3,4,'23232',0.00,0,'',1,1,'2019-05-25 10:57:40',NULL,NULL,1,'2019-05-23 20:57:05','2019-05-23 20:57:05'),
+	(4,3,'3242',0.00,0,'',1,1,'2019-05-25 10:57:40',NULL,NULL,1,'2019-05-23 20:57:12','2019-05-23 20:57:12'),
+	(5,1,'432432',0.00,0,'',1,1,'2019-05-25 10:57:39',NULL,NULL,1,'2019-05-23 20:57:15','2019-05-23 20:57:15'),
+	(6,1,'12121',0.00,0,'',1,0,'2019-05-25 10:57:38',NULL,NULL,1,'2019-05-23 20:57:31','2019-05-23 20:57:31'),
+	(7,1,'5464',0.00,0,'',1,1,'2019-05-25 10:57:35',NULL,NULL,1,'2019-05-23 20:57:35','2019-05-23 20:57:35'),
+	(8,1,'213213',0.00,0,'',1,2,'2019-05-25 10:57:34',NULL,NULL,1,'2019-05-23 20:57:39','2019-05-23 20:57:39'),
+	(9,1,'845435',0.00,0,'',1,1,'2019-05-25 10:57:36',NULL,NULL,1,'2019-05-23 20:57:47','2019-05-23 20:57:47'),
+	(10,1,'456743',0.00,0,'',1,1,'2019-05-25 10:57:33',NULL,NULL,1,'2019-05-23 20:57:51','2019-05-23 20:57:51'),
+	(11,1,'54325432',0.00,0,'',1,2,'2019-05-25 10:57:32',NULL,NULL,1,'2019-05-23 20:57:53','2019-05-23 20:57:53'),
+	(12,1,'5425432',0.00,0,'',1,1,'2019-05-25 10:57:31',NULL,NULL,1,'2019-05-23 20:57:58','2019-05-23 20:57:58'),
 	(13,12,'15743654836',453.00,NULL,'',1,0,'2019-05-25 00:00:00',NULL,'gfbvsda',1,'2019-05-24 15:04:40','2019-05-24 15:04:40'),
 	(14,12,'15743654836',432.00,7,'7',1,1,'2019-05-25 00:00:00',NULL,'gsfgewretre',1,'2019-05-24 15:10:18','2019-05-24 15:10:18'),
 	(15,11,'13678645788',50.00,NULL,'',1,0,'2019-05-24 00:00:00',NULL,'kd',1,'2019-05-24 15:14:53','2019-05-24 15:14:53'),
@@ -378,8 +391,8 @@ LOCK TABLES `pme_platform` WRITE;
 
 INSERT INTO `pme_platform` (`id`, `name`, `logo`, `net`, `intro`, `rebateWeek`, `joinMoneyType`, `joinMoneyTime`, `drawMoneyTime`, `product`, `joinMinMoney`, `burstRate`, `maxLever`, `openFile`, `sorter`, `create_time`, `update_time`)
 VALUES
-	(7,'中进大宗','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'2019-05-23 16:08:46','2019-05-23 16:08:46'),
-	(8,'湖南大宗','','hulan.com','fdsafdsafs','1',NULL,NULL,NULL,NULL,NULL,'5%','50','身份证、银行卡、',50,'2019-05-23 16:17:48','2019-05-23 16:17:48');
+	(7,'中进大宗','/public/upload/images/0db0160db4ddf889dce6a74746946676.gif',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'2019-05-23 16:08:46','2019-05-23 16:08:46'),
+	(8,'湖南大宗','/public/upload/images/eb7a2ec2c38e6a044aecd4cca4e5d665.gif','hulan.com','fdsafdsafs','1',NULL,NULL,NULL,NULL,NULL,'5%','50','身份证、银行卡、',50,'2019-05-23 16:17:48','2019-05-23 16:17:48');
 
 /*!40000 ALTER TABLE `pme_platform` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -439,7 +452,7 @@ LOCK TABLES `pme_site` WRITE;
 
 INSERT INTO `pme_site` (`id`, `site_name`, `site_desc`, `site_keywords`, `site_logo`, `address`, `qq`, `site_email`, `phone`, `icp`, `create_time`, `update_time`)
 VALUES
-	(1,'大师兄',NULL,NULL,'http://localhost:7002/public/upload/images/3c48332c2b7aa17385eeb977c71f4f34.png',NULL,NULL,NULL,NULL,NULL,'2019-04-25 18:03:55','2019-04-25 18:03:55');
+	(1,'大师兄',NULL,NULL,'/public/upload/images/1e11c85b47a61a5411f56fb46df635c6.gif',NULL,NULL,NULL,NULL,NULL,'2019-04-25 18:03:55','2019-04-25 18:03:55');
 
 /*!40000 ALTER TABLE `pme_site` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -462,6 +475,15 @@ CREATE TABLE `pme_slider` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `pme_slider` WRITE;
+/*!40000 ALTER TABLE `pme_slider` DISABLE KEYS */;
+
+INSERT INTO `pme_slider` (`id`, `img`, `alt`, `url`, `use`, `sorter`, `create_time`, `update_time`)
+VALUES
+	(1,'/public/upload/images/52611c524bb36067bdefe5ad42bf5b12.gif','dfda','fdsafdsa',0,50,'2019-05-25 11:28:40','2019-05-25 11:28:40');
+
+/*!40000 ALTER TABLE `pme_slider` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table pme_user
