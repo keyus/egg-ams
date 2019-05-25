@@ -3,7 +3,7 @@ export const columns = [{
     dataIndex: 'id',
     width: '80px',
 },{
-    title: '开户时间',
+    title: '提交时间',
     dataIndex: 'create_time',
     width: '200px',
     scopedSlots: {customRender: 'create_time'}
