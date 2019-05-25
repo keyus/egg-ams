@@ -59,11 +59,6 @@
                 <span v-if="item">正常记账</span>
                 <span v-else>已冻结</span>
             </template>
-            <template slot="handler" slot-scope="item">
-                <div class="handler">
-                    <a href="javascript:;">冻结</a>
-                </div>
-            </template>
         </a-table>
 
     </div>

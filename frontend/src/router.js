@@ -10,6 +10,7 @@ import Member from './views/member/Member'
 import MemberTraderAccount from './views/memberTraderAccount'
 import ArticleList from './views/articleList'
 import OpenAccount from './views/openAccount'
+import Withdraw from './views/withdraw'
 import Users from './views/users'
 import Set from './views/set'
 
@@ -120,6 +121,10 @@ const router =  new Router({
                     path: '/openAccount',
                     name: 'openAccount',
                     component: OpenAccount
+                },{
+                    path: '/withdraw',
+                    name: 'withdraw',
+                    component: Withdraw
                 },
             ]
         },

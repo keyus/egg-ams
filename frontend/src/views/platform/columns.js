@@ -2,11 +2,9 @@ export const columns = [{
     title: '编号',
     dataIndex: 'id',
     width: '100px',
-    fixed: 'left',
 }, {
     title: '交易商名称',
     width: '150px',
-    fixed: 'left',
     scopedSlots: {customRender: 'name'}
 }, {
     title: '交易商LOGO',
@@ -60,5 +58,6 @@ export const columns = [{
 },{
     title: '操作',
     width: '270px',
+    fixed: 'right',
     scopedSlots: {customRender: 'handler'}
 },];

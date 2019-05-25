@@ -1,14 +1,15 @@
 <template>
     <div class="page">
         <div class="search-form" style="margin-bottom: 20px">
-            <a-input placeholder="搜索姓名"
-                     v-model="name"
+            <a-input placeholder="搜索会员账号"
+                     v-model="memberPhone"
                      @keyup.enter="fetch"
                      style="width: 180px;margin-right: 20px"/>
             <a-button type="primary"
                       style="margin-right: 20px"
-                      @click="fetch">搜索</a-button>
-            <a-button  @click="reset">重置</a-button>
+                      @click="fetch">搜索
+            </a-button>
+            <a-button @click="reset">重置</a-button>
         </div>
         <a-table :columns="columns"
                  :rowKey="record => record.id"
@@ -24,10 +25,17 @@
             <template slot="create_time" slot-scope="item">
                 <span>{{item|date}}</span>
             </template>
+            <template slot="money" slot-scope="item">
+                <span>{{item|money}}</span>
+            </template>
+            <template slot="type" slot-scope="item">
+                <span v-if="item===0">银行卡</span>
+                <span v-if="item===1">支付宝</span>
+            </template>
             <template slot="status" slot-scope="item">
-                <span v-if="item === 0">处理中</span>
-                <span v-if="item === 1" style="color: forestgreen">开户成功</span>
-                <span v-if="item === 2" style="color: red">开户失败</span>
+                <span v-if="item===0">处理中</span>
+                <span v-if="item===1" style="color: forestgreen">提现成功</span>
+                <span v-if="item===2" style="color: red">提现失败</span>
             </template>
             <template slot="handler" slot-scope="item">
                 <a href="javascript:;"
@@ -36,7 +44,8 @@
                 <span v-else>已处理</span>
             </template>
         </a-table>
-        <!--处理开户-->
+
+        <!--处理提现-->
         <Handle :visible.sync="handleVisible"
                 @put="fetch"
                 :data="editObject"/>
@@ -48,7 +57,7 @@
     import Handle from './handle'
 
     export default {
-        name: 'openAccount',
+        name: 'withdraw',
         components: {
             Handle,
         },
@@ -68,7 +77,7 @@
                 editObject: {},
                 loading: false,
                 columns,
-                name: undefined,
+                memberPhone: undefined,
             }
         },
         computed: {
@@ -80,11 +89,11 @@
                     return a + parseInt(b.width)
                 })
             },
-            params(){
+            params() {
                 return {
                     page: this.pagination.current,
                     size: this.pagination.size,
-                    name: this.name,
+                    memberPhone: this.memberPhone,
                 }
             }
         },
@@ -92,7 +101,7 @@
             async fetch() {
                 this.loading = true;
                 try {
-                    const res = await this.$http.get('/openAccount', {
+                    const res = await this.$http.get('/withdraw', {
                         params: this.params,
                     });
                     this.data = res.data;
@@ -108,17 +117,17 @@
                 this.pagination = pager;
                 this.fetch();
             },
-            reset(){
-                this.name = undefined;
-                this.fetch()
-            },
             openHandle(item){
                 this.editObject = item;
                 this.handleVisible = true;
             },
+            reset() {
+                this.memberPhone = undefined;
+                this.fetch()
+            }
         },
-        filters:{
-            date(val){
+        filters: {
+            date(val) {
                 return moment(val).format('YYYY-MM-DD HH:mm:ss')
             }
         }

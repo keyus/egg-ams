@@ -25,6 +25,10 @@ export const columns = [{
     dataIndex: 'platformName',
     width: '200px',
 },{
+    title: '备注',
+    dataIndex: 'note',
+    width: '150px',
+},{
     title: '身份证照片1',
     dataIndex: 'idcardImg1',
     width: '200px',
@@ -61,15 +65,17 @@ export const columns = [{
     title: '其它资料3',
     dataIndex: 'img3',
     width: '200px',
-
 },{
     title: '其它资料4',
     dataIndex: 'img4',
     width: '200px',
-
 },{
     title: '其它资料5',
     dataIndex: 'img5',
     width: '200px',
-
+},{
+    title: '操作',
+    width: '100px',
+    fixed: 'right',
+    scopedSlots: {customRender: 'handler'}
 },];

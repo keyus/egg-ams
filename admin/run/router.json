@@ -611,9 +611,10 @@
     ]
   },
   {
-    "name": "destroy_openAccount",
+    "name": "openAccount",
     "methods": [
-      "DELETE"
+      "PATCH",
+      "PUT"
     ],
     "paramNames": [
       {
@@ -629,6 +630,58 @@
     ],
     "path": "/api/openAccount/:id",
     "regexp": "/^\\/api\\/openAccount\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "withdraws",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/withdraw",
+    "regexp": "/^\\/api\\/withdraw(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "withdraws",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/withdraw",
+    "regexp": "/^\\/api\\/withdraw(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "withdraw",
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/withdraw/:id",
+    "regexp": "/^\\/api\\/withdraw\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
     "stack": [
       "auth",
       "wrappedController"

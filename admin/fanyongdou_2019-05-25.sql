@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-05-25 04:27:41 +0000
+# Generation Time: 2019-05-25 08:38:33 +0000
 # ************************************************************
 
 
@@ -201,7 +201,7 @@ CREATE TABLE `pme_member` (
   `bankAccount` varchar(50) DEFAULT NULL COMMENT '银行卡号',
   `status` tinyint(11) NOT NULL DEFAULT '1' COMMENT '账号状态，是否正常0,禁用，1启用',
   `sorter` int(11) NOT NULL DEFAULT '50',
-  `withdrawSuccess` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否提现成功',
+  `withdrawMoney` decimal(11,2) NOT NULL DEFAULT '0.00' COMMENT '当前提现金额',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -210,19 +210,19 @@ CREATE TABLE `pme_member` (
 LOCK TABLES `pme_member` WRITE;
 /*!40000 ALTER TABLE `pme_member` DISABLE KEYS */;
 
-INSERT INTO `pme_member` (`id`, `phone`, `password`, `idCard`, `hasAccount`, `idcard_img1`, `idcard_img2`, `name`, `money`, `alipay`, `bankName`, `bankCode`, `bankAddress`, `bankAccount`, `status`, `sorter`, `withdrawSuccess`, `create_time`, `update_time`)
+INSERT INTO `pme_member` (`id`, `phone`, `password`, `idCard`, `hasAccount`, `idcard_img1`, `idcard_img2`, `name`, `money`, `alipay`, `bankName`, `bankCode`, `bankAddress`, `bankAccount`, `status`, `sorter`, `withdrawMoney`, `create_time`, `update_time`)
 VALUES
-	(1,'15802816168','kjfkdal','518377282899991918',0,NULL,NULL,'中不中',18873.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-21 13:13:34','2019-05-21 13:13:34'),
-	(2,'15802817170','111111',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,0,50,0,'2019-05-21 15:21:39','2019-05-21 15:21:39'),
-	(4,'15802816169','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-21 15:28:43','2019-05-21 15:28:43'),
-	(5,'13679282828','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-21 15:59:26','2019-05-21 15:59:26'),
-	(6,'17827272772','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:53:31','2019-05-22 10:53:31'),
-	(7,'18597328978','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:53:41','2019-05-22 10:53:41'),
-	(8,'17846378567','96e79218965eb72c92a549dd5a330112','518377282899991911',1,NULL,NULL,'中不有',0.00,NULL,'中国银行','BOC','叶不要嚅嚅老大哥','62170038182839728',1,50,0,'2019-05-22 10:53:50','2019-05-22 10:53:50'),
-	(9,'15438975849','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:54:00','2019-05-22 10:54:00'),
-	(10,'18758375843','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:54:08','2019-05-22 10:54:08'),
-	(11,'13678645788','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0,'2019-05-22 10:54:17','2019-05-22 10:54:17'),
-	(12,'15743654836','96e79218965eb72c92a549dd5a330112','518377282899991911',1,NULL,NULL,'刘不齐',1500.00,'fdsfda@163.com','中国银行','BOC','中国银行北京朝阳区支行','61270038288928719376',1,50,1,'2019-05-22 10:54:28','2019-05-22 10:54:28');
+	(1,'15802816168','kjfkdal','518377282899991918',0,NULL,NULL,'中不中',18873.00,NULL,NULL,NULL,NULL,NULL,1,50,0.00,'2019-05-21 13:13:34','2019-05-21 13:13:34'),
+	(2,'15802817170','111111',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,0,50,0.00,'2019-05-21 15:21:39','2019-05-21 15:21:39'),
+	(4,'15802816169','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0.00,'2019-05-21 15:28:43','2019-05-21 15:28:43'),
+	(5,'13679282828','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0.00,'2019-05-21 15:59:26','2019-05-21 15:59:26'),
+	(6,'17827272772','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0.00,'2019-05-22 10:53:31','2019-05-22 10:53:31'),
+	(7,'18597328978','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0.00,'2019-05-22 10:53:41','2019-05-22 10:53:41'),
+	(8,'17846378567','96e79218965eb72c92a549dd5a330112','518377282899991911',1,NULL,NULL,'中不有',0.00,NULL,'中国银行','BOC','叶不要嚅嚅老大哥','62170038182839728',1,50,0.00,'2019-05-22 10:53:50','2019-05-22 10:53:50'),
+	(9,'15438975849','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0.00,'2019-05-22 10:54:00','2019-05-22 10:54:00'),
+	(10,'18758375843','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0.00,'2019-05-22 10:54:08','2019-05-22 10:54:08'),
+	(11,'13678645788','96e79218965eb72c92a549dd5a330112',NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,0.00,'2019-05-22 10:54:17','2019-05-22 10:54:17'),
+	(12,'15743654836','96e79218965eb72c92a549dd5a330112','518377282899991911',1,NULL,NULL,'刘不齐',1350.00,'fdsfda@163.com','中国银行','BOC','中国银行北京朝阳区支行','61270038288928719376',1,50,0.00,'2019-05-22 10:54:28','2019-05-22 10:54:28');
 
 /*!40000 ALTER TABLE `pme_member` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -315,7 +315,10 @@ VALUES
 	(20,12,'15743654836',79.00,7,'7',1,1,'2019-05-24 00:00:00',NULL,'霜地城',1,'2019-05-24 15:59:11','2019-05-24 15:59:11'),
 	(21,12,'15743654836',42.00,7,'7',1,1,'2019-05-24 00:00:00',NULL,'gfsgfs',1,'2019-05-24 16:00:03','2019-05-24 16:00:03'),
 	(22,12,'15743654836',100.00,NULL,'',0,2,'2019-05-24 00:00:00',NULL,'fdsreqrew',1,'2019-05-24 16:00:47','2019-05-24 16:00:47'),
-	(23,12,'15743654836',100.00,7,'7',1,1,'2019-05-24 00:00:00',NULL,'fdsfds',1,'2019-05-24 16:02:57','2019-05-24 16:02:57');
+	(23,12,'15743654836',100.00,7,'7',1,1,'2019-05-24 00:00:00',NULL,'fdsfds',1,'2019-05-24 16:02:57','2019-05-24 16:02:57'),
+	(24,12,'15743654836',50.00,NULL,'',1,2,'2019-05-25 15:09:25',NULL,'提现成功',1,'2019-05-25 15:09:25','2019-05-25 15:09:25'),
+	(25,12,'15743654836',50.00,NULL,'',1,2,'2019-05-25 15:18:05',NULL,'提现成功',1,'2019-05-25 15:18:04','2019-05-25 15:18:04'),
+	(26,12,'15743654836',50.00,NULL,'',1,2,'2019-05-25 15:22:29',NULL,'提现成功',1,'2019-05-25 15:22:28','2019-05-25 15:22:28');
 
 /*!40000 ALTER TABLE `pme_moneyDetails` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -332,7 +335,7 @@ CREATE TABLE `pme_openAccount` (
   `platformId` int(11) NOT NULL COMMENT '交易商ID',
   `memberId` int(11) DEFAULT NULL COMMENT '开户会员账号ID',
   `memberPhone` varchar(11) DEFAULT NULL COMMENT '会员手机号',
-  `status` tinyint(1) DEFAULT NULL COMMENT '0：未处理     1：已处理',
+  `status` tinyint(1) DEFAULT NULL COMMENT '0：处理中    1：开户成功   2：开户失败',
   `idcardImg1` varchar(100) DEFAULT NULL COMMENT '身份证照片1',
   `idcardImg2` varchar(100) DEFAULT NULL COMMENT '身份证照片2',
   `idcardHandImg` varchar(100) DEFAULT NULL COMMENT '手持身份证照片',
@@ -343,6 +346,7 @@ CREATE TABLE `pme_openAccount` (
   `img3` varchar(100) DEFAULT NULL COMMENT '补充资料3',
   `img4` varchar(100) DEFAULT NULL COMMENT '补充资料4',
   `img5` varchar(100) DEFAULT NULL COMMENT '补充资料5',
+  `note` varchar(50) DEFAULT NULL COMMENT '开户失败原因',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
@@ -351,10 +355,10 @@ CREATE TABLE `pme_openAccount` (
 LOCK TABLES `pme_openAccount` WRITE;
 /*!40000 ALTER TABLE `pme_openAccount` DISABLE KEYS */;
 
-INSERT INTO `pme_openAccount` (`id`, `name`, `platformId`, `memberId`, `memberPhone`, `status`, `idcardImg1`, `idcardImg2`, `idcardHandImg`, `bankImg1`, `bankImg2`, `img1`, `img2`, `img3`, `img4`, `img5`, `create_time`, `update_time`)
+INSERT INTO `pme_openAccount` (`id`, `name`, `platformId`, `memberId`, `memberPhone`, `status`, `idcardImg1`, `idcardImg2`, `idcardHandImg`, `bankImg1`, `bankImg2`, `img1`, `img2`, `img3`, `img4`, `img5`, `note`, `create_time`, `update_time`)
 VALUES
-	(1,'吵右地',8,1,'15802816168',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-05-24 19:39:32','2019-05-24 19:39:32'),
-	(2,'吵不地',8,1,'15802816168',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-05-24 19:39:38','2019-05-24 19:39:38');
+	(1,'吵右地',8,1,'15802816168',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'fdsafdsa','2019-05-24 19:39:32','2019-05-24 19:39:32'),
+	(2,'吵不地',8,1,'15802816168',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'112321','2019-05-24 19:39:38','2019-05-24 19:39:38');
 
 /*!40000 ALTER TABLE `pme_openAccount` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -525,9 +529,26 @@ DROP TABLE IF EXISTS `pme_withdraw`;
 
 CREATE TABLE `pme_withdraw` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `memberId` int(11) NOT NULL COMMENT '会员ID',
+  `memberPhone` varchar(11) NOT NULL DEFAULT '' COMMENT '会员手机',
+  `money` decimal(11,2) NOT NULL COMMENT '提现金额',
+  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0: 银行卡  1：支付宝',
+  `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0:处理中 1：提现成功  2：提现失败',
+  `note` varchar(50) DEFAULT NULL COMMENT '失败原因',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '提现日期',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `pme_withdraw` WRITE;
+/*!40000 ALTER TABLE `pme_withdraw` DISABLE KEYS */;
+
+INSERT INTO `pme_withdraw` (`id`, `memberId`, `memberPhone`, `money`, `type`, `status`, `note`, `create_time`, `update_time`)
+VALUES
+	(1,12,'15743654836',50.00,0,2,'银行卡信息错误','2019-05-25 13:36:47','2019-05-25 13:36:47');
+
+/*!40000 ALTER TABLE `pme_withdraw` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 

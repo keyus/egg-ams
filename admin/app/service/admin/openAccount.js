@@ -63,6 +63,21 @@ class OpenAccountService extends BaseService {
             content_id
         });
     }
+    async update(body){
+        const {
+            id,
+            status,
+            note,
+        } = body;
+        const res = await this.sql.update(this.table,{
+            status,
+            note,
+        }, { where: { id } })
+        return {
+            code: 200,
+            data: res,
+        }
+    }
 }
 
 module.exports = OpenAccountService;

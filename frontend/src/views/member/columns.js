@@ -2,12 +2,10 @@ export const columns = [{
     title: '编号',
     dataIndex: 'id',
     width: '80px',
-    fixed: 'left',
 }, {
     title: '手机号',
     width: '180px',
     scopedSlots: {customRender: 'phone'},
-    fixed: 'left',
 },{
     title: '交易账号',
     width: '100px',
@@ -68,5 +66,6 @@ export const columns = [{
 },{
     title: '操作',
     width: '320px',
+    fixed: 'right',
     scopedSlots: {customRender: 'handler'}
 },];

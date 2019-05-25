@@ -46,8 +46,4 @@ export const columns = [{
     title: '备注',
     dataIndex: 'note',
     width: '200px',
-},{
-    title: '操作',
-    width: '100px',
-    scopedSlots: {customRender: 'handler'}
-},];
+}];
