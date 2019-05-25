@@ -133,7 +133,7 @@
                             uid: -1,
                             name: 'logo',
                             status: 'done',
-                            url: this.data.img,
+                            url: this.$img(this.data.img),
                         }
                     ] : [];
                 }

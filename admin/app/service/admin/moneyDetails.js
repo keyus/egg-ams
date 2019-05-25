@@ -12,9 +12,9 @@ class MoneyDetailsService extends BaseService {
             const val = query[key];
             if(val){
                 if(where) {
-                    where += `and ${key} = ${val}`;
+                    where += `and ${key} = "${val}"`;
                 }else{
-                    where = `where ${key} = ${val}`;
+                    where = `where ${key} = "${val}"`;
                 }
             }
         })

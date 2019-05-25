@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <div class="search-form" style="margin-bottom: 20px">
-            <a-input placeholder="搜索交易账号"
+            <a-input placeholder="搜索姓名"
                      v-model="name"
                      @keyup.enter="fetch"
                      style="width: 180px;margin-right: 20px"/>

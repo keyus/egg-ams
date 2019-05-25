@@ -17,7 +17,7 @@ class MemberService extends BaseService {
         let whereStr = "";
         if(phone) {
             where.phone = phone;
-            whereStr = `where phone = ${phone}`
+            whereStr = `where phone = "${phone}"`
         }
         if(status) {
             where.status = status;

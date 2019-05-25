@@ -5,21 +5,16 @@ const BaseService = require('../base');
 
 class OpenAccountService extends BaseService {
     async list(query) {
+        const { name } = query;
         const page = Number(query.page || 1);
         const size = Number(query.size || 10);
         let where = '';
-        ['name'].forEach(key=>{
-            const val = query[key];
-            if(val){
-                if(where) {
-                    where += `and ${key} = ${val}`;
-                }else{
-                    where = `where ${key} = ${val}`;
-                }
-            }
-        })
-        console.log(where)
-        const count = await this.sql.query(`select count(id) from ${this.table} ${where}`);
+        let whereCount = '';
+        if(name) {
+            whereCount = `where name = "${name}"`;
+            where = `where a.name = "${name}"`;
+        }
+        const count = await this.sql.query(`select count(id) from ${this.table} ${whereCount}`);
         const sql = `
                 select a.*, b.name as platformName from ${this.table} as a 
                 left join ${this.tablePrefix}platform as b

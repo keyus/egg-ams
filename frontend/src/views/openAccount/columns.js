@@ -33,11 +33,6 @@ export const columns = [{
     dataIndex: 'idcardImg2',
     width: '200px',
 },{
-    title: '身份证照片1',
-    dataIndex: 'idcardImg1',
-    width: '200px',
-
-},{
     title: '手持身份证照片',
     dataIndex: 'idcardHandImg',
     width: '200px',

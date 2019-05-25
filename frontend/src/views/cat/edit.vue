@@ -187,7 +187,7 @@
                             uid: -1,
                             name: '图片',
                             status: 'done',
-                            url: this.data.banner,
+                            url: this.$img(this.data.banner),
                         }
                     ] : [];
                     this.$nextTick(()=>{

@@ -374,7 +374,7 @@
       "responseTimeout": 60000
     },
     "onClientError": null,
-    "host": "http://localhost:7002",
+    "host": "http://127.0.0.1:7001/",
     "tablePrefix": "pme_",
     "tokenSign": "eggCmsAdmin",
     "uploadImgPath": "/public/upload/images",

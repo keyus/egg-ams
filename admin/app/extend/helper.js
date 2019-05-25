@@ -12,7 +12,7 @@ module.exports = {
             const writerStream = fs.createWriteStream(target);
             try {
                 readerStream.pipe(writerStream);
-                imgArr.push(this.config.host + path.join(this.config.uploadImgPath,createFileName))
+                imgArr.push(path.join(this.config.uploadImgPath,createFileName))
             } catch (err) {
                 throw err;
             }

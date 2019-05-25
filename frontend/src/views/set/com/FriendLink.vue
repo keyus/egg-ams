@@ -13,7 +13,7 @@
                 <a-list-item slot="renderItem" slot-scope="item, index">
                     <a-card :title="item.name">
                         <div style="display: flex;align-items: center">
-                            <a-avatar size="large" :src="item.img" alt="logo">logo</a-avatar>
+                            <a-avatar size="large" :src="$img(item.img)" alt="logo">logo</a-avatar>
                             <div style="flex: 1;
                         min-width: 1%;
                         margin-left: 10px;

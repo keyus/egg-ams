@@ -52,7 +52,7 @@ module.exports = appInfo => {
 
     //配置
     const userConfig = {
-        host: 'http://localhost:7002',
+        host: 'http://127.0.0.1:7001/',
         tablePrefix: 'pme_',                       //表前缀
         tokenSign: 'eggCmsAdmin',                  //token签名
         uploadImgPath: '/public/upload/images'     //图片上传路径

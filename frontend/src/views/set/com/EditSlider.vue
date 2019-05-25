@@ -132,7 +132,7 @@
                             uid: -1,
                             name: this.data.alt,
                             status: 'done',
-                            url: this.data.img,
+                            url: this.$img(this.data.img),
                         }
                     ] : [];
                 }

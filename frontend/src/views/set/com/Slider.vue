@@ -13,7 +13,7 @@
                 <a-list-item slot="renderItem" slot-scope="item, index">
                     <a-card :title="item.alt">
                         <div class="slider-img" :style="{
-                         backgroundImage: `url('${item.img}')`,
+                         backgroundImage: `url('${$img(item.img)}')`,
                         }">
 
                         </div>

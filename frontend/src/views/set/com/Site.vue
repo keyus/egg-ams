@@ -173,7 +173,7 @@
                             uid: -1,
                             name: 'logo',
                             status: 'done',
-                            url: res.data.site_logo,
+                            url: this.$img(res.data.site_logo),
                         }
                     ] : [];
                 } catch (e) {

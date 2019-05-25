@@ -274,7 +274,7 @@
                             uid: -1,
                             name: '图片',
                             status: 'done',
-                            url: this.data.logo,
+                            url: this.$img(this.data.logo),
                         }
                     ] : [];
 

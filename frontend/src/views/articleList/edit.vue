@@ -237,7 +237,7 @@
                                 uid: -1,
                                 name: '图片',
                                 status: 'done',
-                                url: this.data.img,
+                                url: this.$img(this.data.img),
                             }
                         ] : [];
                         this.editor = this.$initEditor(this.$refs.editor);
