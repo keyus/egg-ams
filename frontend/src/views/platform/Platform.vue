@@ -19,8 +19,10 @@
                 <a href="javascript:;" @click="openProduct(item)">{{item.name}}</a>
             </template>
             <template slot="nav" slot-scope="item">
-                <a-icon type="check" v-if="item"/>
-                <a-icon type="close" v-else/>
+                <span v-if="item">
+                    <img :src="$img(item)" style="width: 30px" alt="">
+                </span>
+                <span v-else>--</span>
             </template>
             <template slot="list" slot-scope="item">
                 <a-icon type="check" v-if="item"/>

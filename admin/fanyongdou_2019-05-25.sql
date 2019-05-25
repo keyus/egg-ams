@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-05-25 08:38:33 +0000
+# Generation Time: 2019-05-25 11:36:46 +0000
 # ************************************************************
 
 
@@ -358,7 +358,7 @@ LOCK TABLES `pme_openAccount` WRITE;
 INSERT INTO `pme_openAccount` (`id`, `name`, `platformId`, `memberId`, `memberPhone`, `status`, `idcardImg1`, `idcardImg2`, `idcardHandImg`, `bankImg1`, `bankImg2`, `img1`, `img2`, `img3`, `img4`, `img5`, `note`, `create_time`, `update_time`)
 VALUES
 	(1,'吵右地',8,1,'15802816168',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'fdsafdsa','2019-05-24 19:39:32','2019-05-24 19:39:32'),
-	(2,'吵不地',8,1,'15802816168',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'112321','2019-05-24 19:39:38','2019-05-24 19:39:38');
+	(2,'吵不地',8,1,'15802816168',2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'lkjbhgvcvx','2019-05-24 19:39:38','2019-05-24 19:39:38');
 
 /*!40000 ALTER TABLE `pme_openAccount` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -395,8 +395,8 @@ LOCK TABLES `pme_platform` WRITE;
 
 INSERT INTO `pme_platform` (`id`, `name`, `logo`, `net`, `intro`, `rebateWeek`, `joinMoneyType`, `joinMoneyTime`, `drawMoneyTime`, `product`, `joinMinMoney`, `burstRate`, `maxLever`, `openFile`, `sorter`, `create_time`, `update_time`)
 VALUES
-	(7,'中进大宗','/public/upload/images/0db0160db4ddf889dce6a74746946676.gif',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'2019-05-23 16:08:46','2019-05-23 16:08:46'),
-	(8,'湖南大宗','/public/upload/images/eb7a2ec2c38e6a044aecd4cca4e5d665.gif','hulan.com','fdsafdsafs','1',NULL,NULL,NULL,NULL,NULL,'5%','50','身份证、银行卡、',50,'2019-05-23 16:17:48','2019-05-23 16:17:48');
+	(7,'中进大宗','/public/upload/images/9f8ad68bc2bf37104ef2d5f80797ba44.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'2019-05-23 16:08:46','2019-05-23 16:08:46'),
+	(8,'湖南大宗','/public/upload/images/70aed8d4af657596e030165dc8bcc6ed.png','hulan.com','fdsafdsafs','1',NULL,NULL,NULL,NULL,NULL,'5%','50','身份证、银行卡、',50,'2019-05-23 16:17:48','2019-05-23 16:17:48');
 
 /*!40000 ALTER TABLE `pme_platform` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -424,7 +424,8 @@ LOCK TABLES `pme_platformProduct` WRITE;
 INSERT INTO `pme_platformProduct` (`id`, `productName`, `platformId`, `diff`, `maxNums`, `buyFree`, `sellFree`)
 VALUES
 	(2,'铜',1,5,12,NULL,NULL),
-	(5,'白银',7,12,12,'5',NULL);
+	(5,'白银',7,12,12,'5',NULL),
+	(6,'黄金',8,5,13,NULL,NULL);
 
 /*!40000 ALTER TABLE `pme_platformProduct` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -456,7 +457,7 @@ LOCK TABLES `pme_site` WRITE;
 
 INSERT INTO `pme_site` (`id`, `site_name`, `site_desc`, `site_keywords`, `site_logo`, `address`, `qq`, `site_email`, `phone`, `icp`, `create_time`, `update_time`)
 VALUES
-	(1,'大师兄',NULL,NULL,'/public/upload/images/1e11c85b47a61a5411f56fb46df635c6.gif',NULL,NULL,NULL,NULL,NULL,'2019-04-25 18:03:55','2019-04-25 18:03:55');
+	(1,'大师兄',NULL,NULL,'/public/upload/images/7df64997d6ec6d206a00fcb45eb6b740.png',NULL,NULL,NULL,NULL,NULL,'2019-04-25 18:03:55','2019-04-25 18:03:55');
 
 /*!40000 ALTER TABLE `pme_site` ENABLE KEYS */;
 UNLOCK TABLES;
