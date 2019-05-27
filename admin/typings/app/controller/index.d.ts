@@ -10,6 +10,7 @@ import ExportAdminApiAuth = require('../../../app/controller/admin/api/auth');
 import ExportAdminApiCat = require('../../../app/controller/admin/api/cat');
 import ExportAdminApiContent = require('../../../app/controller/admin/api/content');
 import ExportAdminApiFriendlink = require('../../../app/controller/admin/api/friendlink');
+import ExportAdminApiIdCardAuth = require('../../../app/controller/admin/api/idCardAuth');
 import ExportAdminApiMember = require('../../../app/controller/admin/api/member');
 import ExportAdminApiMemberTraderAccount = require('../../../app/controller/admin/api/memberTraderAccount');
 import ExportAdminApiMoneyDetails = require('../../../app/controller/admin/api/moneyDetails');
@@ -34,6 +35,7 @@ declare module 'egg' {
         cat: ExportAdminApiCat;
         content: ExportAdminApiContent;
         friendlink: ExportAdminApiFriendlink;
+        idCardAuth: ExportAdminApiIdCardAuth;
         member: ExportAdminApiMember;
         memberTraderAccount: ExportAdminApiMemberTraderAccount;
         moneyDetails: ExportAdminApiMoneyDetails;

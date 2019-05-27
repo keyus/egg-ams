@@ -688,6 +688,58 @@
     ]
   },
   {
+    "name": "idCardAuths",
+    "methods": [
+      "HEAD",
+      "GET"
+    ],
+    "paramNames": [],
+    "path": "/api/idCardAuth",
+    "regexp": "/^\\/api\\/idCardAuth(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "idCardAuths",
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/idCardAuth",
+    "regexp": "/^\\/api\\/idCardAuth(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": "idCardAuth",
+    "methods": [
+      "PATCH",
+      "PUT"
+    ],
+    "paramNames": [
+      {
+        "name": "id",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/idCardAuth/:id",
+    "regexp": "/^\\/api\\/idCardAuth\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "auth",
+      "wrappedController"
+    ]
+  },
+  {
     "name": null,
     "methods": [
       "POST"

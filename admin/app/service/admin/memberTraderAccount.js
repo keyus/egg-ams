@@ -33,6 +33,7 @@ class MemberTraderAccountService extends BaseService {
                 left join ${this.tablePrefix}member as c
                 on a.memberId = c.id
                 ${where}
+                order by create_time desc
                 limit ${page * size - size},${size}
              `;
             const data = await this.sql.query(sql);

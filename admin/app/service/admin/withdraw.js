@@ -54,27 +54,26 @@ class WithdrawService extends BaseService {
             money,
             note,
         } = query;
-        const body = { code: -1, message: '参数错误',}
-        if(!id || !status) return body;
         //查询需要处理的记录
         const find = await this.sql.get(this.table,{id});
         //禁止从提现成功,提现失败   状态切换到其它状态
-        if(!find || find.status !== 0) return body;
-        //如果需要切换到提现成功状态
-        if(status === 1){
-            //读取会员信息
-            const member = await this.sql.get(`${this.tablePrefix}member`,{id: find.memberId});
-            //存在会员
-            if(member){
+        if(!find || find.status !== 0) return {code: -1, message: '参数错误'};
+        const conn = await this.sql.beginTransaction();
+
+        try {
+            //如果需要切换到提现成功状态
+            if(status === 1){
+                //读取会员信息
+                const member = await conn.get(`${this.tablePrefix}member`,{id: find.memberId});
                 //如果会员金额大于提现金额，则正常扣款
-                if(member.money > money){
+                if(member.money > Number(money)){
                     //更新会员返佣余额,以及重置提现锁定金额
-                    await this.sql.update(`${this.tablePrefix}member`,{
+                    await conn.update(`${this.tablePrefix}member`,{
                         money: Number(member.money) - Number(money),        //会员返佣余额扣款
                         withdrawMoney: 0,                                   //重置会员提现金额为0
                     },{where: {id: find.memberId}});
                     //新增资金明细提现记录
-                    await this.sql.insert(`${this.tablePrefix}moneyDetails`,{
+                    await conn.insert(`${this.tablePrefix}moneyDetails`,{
                         memberId: find.memberId,
                         memberPhone: member.phone,
                         money,
@@ -84,23 +83,21 @@ class WithdrawService extends BaseService {
                         note: '提现成功',
                         status: 1,
                     })
-                }else{
-                    return {
-                        code: -1,
-                        message: '会员扣款失败,提现金额大于会员当前余额'
-                    }
                 }
             }
+            //更新提现记录状态
+            await conn.update(this.table, {
+                status,
+                note,
+            },{ where: { id } });
+            await conn.commit();
+        }catch (e) {
+            await conn.rollback();
+            throw e;
+            return { code: -1, message: '处理失败，请重试' }
         }
-        //更新提现记录状态
-        const res = await this.sql.update(this.table, {
-            status,
-            note,
-        },{ where: { id } });
-
         return {
             code: 200,
-            data: res,
             message: '修改成功'
         }
 

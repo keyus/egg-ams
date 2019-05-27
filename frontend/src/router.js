@@ -10,6 +10,7 @@ import Member from './views/member/Member'
 import MemberTraderAccount from './views/memberTraderAccount'
 import ArticleList from './views/articleList'
 import OpenAccount from './views/openAccount'
+import IdCardAuth from './views/idCardAuth'
 import Withdraw from './views/withdraw'
 import Users from './views/users'
 import Set from './views/set'
@@ -52,7 +53,7 @@ export const menus = [
         icon: 'security-scan'
     },
     {
-        path: '/verified',
+        path: '/idCardAuth',
         name: '实名认证处理',
         icon: 'idcard'
     },
@@ -125,6 +126,10 @@ const router =  new Router({
                     path: '/withdraw',
                     name: 'withdraw',
                     component: Withdraw
+                },{
+                    path: '/idCardAuth',
+                    name: 'idCardAuth',
+                    component: IdCardAuth
                 },
             ]
         },

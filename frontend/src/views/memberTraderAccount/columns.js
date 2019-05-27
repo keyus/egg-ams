@@ -14,4 +14,8 @@ export const columns = [{
 }, {
     title: '交易商',
     dataIndex: 'platformName',
+}, {
+    title: '绑定时间',
+    dataIndex: 'create_time',
+    scopedSlots: {customRender: 'create_time'},
 },];
