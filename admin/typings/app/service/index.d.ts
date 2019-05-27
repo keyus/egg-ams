@@ -19,6 +19,7 @@ import ExportAdminSite = require('../../../app/service/admin/site');
 import ExportAdminSlider = require('../../../app/service/admin/slider');
 import ExportAdminUser = require('../../../app/service/admin/user');
 import ExportAdminWithdraw = require('../../../app/service/admin/withdraw');
+import ExportFrontendMember = require('../../../app/service/frontend/member');
 
 declare module 'egg' {
   interface IService {
@@ -40,6 +41,9 @@ declare module 'egg' {
       slider: ExportAdminSlider;
       user: ExportAdminUser;
       withdraw: ExportAdminWithdraw;
+    }
+    frontend: {
+      member: ExportFrontendMember;
     }
   }
 }

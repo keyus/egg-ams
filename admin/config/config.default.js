@@ -55,6 +55,7 @@ module.exports = appInfo => {
         host: 'http://127.0.0.1:7001/',
         tablePrefix: 'pme_',                       //表前缀
         tokenSign: 'eggCmsAdmin',                  //token签名
+        webTokenSign: 'fan_yong_dou.com',          //web前台网站token签名
         uploadImgPath: '/public/upload/images'     //图片上传路径
     };
     return {

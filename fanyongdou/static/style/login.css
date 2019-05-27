@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: "pingfang";
     src: url("./font/pingfang.eot"),
@@ -366,4 +368,11 @@ body {
 .login-box {
     padding-top: 24px;
     box-sizing: border-box;
+}
+
+.center-wrap .swipe-text-item h4,
+.center-wrap .swipe-text-item h5,
+.center-wrap .swipe-text-item h6
+{
+   color: #fff;
 }

@@ -1,5 +1,8 @@
+import React , {Component} from 'react'
 import AdminLayout from '../../components/adminLayout'
 import {Table,Button,Icon,Avatar,Alert} from 'antd'
+import util from '../../util'
+import http from '../../util/http'
 
 const columns = [{
     title: '交易商',
@@ -22,10 +25,36 @@ const columns = [{
     </span>
     ),
 }];
-export default function Index() {
-    const data = [];
-    return (
-        <AdminLayout>
+
+class Page extends Component {
+    state = {
+        user: {},
+        platform: [],
+    }
+    componentDidMount(){
+        this.fetch();
+    }
+    fetch = async ()=>{
+        try {
+            const [res1] = await Promise.all([
+                http.post('/webUser'),
+            ])
+            util.saveMember(res1, false);
+            this.setState({
+                user: res1.data,
+            })
+        }catch (e) {
+
+        }
+    }
+    render(){
+        const {
+            platform,
+            user,
+        } = this.state;
+        const data = [];
+        console.log(user)
+        return(
             <div>
                 <div className='alerts'>
                     <Alert
@@ -42,7 +71,7 @@ export default function Index() {
                         <Avatar size={64} icon="user"/>
                         <div className='ava-col'>
                             <p className='name'>
-                                爱村人人要
+                                {user.name || user.phone}
                             </p>
                             <p className='user-info'>
                                 <span><Icon type="idcard"/>已实名认证</span>
@@ -55,7 +84,7 @@ export default function Index() {
                                 账户余额:
                             </p>
                             <p className='money'>
-                                ￥121211.05
+                                {user.money}
                                 <Button type='primary'>提现</Button>
                             </p>
                         </div>
@@ -75,6 +104,14 @@ export default function Index() {
                     <Table columns={columns}  dataSource={data}/>
                 </div>
             </div>
+        )
+    }
+}
+
+export default function Index() {
+    return (
+        <AdminLayout>
+            <Page/>
         </AdminLayout>
     )
 }

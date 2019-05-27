@@ -22,6 +22,7 @@ import ExportAdminApiSlider = require('../../../app/controller/admin/api/slider'
 import ExportAdminApiUpload = require('../../../app/controller/admin/api/upload');
 import ExportAdminApiUser = require('../../../app/controller/admin/api/user');
 import ExportAdminApiWithdraw = require('../../../app/controller/admin/api/withdraw');
+import ExportFrontendApiMember = require('../../../app/controller/frontend/api/member');
 
 declare module 'egg' {
   interface IController {
@@ -47,6 +48,11 @@ declare module 'egg' {
         upload: ExportAdminApiUpload;
         user: ExportAdminApiUser;
         withdraw: ExportAdminApiWithdraw;
+      }
+    }
+    frontend: {
+      api: {
+        member: ExportFrontendApiMember;
       }
     }
   }

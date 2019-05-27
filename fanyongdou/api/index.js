@@ -1,5 +1,6 @@
 import axios from 'axios';
 import iconv from "iconv-lite";
+import http from "../util/http";
 
 //全球期货
 export const QuanQiuQiHuo = ()=>{
@@ -22,3 +23,4 @@ export const QuanQiuGuZhi = ()=>{
         return Promise.resolve(response)
     })
 }
+

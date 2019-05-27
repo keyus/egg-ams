@@ -6,8 +6,14 @@
 module.exports = app => {
     const {router, controller} = app;
     const checkToken = app.middleware.auth();
-    // router.get('/', controller.home.index);
+    const authWeb = app.middleware.authWeb();
     router.get('/io', controller.admin.home.index);
+
+    //web api
+    router.post('/api/webUser', authWeb, controller.frontend.api.member.user);     //获取登陆会员信息
+    router.post('/api/webLogin', controller.frontend.api.member.login);    //会员登陆
+
+    //后台api
     router.resources('auth', '/api/auth',controller.admin.api.auth);                                    //登陆身份验证
     router.resources('content', '/api/content',controller.admin.api.content);                           //内容
     router.resources('user', '/api/user',checkToken,controller.admin.api.user);                         //管理员

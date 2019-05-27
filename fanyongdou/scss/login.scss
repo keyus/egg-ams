@@ -1,0 +1,16 @@
+@import "~antd/dist/antd.min.css";
+
+.login-form{
+  padding: 0 15px;
+}
+.login-form-button{
+  width: 100%;
+}
+.login-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a{
+    color: #aaa;
+  }
+}
