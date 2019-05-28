@@ -199,6 +199,7 @@
         "egg-cors": "^2.2.0",
         "egg-validate": "^2.0.2",
         "md5": "^2.2.1",
+        "moment": "^2.24.0",
         "jsonwebtoken": "^8.5.0"
       },
       "devDependencies": {
@@ -335,6 +336,7 @@
     "host": "http://127.0.0.1:7001/",
     "tablePrefix": "pme_",
     "tokenSign": "eggCmsAdmin",
+    "webTokenSign": "fan_yong_dou.com",
     "uploadImgPath": "/public/upload/images",
     "coreMiddlewares": "~config~coreMiddleware",
     "appMiddlewares": [],

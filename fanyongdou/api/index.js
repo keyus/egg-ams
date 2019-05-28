@@ -1,6 +1,7 @@
 import axios from 'axios';
 import iconv from "iconv-lite";
 import http from "../util/http";
+import config from '../util/config'
 
 //全球期货
 export const QuanQiuQiHuo = ()=>{
@@ -22,5 +23,20 @@ export const QuanQiuGuZhi = ()=>{
         response.data = iconv.decode(response.data, "GBK");
         return Promise.resolve(response)
     })
+}
+
+//获取平台信息
+export const getPlatform = ()=>{
+    return axios.post(`${config.baseURL}/webPlatform`)
+}
+
+//获取登陆用户信息
+export const getLoginUser = ()=>{
+    return http.post('/webUser')
+}
+
+//获取登陆用户信息
+export const getUserAccount = (data)=>{
+    return http.post('/userAccount', data)
 }
 

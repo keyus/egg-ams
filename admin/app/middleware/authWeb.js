@@ -3,7 +3,6 @@ module.exports = () => {
     return async function authWeb(ctx, next) {
         const token = ctx.req.headers.authorization;
         jwt.verify(token, ctx.app.config.webTokenSign, async (err)=>{
-            console.log('err',err)
             if(err) {
                 ctx.body = {
                     ...err,

@@ -43,6 +43,20 @@ class Util {
         }
         return user || {};
     }
+    formatMoney(number){
+        const fallbackNumber = Number.isNaN(+number) ? 0 : +number;
+        const val = new Intl.NumberFormat('zh-CN', {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2
+        }).format(fallbackNumber);
+        return `${val}元`
+    }
+    getSex(val){
+        if(val){
+            return '/static/images/sex1.jpg'
+        }
+        return '/static/images/sex0.jpg'
+    }
 
 }
 export default new Util();

@@ -107,6 +107,7 @@
   "host": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
   "tablePrefix": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
   "tokenSign": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
+  "webTokenSign": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
   "uploadImgPath": "/Users/xiaohuangyu/work/egg-ams/admin/config/config.default.js",
   "session": {
     "maxAge": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg-session/config/config.default.js",
@@ -198,6 +199,7 @@
       "egg-cors": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
       "egg-validate": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
       "md5": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "moment": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
       "jsonwebtoken": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {

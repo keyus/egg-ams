@@ -52,6 +52,7 @@ class IdCardAuthService extends BaseService {
             id,
             status,
             note,
+            sex,
         } = query;
         const body = {code: -1, message: '参数错误',}
         //查询需要处理的记录
@@ -68,12 +69,14 @@ class IdCardAuthService extends BaseService {
                 idCardHandImg: find.idCardHandImg,
                 idCard: find.idCard,
                 name: find.name,
+                sex,
             }, {where: {id: member.id}})
         }
         //更新记录 认证成功或者认证失败
         const res = await this.sql.update(this.table, {
             status,
             note,
+            sex,
         }, {where: {id}});
 
         return {

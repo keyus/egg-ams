@@ -5,27 +5,45 @@ import moment from 'moment';
 import columns from './columns'
 
 const { RangePicker } = DatePicker;
-const dateFormat = 'YYYY/MM/DD';
+const dateFormat = 'YYYY-MM-DD';
 const Option = Select.Option;
 export default class MoneyPage extends Component {
+    static defaultProps = {
+        platform: [],
+    }
+    state = {
+        type: '0',
+        loading: false,
+        dataSource: [],
+    }
+    componentWillUnmount(){
+        this.setState = ()=>{}
+    }
     handleClick = (e) => {
-        console.log('click ', e);
         this.setState({
-            current: e.key,
+            type: e.key,
         });
     }
     render() {
+        const {
+            platform,
+        } = this.props;
+        const {
+            type,
+            loading,
+            dataSource,
+        } = this.state;
         return (
             <>
                 <Menu
                     onClick={this.handleClick}
-                    selectedKeys={['mail']}
+                    selectedKeys={[type]}
                     mode="horizontal"
                 >
-                    <Menu.Item key="mail">
+                    <Menu.Item key={0}>
                         <Icon type="mail" />收入明细
                     </Menu.Item>
-                    <Menu.Item key="alipay">
+                    <Menu.Item key={1}>
                         <Icon type="mail" />提现记录
                     </Menu.Item>
                 </Menu>
@@ -35,10 +53,16 @@ export default class MoneyPage extends Component {
                         <div className='item'>
                             <span className='item-name'>交易商：</span>
                             <div className='item-auto'>
-                                <Select defaultValue="lucy" style={{ width: '100%' }}>
-                                    <Option value="jack">Jack</Option>
-                                    <Option value="lucy">Lucy</Option>
-                                    <Option value="Yiminghe">yiminghe</Option>
+                                <Select defaultValue=""
+                                        placeholder="选择交易商"
+                                        style={{ width: '100%' }}>
+                                    <Option value="">全部交易商</Option>
+                                    {
+                                        platform.map((it,index)=>(
+                                            <Option key={index}
+                                                    value={it.id} >{it.name}</Option>
+                                        ))
+                                    }
                                 </Select>
                             </div>
                         </div>
@@ -60,7 +84,11 @@ export default class MoneyPage extends Component {
                     </Col>
                 </Row>
                 <div className='ff-table'>
-                    <Table columns={columns} dataSource={[]} />
+                    <Table columns={columns}
+                           loading={loading}
+                           rowKey={item=>item.id}
+                           locale={{emptyText: '暂无记录'}}
+                           dataSource={dataSource} />
                 </div>
             </>
         )

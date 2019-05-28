@@ -7,5 +7,4 @@ Vue.filter('money', function (number) {
         minimumFractionDigits: 2
     }).format(fallbackNumber);
     return `${val}元`
-
 })

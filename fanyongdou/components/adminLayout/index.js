@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import Head from 'next/head'
-import Link from 'next/link';
 import {Icon, Avatar, Popover} from 'antd'
 import classnames from 'classnames'
 import side from './side'
@@ -64,7 +63,8 @@ export default class AdminLayout extends Component {
                     <div className='ff-header-user'>
                         <Popover placement="bottomRight"
                                  content={menus} trigger="click">
-                            <Avatar icon="user"/>
+                            <Avatar src={util.getSex(user.sex)} />
+
                             <span className='ml10'>{user.name || user.phone}</span>
                             <Icon type="down"/>
                         </Popover>
@@ -75,11 +75,10 @@ export default class AdminLayout extends Component {
                         {
                             side.map((it, key) => (
                                 <li key={key}>
-                                    <Link href={it.path}>
-                                        <a className={classnames({
-                                            active: it.index === active,
-                                        })}><Icon type={it.icon}/>{it.name}</a>
-                                    </Link>
+                                    <a href={it.path}
+                                       className={classnames({
+                                        active: it.index === active,
+                                    })}><Icon type={it.icon}/>{it.name}</a>
                                 </li>
                             ))
                         }

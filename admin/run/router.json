@@ -31,8 +31,33 @@
       "POST"
     ],
     "paramNames": [],
+    "path": "/api/userAccount",
+    "regexp": "/^\\/api\\/userAccount(?:\\/(?=$))?$/",
+    "stack": [
+      "authWeb",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
     "path": "/api/webLogin",
     "regexp": "/^\\/api\\/webLogin(?:\\/(?=$))?$/",
+    "stack": [
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/webPlatform",
+    "regexp": "/^\\/api\\/webPlatform(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]

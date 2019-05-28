@@ -199,6 +199,7 @@
       "egg-cors": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
       "egg-validate": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
       "md5": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
+      "moment": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js",
       "jsonwebtoken": "/Users/xiaohuangyu/work/egg-ams/admin/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {

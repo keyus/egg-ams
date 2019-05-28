@@ -1,32 +1,30 @@
+import moment from 'moment';
+
 export default [
     {
         title: '交易商',
-        dataIndex: 'platform',
-        key: 'platform',
+        dataIndex: 'platformName',
+        key: 'platformName',
     }, {
         title: '交易账号',
         dataIndex: 'account',
         key: 'account',
     }, {
+        title: '姓名',
+        dataIndex: 'accountName',
+        key: 'accountName',
+    }, {
         title: '开户日期',
         dataIndex: 'date',
         key: 'date',
+        render(val){
+            return moment(val).format('YYYY-MM-DD')
+        }
     },
     {
-        title: '返佣比例',
-        dataIndex: 'bi',
-        key: 'bi',
-    },
-    {
-        title: '返佣类型',
-        dataIndex: 'type',
-        key: 'type',
+        title: '返佣周期',
+        dataIndex: 'rebateWeek',
+        key: 'rebateWeek',
         align: 'center'
     },
-    {
-        title: '账号状态',
-        dataIndex: 'status',
-        key: 'status',
-    },
-
 ]

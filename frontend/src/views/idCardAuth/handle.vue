@@ -1,6 +1,6 @@
 <template>
     <a-modal
-            title="处理提现记录"
+            title="处理实名认证"
             cancelText="取消"
             okText="确认"
             destroyOnClose
@@ -45,6 +45,7 @@
                         label="状态"
                 >
                     <a-select
+                            @change="changeStatus"
                             v-decorator="[
                               'status',{
                                   rules: [{ required: true, message: '请选择状态' }]
@@ -54,6 +55,24 @@
                     >
                         <a-select-option :value="1">认证成功</a-select-option>
                         <a-select-option :value="2">认证失败</a-select-option>
+                    </a-select>
+                </a-form-item>
+                <a-form-item
+                        :label-col="formItemLayout.labelCol"
+                        :wrapper-col="formItemLayout.wrapperCol"
+                        label="性别"
+                        v-if="status === 1"
+                >
+                    <a-select
+                            v-decorator="[
+                              'sex',{
+                                  rules: [{ required: true, message: '你需要手动为客户记录性别' }]
+                              }
+                            ]"
+                            placeholder="请选择状态"
+                    >
+                        <a-select-option :value="0">女士</a-select-option>
+                        <a-select-option :value="1">男士</a-select-option>
                     </a-select>
                 </a-form-item>
                 <a-form-item
@@ -95,6 +114,7 @@
                 confirmLoading: false,
                 formItemLayout,
                 form: this.$form.createForm(this),
+                status: undefined,
             }
         },
         methods: {
@@ -106,6 +126,9 @@
             },
             handleCancel() {
                 this.$emit('update:visible', false);
+            },
+            changeStatus(val){
+                this.status = val;
             },
             async fetch(values) {
                 this.confirmLoading = true;
