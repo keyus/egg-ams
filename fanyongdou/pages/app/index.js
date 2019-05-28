@@ -138,6 +138,7 @@ class Page extends Component {
                 <div>
                     <Table columns={columns}
                            rowKey={row => row.id}
+                           pagination={false}
                            dataSource={platform}/>
                 </div>
             </div>
