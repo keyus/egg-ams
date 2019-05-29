@@ -35,8 +35,13 @@ export const getLoginUser = ()=>{
     return http.post('/webUser')
 }
 
-//获取登陆用户信息
+//获取登陆用户交易账号
 export const getUserAccount = (data)=>{
     return http.post('/userAccount', data)
+}
+
+//获取登陆用户收入明细
+export const getUserMoneyDetails = (data)=>{
+    return http.post('/userMoneyDetails', data)
 }
 

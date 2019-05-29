@@ -44,6 +44,19 @@
       "POST"
     ],
     "paramNames": [],
+    "path": "/api/userMoneyDetails",
+    "regexp": "/^\\/api\\/userMoneyDetails(?:\\/(?=$))?$/",
+    "stack": [
+      "authWeb",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
     "path": "/api/webLogin",
     "regexp": "/^\\/api\\/webLogin(?:\\/(?=$))?$/",
     "stack": [

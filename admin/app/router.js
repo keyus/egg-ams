@@ -12,6 +12,7 @@ module.exports = app => {
     //web api
     router.post('/api/webUser', authWeb, controller.frontend.api.member.user);     //获取登陆会员信息
     router.post('/api/userAccount', authWeb, controller.frontend.api.member.userAccount);     //获取登陆会员交易账号
+    router.post('/api/userMoneyDetails', authWeb, controller.frontend.api.member.userMoneyDetails);     //获取登陆会员资金明细
     router.post('/api/webLogin', controller.frontend.api.member.login);            //会员登陆
     router.post('/api/webPlatform', controller.frontend.api.member.platform);      //获取平台
 

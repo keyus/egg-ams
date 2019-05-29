@@ -16,6 +16,7 @@ class MemberController extends Controller {
         const data = await this.ctx.service.frontend.member.checkUser(body);
         ctx.body = data;
     }
+    //获取用户信息
     async user(){
         const {ctx} = this;
         const token = ctx.req.headers.authorization;
@@ -23,6 +24,7 @@ class MemberController extends Controller {
         ctx.body = data;
         ctx.status = data.code === 200 ? 200 : 401;
     }
+    //获取交易平台
     async platform(){
         const {ctx} = this;
         const data = await this.ctx.service.frontend.member.platform();
@@ -35,6 +37,15 @@ class MemberController extends Controller {
         const token = ctx.req.headers.authorization;
         const body = ctx.request.body;
         const data = await this.ctx.service.frontend.member.userAccount(token,body);
+        ctx.body = data;
+        ctx.status = 200;
+    }
+    //获取资金明细
+    async userMoneyDetails(){
+        const {ctx} = this;
+        const token = ctx.req.headers.authorization;
+        const body = ctx.request.body;
+        const data = await this.ctx.service.frontend.member.userMoneyDetails(token,body);
         ctx.body = data;
         ctx.status = 200;
     }

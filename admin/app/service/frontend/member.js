@@ -122,6 +122,50 @@ class MemberService extends BaseService {
             data: res,
         }
     }
+    //获取资金明细
+    async userMoneyDetails(token,body){
+        const decode = jwt.decode(token);
+        if (!decode) {
+            return {
+                code: -1,
+                message: '非法访问'
+            }
+        }
+        //最大查询3个月范围
+        const endDate = body.startDate || moment().endOf('day').format(formatDate);
+        const startDate = body.endDate || moment().subtract(3, 'M').startOf('day').format(formatDate);
+        const page = body.page || 1;
+        const platformId = body.platformId;
+        const size = 10;
+        const { memberId } = decode.data;
+        const type = Number(body.type);
+        const platformCountWhere = platformId ? `and platformId = ${platformId}` : '';
+        const platformWhere = platformId ? `and a.platformId = ${platformId}` : '';
+        const count = await this.sql.query(`select count(id) from ${this.tablePrefix}moneyDetails where memberId = ${memberId} and type = ${type} ${platformCountWhere} and create_time between '${startDate}' and '${endDate}' `);
+        const sql = `
+                        select a.*, b.name as platformName, c.accountName
+                        from ${this.tablePrefix}moneyDetails as a
+                        left join ${this.tablePrefix}platform as b
+                        on a.platformId = b.id
+                        left join ${this.tablePrefix}memberTraderAccount as c
+                        on a.account = c.account 
+                        where a.memberId = ${memberId}
+                        ${platformWhere}
+                        and a.type = ${type}
+                        and a.moneyDate between '${startDate}' and '${endDate}'
+                        order by a.moneyDate desc
+                        limit ${page * size - size},${size}
+                    `
+        const res = await this.sql.query(sql);
+        return {
+            code: 200,
+            data: res,
+            page,
+            size,
+            total: count[0]['count(id)'],
+        }
+    }
+
 }
 
 module.exports = MemberService;
