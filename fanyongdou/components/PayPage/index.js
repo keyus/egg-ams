@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import {Menu, Switch} from 'antd'
-
+import {Menu, Switch, message} from 'antd'
+import util from '../../util'
 const data = [
     {
         title: '支付宝',
@@ -12,7 +12,36 @@ const data = [
     },
 ];
 export default class PayPage extends Component {
+    state={
+        loading: false,
+        user: {
+            alipayActive: 0,
+            bankActive: 0,
+        }
+    }
+    componentDidMount(){
+        this.init();
+    }
+    init=()=>{
+        try{
+            const user = JSON.parse(localStorage.getItem('member')) || {};
+            this.setState({
+                user,
+            })
+        }catch (e) {
+            message.error('错误的访问，即将退出系统')
+            util.logout();
+        }
+    }
     render() {
+        const {
+            user,
+            loading,
+        } = this.state;
+        const {
+            alipayActive,
+            bankActive,
+        } = user;
         return (
             <>
                 <h2 className='pay-title'>收款方式</h2>
@@ -27,20 +56,32 @@ export default class PayPage extends Component {
                         <Menu.Item key={3}>银行卡收款</Menu.Item>
                     </Menu>
                     <div className='pay-main'>
-                        {
-                            data.map((it,key)=>(
-                                <div className='pay-fast' key={key}>
-                                    <div><img src={it.logo}/></div>
-                                    <div className='item-auto'>
-                                        <p className='name'>{it.title}</p>
-                                        <p>未设置{it.title}收款方式</p>
-                                    </div>
-                                    <div>
-                                        <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />
-                                    </div>
-                                </div>
-                            ))
-                        }
+                        <div className='pay-fast'>
+                            <div><img src='/static/images/pi_zhifubao.png'/></div>
+                            <div className='item-auto'>
+                                <p className='name'>支付宝</p>
+                                <p>未设置支付宝收款方式</p>
+                            </div>
+                            <div>
+                                <Switch checkedChildren="开"
+                                        unCheckedChildren="关"
+                                        checked={Boolean(alipayActive)}
+                                        defaultChecked />
+                            </div>
+                        </div>
+                        <div className='pay-fast'>
+                            <div><img src='/static/images/pi_bankcard.png'/></div>
+                            <div className='item-auto'>
+                                <p className='name'>银行卡</p>
+                                <p>未设置银行卡收款方式</p>
+                            </div>
+                            <div>
+                                <Switch checkedChildren="开"
+                                        unCheckedChildren="关"
+                                        checked={Boolean(bankActive)}
+                                        defaultChecked />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </>
