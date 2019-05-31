@@ -56,6 +56,30 @@
     "methods": [
       "POST"
     ],
+    "paramNames": [
+      {
+        "name": "key",
+        "prefix": "/",
+        "delimiter": "/",
+        "optional": false,
+        "repeat": false,
+        "partial": false,
+        "asterisk": false,
+        "pattern": "[^\\/]+?"
+      }
+    ],
+    "path": "/api/setPay/:key",
+    "regexp": "/^\\/api\\/setPay\\/((?:[^\\/]+?))(?:\\/(?=$))?$/",
+    "stack": [
+      "authWeb",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
     "paramNames": [],
     "path": "/api/webLogin",
     "regexp": "/^\\/api\\/webLogin(?:\\/(?=$))?$/",

@@ -10,11 +10,12 @@ module.exports = app => {
     router.get('/io', controller.admin.home.index);
 
     //web api
-    router.post('/api/webUser', authWeb, controller.frontend.api.member.user);     //获取登陆会员信息
-    router.post('/api/userAccount', authWeb, controller.frontend.api.member.userAccount);     //获取登陆会员交易账号
+    router.post('/api/webUser', authWeb, controller.frontend.api.member.user);                          //获取登陆会员信息
+    router.post('/api/userAccount', authWeb, controller.frontend.api.member.userAccount);               //获取登陆会员交易账号
     router.post('/api/userMoneyDetails', authWeb, controller.frontend.api.member.userMoneyDetails);     //获取登陆会员资金明细
-    router.post('/api/webLogin', controller.frontend.api.member.login);            //会员登陆
-    router.post('/api/webPlatform', controller.frontend.api.member.platform);      //获取平台
+    router.post('/api/setPay/:key', authWeb, controller.frontend.api.member.setPay);                    //会员更新收款方式 [key: payType, alipay, bank]
+    router.post('/api/webLogin', controller.frontend.api.member.login);                                 //会员登陆
+    router.post('/api/webPlatform', controller.frontend.api.member.platform);                           //获取平台
 
     //后台api
     router.resources('auth', '/api/auth',controller.admin.api.auth);                                    //登陆身份验证

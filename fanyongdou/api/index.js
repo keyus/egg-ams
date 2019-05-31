@@ -45,3 +45,8 @@ export const getUserMoneyDetails = (data)=>{
     return http.post('/userMoneyDetails', data)
 }
 
+//更新支付方式
+export const updatePay = (params,data)=>{
+    return http.post(`/setPay/${params}`, data)
+}
+

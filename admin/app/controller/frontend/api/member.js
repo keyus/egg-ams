@@ -49,6 +49,17 @@ class MemberController extends Controller {
         ctx.body = data;
         ctx.status = 200;
     }
+
+    //获取资金明细
+    async setPay(){
+        const {ctx} = this;
+        const token = ctx.req.headers.authorization;
+        ctx.validate({key: ['payType','alipay','bank']}, ctx.params);
+        const body = ctx.request.body;
+        const data = await this.ctx.service.frontend.member.setPay(token,body,ctx.params.key);
+        ctx.body = data;
+        ctx.status = 200;
+    }
 }
 
 module.exports = MemberController;

@@ -166,6 +166,35 @@ class MemberService extends BaseService {
         }
     }
 
+    async setPay(token, body,params){
+        const decode = jwt.decode(token);
+        if (!decode) {
+            return {
+                code: -1,
+                message: '非法访问'
+            }
+        }
+        const { memberId } = decode.data;
+        if(params === 'payType'){
+            let {alipayActive, bankActive} = body;
+            if(alipayActive) bankActive = 0;
+            if(bankActive) alipayActive = 0;
+            await this.sql.update(`${this.tablePrefix}member`,{alipayActive,bankActive}, {where: {id: memberId}})
+        }
+        if(params === 'alipay'){
+            const {alipay} = body;
+            await this.sql.update(`${this.tablePrefix}member`,{alipay}, {where: {id: memberId}})
+        }
+        if(params === 'bank'){
+            const {bankCode,bankAccount,bankName,bankAddress} = body;
+            await this.sql.update(`${this.tablePrefix}member`,{bankCode,bankAccount,bankName,bankAddress}, {where: {id: memberId}})
+        }
+        return {
+            code: 200,
+            data: 'ok'
+        }
+
+    }
 }
 
 module.exports = MemberService;
