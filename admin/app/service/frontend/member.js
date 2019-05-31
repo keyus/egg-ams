@@ -19,12 +19,6 @@ class MemberService extends BaseService {
     //获取登陆用户信息
     async getLoginUser(token) {
         const decode = jwt.decode(token);
-        if (!decode) {
-            return {
-                code: -1,
-                message: '非法访问'
-            }
-        }
         const {phone, password} = decode.data;
         const startDate = moment().subtract(1, 'd').startOf('day').format(formatDate);
         const endDate = moment().subtract(1, 'd').endOf('day').format(formatDate);
@@ -68,7 +62,7 @@ class MemberService extends BaseService {
                 token: genToken(
                     {
                         phone,
-                        password: md5(password),
+                        password: res.password,
                         memberId: res.id,
                         name: res.name,
                     },
@@ -96,12 +90,6 @@ class MemberService extends BaseService {
     //获取交易账号
     async userAccount(token, {type}) {
         const decode = jwt.decode(token);
-        if (!decode) {
-            return {
-                code: -1,
-                message: '非法访问'
-            }
-        }
         const {
             memberId,
             name,
@@ -125,12 +113,6 @@ class MemberService extends BaseService {
     //获取资金明细
     async userMoneyDetails(token,body){
         const decode = jwt.decode(token);
-        if (!decode) {
-            return {
-                code: -1,
-                message: '非法访问'
-            }
-        }
         //最大查询3个月范围
         const endDate = body.startDate || moment().endOf('day').format(formatDate);
         const startDate = body.endDate || moment().subtract(3, 'M').startOf('day').format(formatDate);
@@ -168,12 +150,6 @@ class MemberService extends BaseService {
 
     async setPay(token, body,params){
         const decode = jwt.decode(token);
-        if (!decode) {
-            return {
-                code: -1,
-                message: '非法访问'
-            }
-        }
         const { memberId } = decode.data;
         if(params === 'payType'){
             let {alipayActive, bankActive} = body;
@@ -195,6 +171,98 @@ class MemberService extends BaseService {
         }
 
     }
+
+    //实名认证
+    async webIdCardAuth(token, body){
+        const decode = jwt.decode(token);
+        const { memberId, phone, } = decode.data;
+        const {
+            name,
+            idCard,
+            idCardImg1,
+            idCardImg2,
+            idCardHandImg,
+        } = body;
+
+        const find = await this.sql.get(`${this.tablePrefix}idCardAuth`,{
+            memberId,
+        })
+        //认证中禁止修改
+        if(find && find.status === 0) return {
+            code: -1,
+            message: '已有实名认证申请，请等候审核完成'
+        }
+        //已完成实名认证
+        if(find && find.status === 1) return {
+            code: -1,
+            message: '已完成实名认证'
+        }
+        //不存在认证信息则创建新记录
+        if(!find){
+            const res = await this.sql.insert(`${this.tablePrefix}idCardAuth`,{
+                name,
+                memberId,
+                memberPhone: phone,
+                idCard,
+                idCardImg1,
+                idCardImg2,
+                idCardHandImg,
+            })
+            if(res.affectedRows === 1){
+                return {
+                    code: 200,
+                    data: res,
+                }
+            }
+            return {
+                code: -1,
+                message: '提交失败请稍候再试'
+            }
+        }
+        else{
+            const res = await this.sql.update(`${this.tablePrefix}idCardAuth`,{
+                name,
+                memberId,
+                memberPhone: phone,
+                idCard,
+                idCardImg1,
+                idCardImg2,
+                idCardHandImg,
+                status: 0,
+            },{
+                where: {
+                    id: find.id,
+                }
+            })
+            if(res.affectedRows === 1){
+                return {
+                    code: 200,
+                    data: res,
+                }
+            }
+            return {
+                code: -1,
+                message: '提交失败请稍候再试'
+            }
+        }
+
+
+
+    }
+     //读取实名认证
+    async readIdCardAuth(token){
+        const decode = jwt.decode(token);
+        const { memberId, } = decode.data;
+        const res = await this.sql.get(`${this.tablePrefix}idCardAuth`,{
+            memberId,
+        })
+        return {
+            code: 200,
+            data: res,
+        }
+    }
+
+
 }
 
 module.exports = MemberService;

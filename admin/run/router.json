@@ -81,6 +81,32 @@
       "POST"
     ],
     "paramNames": [],
+    "path": "/api/webIdCardAuth",
+    "regexp": "/^\\/api\\/webIdCardAuth(?:\\/(?=$))?$/",
+    "stack": [
+      "authWeb",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/readIdCardAuth",
+    "regexp": "/^\\/api\\/readIdCardAuth(?:\\/(?=$))?$/",
+    "stack": [
+      "authWeb",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
     "path": "/api/webLogin",
     "regexp": "/^\\/api\\/webLogin(?:\\/(?=$))?$/",
     "stack": [

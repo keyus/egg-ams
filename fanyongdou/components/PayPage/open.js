@@ -8,15 +8,35 @@ export default class Open extends Component {
         user: {}
     }
     changeAlipay=(val)=>{
+        let {
+            bankActive,
+            alipayActive,
+        } = this.props.user;
+        if(val){
+            alipayActive = true;
+            bankActive = false;
+        }else{
+            alipayActive = false;
+        }
         this.fetch({
-            changeAlipay: Number(val),
-            changeBank: !Number(val),
+            bankActive,
+            alipayActive,
         })
     }
     changeBank = (val)=>{
+        let {
+            bankActive,
+            alipayActive,
+        } = this.props.user;
+        if(val){
+            bankActive = true;
+            alipayActive = false;
+        }else{
+            bankActive = false;
+        }
         this.fetch({
-            changeBank: Number(val),
-            changeAlipay: !Number(val),
+            bankActive,
+            alipayActive,
         })
     }
     fetch =async (values)=>{
@@ -38,6 +58,8 @@ export default class Open extends Component {
     }
     updateStorage=(values)=>{
         const user = {...this.props.user};
+        user.bankActive = values.bankActive;
+        user.alipayActive = values.alipayActive;
         localStorage.setItem('member', JSON.stringify(user));
         this.props.updateUser(user);
     }

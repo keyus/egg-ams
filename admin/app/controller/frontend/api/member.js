@@ -60,6 +60,33 @@ class MemberController extends Controller {
         ctx.body = data;
         ctx.status = 200;
     }
+
+    //实名认证
+    async webIdCardAuth(){
+        const {ctx} = this;
+        const token = ctx.req.headers.authorization;
+        const body = ctx.request.body;
+        ctx.validate({
+            name: 'string',
+            idCard: 'string',
+            idCardImg1: 'string',
+            idCardImg2: 'string',
+            idCardHandImg: 'string',
+        }, body);
+        const data = await this.ctx.service.frontend.member.webIdCardAuth(token,body);
+        ctx.body = data;
+        ctx.status = 200;
+    }
+
+    //读取实名认证信息
+    async readIdCardAuth(){
+        const {ctx} = this;
+        const token = ctx.req.headers.authorization;
+        const data = await this.ctx.service.frontend.member.readIdCardAuth(token);
+        ctx.body = data;
+        ctx.status = 200;
+    }
+
 }
 
 module.exports = MemberController;

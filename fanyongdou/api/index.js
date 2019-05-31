@@ -50,3 +50,13 @@ export const updatePay = (params,data)=>{
     return http.post(`/setPay/${params}`, data)
 }
 
+//实名认证
+export const webIdCardAuth = (data)=>{
+    return http.post(`/webIdCardAuth`, data)
+}
+
+//读取实名认证信息
+export const readIdCardAuth = (data)=>{
+    return http.post(`/readIdCardAuth`, data)
+}
+
