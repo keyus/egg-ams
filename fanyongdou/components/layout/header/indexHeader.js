@@ -6,10 +6,12 @@ import classnames from 'classnames'
 export default class IndexHeader extends Component {
     static defaultProps = {
         active: 1,
+        user: {},
     }
     render() {
         const {
             active,
+            user,
         } = this.props;
         return (
             <header className="in-header">
@@ -32,7 +34,7 @@ export default class IndexHeader extends Component {
                         <b className="header-item-line" style={{opacity: '0', width: '51px', left: '216px'}}><i
                             className="header-light"/></b>
                     </div>
-                    <LoginBtn/>
+                    <LoginBtn user={user}/>
                 </nav>
                 <div className='banner-title ta-c'>返佣来客</div>
                 <div className="subtitle ta-c">

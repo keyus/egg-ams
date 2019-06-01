@@ -120,6 +120,19 @@
     top: 50%;
     right: 50px;
     margin-top: -20px;
+    .member-user{
+      position: absolute;
+      white-space: nowrap;
+      line-height: 40px;
+      color: #fff;
+      right: 30px;
+      .app-btn{
+        color: #fff;
+        border: 1px solid hsla(0,0%,100%,.4);
+        padding: 5px 10px;
+        margin-left: 10px;
+      }
+    }
     .buy-btn{
       width: 110px;
       height: 40px;

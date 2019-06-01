@@ -159,5 +159,5 @@ Index.getInitialProps = async ({req}) => {
         const res = await getPlatform();
         props.platform = res.data.data;
     }
-    return props
+    return props;
 }

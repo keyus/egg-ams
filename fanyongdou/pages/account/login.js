@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import LoginForm from '../../components/LoginForm'
+
+
 export default function Login() {
     return (
         <>
@@ -28,10 +30,6 @@ export default function Login() {
                     <div className="login-box">
                         <div className="waiting-box" style={{display: 'block'}}>
                             <LoginForm/>
-                            {/*<iframe id="iframe" className="login-iframe"*/}
-                                    {/*data-src="//passport.jd.com/common/loginPage?from=uc_jcloud&amp;btnTag=ee19d7c480d8e15d"*/}
-                                    {/*frameBorder="0"*/}
-                                    {/*src="//passport.jd.com/common/loginPage?from=uc_jcloud&amp;btnTag=ee19d7c480d8e15d&amp;ReturnUrl=http%3A%2F%2Fjddsp.jd.com%2Fadhelper%2F%23%2F"/>*/}
                         </div>
                     </div>
                     <div className="footer  pr">

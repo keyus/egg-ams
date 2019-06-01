@@ -1,5 +1,7 @@
 import config from './config'
-import classnames from 'classnames'
+import classnames from 'classnames';
+import cookie from '../util/cookie'
+
 export const reg = {
     phone: /^1[3-9]\d{9}$/,
     password: /^[a-zA-Z0-9]{6,20}$/,
@@ -14,7 +16,7 @@ export const reg = {
 class Util {
     //是否已登陆
     isLogin() {
-        if (localStorage.getItem(config.localToken) && localStorage.getItem(config.localMember)) {
+        if (cookie.getItem(config.localToken) && cookie.getItem(config.localMember)) {
             return true;
         }
         return false
@@ -22,8 +24,10 @@ class Util {
 
     //保存登陆用户数据
     saveMember(res, saveToken = true) {
-        localStorage.setItem(config.localMember, JSON.stringify(res.data));
-        saveToken && localStorage.setItem(config.localToken, res.token);
+        const data = JSON.stringify(res.data);
+        const token = res.token;
+        cookie.setItem(config.localMember,data,'','/')
+        saveToken && cookie.setItem(config.localToken,token,'','/')
     }
 
     //去app首页
@@ -33,14 +37,14 @@ class Util {
 
     //退出
     logout() {
-        localStorage.removeItem(config.localMember);
-        localStorage.removeItem(config.localToken);
+        cookie.removeItem(config.localMember);
+        cookie.removeItem(config.localToken);
         window.location.href = '/account/login'
     }
 
     //获取登陆用户
     getUser() {
-        let user = localStorage.getItem(config.localMember);
+        let user = cookie.getItem(config.localMember);
         try {
             user = JSON.parse(user)
         } catch (e) {

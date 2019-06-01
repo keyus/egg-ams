@@ -31,7 +31,7 @@ class LoginForm extends Component{
         })
         try {
             const res = await http.post('/webLogin',values);
-            message.success('登陆成功')
+            message.success('登陆成功');
             util.saveMember(res);
             util.goApp();
             this.setState({

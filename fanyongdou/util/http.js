@@ -3,13 +3,14 @@ import message from 'antd/lib/message'
 import 'antd/lib/message/style/index.css'
 import config from './config'
 import util from './index'
+import cookie from './cookie'
 const ins = axios.create({
     baseURL: config.baseURL,
     timeout: 10000,
 })
 
 ins.interceptors.request.use(function (req) {
-    req.headers.Authorization = localStorage.getItem(config.localToken);
+    req.headers.Authorization = cookie.getItem(config.localToken);
     return req;
 }, function (error) {
     return Promise.reject(error);

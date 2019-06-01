@@ -19,10 +19,10 @@ class MemberService extends BaseService {
     //获取登陆用户信息
     async getLoginUser(token) {
         const decode = jwt.decode(token);
-        const {phone, password} = decode.data;
+        const {password, memberId} = decode.data;
         const startDate = moment().subtract(1, 'd').startOf('day').format(formatDate);
         const endDate = moment().subtract(1, 'd').endOf('day').format(formatDate);
-        const user = await this.sql.get(`${this.tablePrefix}member`, {phone});
+        const user = await this.sql.get(`${this.tablePrefix}member`, {id: memberId});
         const sql = `select sum(money) as money from ${this.tablePrefix}moneyDetails 
             where memberId = ${user.id} 
             and status = 1 
@@ -54,7 +54,8 @@ class MemberService extends BaseService {
             password,
         } = body;
         const res = await this.sql.get(`${this.tablePrefix}member`, {phone});
-        if (res && res.password === md5(password)) {
+        const md5password = md5(password);
+        if (res && res.password === md5password ) {
             delete res.password;
             return {
                 code: 200,
@@ -62,7 +63,7 @@ class MemberService extends BaseService {
                 token: genToken(
                     {
                         phone,
-                        password: res.password,
+                        password: md5password,
                         memberId: res.id,
                         name: res.name,
                     },

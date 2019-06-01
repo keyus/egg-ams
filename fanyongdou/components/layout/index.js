@@ -8,6 +8,7 @@ import './index.scss'
 
 export default class Layout extends Component {
     static defaultProps = {
+        user: {},               //会员登陆信息
         title: '返佣豆',
         index: false,           //是否是首页
         header: 'default',      //使用的头部

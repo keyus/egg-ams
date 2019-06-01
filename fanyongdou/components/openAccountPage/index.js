@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {Menu, Form, Input, Alert, Button, Upload, Icon, Select} from 'antd'
 import './index.scss'
+import {message} from "antd/lib/index";
+import {webIdCardAuth} from "../../api";
+import config from "../../util/config";
 
 const Option = Select.Option;
 const fileList = [{
@@ -40,11 +43,60 @@ const tailFormItemLayout = {
     },
 };
 class OpenAccountPage extends Component {
+    static defaultProps = {
+        platform: [],
+    }
     state = {
         current: '1',
     }
+    static getDerivedStateFromProps(props, state) {
+        return {
+
+        }
+    }
+    submit = () => {
+        if (this.state.disabled) {
+            return;
+        }
+        this.props.form.validateFields((err, values) => {
+            if (err) return;
+            ['idCardImg1', 'idCardImg2', 'idCardHandImg'].forEach(key => {
+                values[key] = values[key][0].response.data[0]
+            })
+            this.fetch(values)
+        });
+    }
+    fetch = async (values) => {
+        this.setState({
+            loading: true,
+        })
+        try {
+            await webIdCardAuth(values);
+            message.success('保存成功');
+            this.setState({
+                loading: false,
+            })
+        } catch (e) {
+            this.setState({
+                loading: false,
+            })
+        }
+    }
+    normFile = (e) => {
+        if (Array.isArray(e)) {
+            return e;
+        }
+        if (e && e.fileList.length > 1) e.fileList.shift();
+        return e && e.fileList;
+    }
     render() {
-        const {getFieldDecorator} = this.props.form;
+        const {
+            platform,
+            form,
+        }= this.props;
+        const {
+        } = this.state;
+        const {getFieldDecorator} = form;
         return (
             <>
                 <h2 className='pay-title'>在线开户</h2>
@@ -88,8 +140,11 @@ class OpenAccountPage extends Component {
                             })(
                                 <Select style={{ width: '520px' }}
                                         placeholder="请选择交易商">
-                                    <Option value="lucy">Lucy</Option>
-                                    <Option value="Yiminghe">yiminghe</Option>
+                                    {
+                                        platform.map((it,key)=>(
+                                            <Option key={key} value={it.id} >{it.name}</Option>
+                                        ))
+                                    }
                                 </Select>
                             )}
                         </Form.Item>
@@ -97,21 +152,26 @@ class OpenAccountPage extends Component {
                         <Form.Item
                             label="身份证件正面照片"
                         >
-                            {getFieldDecorator('cardImg1', {
+                            {getFieldDecorator('idCardImg1', {
+                                valuePropName: 'fileList',
+                                getValueFromEvent: this.normFile,
                                 rules: [
                                     {required: true, message: '请上传身份证正面照片'}
                                 ]
                             })(
-                                <Upload name="files" action="/upload.do">
+                                <Upload name="files"
+                                        listType='picture'
+                                        accept="image/png, image/jpeg, image/gif, image/jpg"
+                                        action={config.uploadUrl}>
                                     <Button>
-                                        <Icon type="upload" /> 更新身份证正面照片
+                                        <Icon type="upload"/> 更新身份证正面照片
                                     </Button>
                                 </Upload>
                             )}
                         </Form.Item>
 
                         <Form.Item {...tailFormItemLayout}>
-                            <Button type="primary">更新</Button>
+                            <Button type="primary" onClick={this.submit}>提交开户</Button>
                         </Form.Item>
                     </Form>
                 </div>
