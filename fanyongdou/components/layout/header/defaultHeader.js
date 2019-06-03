@@ -6,12 +6,10 @@ import classnames from 'classnames'
 export default class DefaultHeader extends Component {
     static defaultProps = {
         active: 1,
-        user: {},
     }
     render() {
         const {
             active,
-            user,
         } = this.props;
         return (
             <header className="in-header default-header">
@@ -34,7 +32,7 @@ export default class DefaultHeader extends Component {
                         <b className="header-item-line" style={{opacity: '0', width: '51px', left: '216px'}}><i
                             className="header-light"/></b>
                     </div>
-                    <LoginBtn user={user}/>
+                    <LoginBtn/>
                 </nav>
             </header>
         )

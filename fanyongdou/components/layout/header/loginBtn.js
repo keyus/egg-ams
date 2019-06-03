@@ -1,6 +1,6 @@
-
-export default function LoginBtn(props) {
-    const {user} = props;
+import {connect} from 'react-redux'
+function LoginBtn(props) {
+    let user  =  props.user || {}
     return (
         <div className="header-nav-operation">
             {
@@ -19,3 +19,8 @@ export default function LoginBtn(props) {
         </div>
     )
 }
+export default connect((state)=>{
+    return {
+        user: state.member,
+    }
+},null)(LoginBtn)

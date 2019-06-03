@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import Head from 'next/head'
 import {Icon, Avatar, Popover} from 'antd'
 import classnames from 'classnames'
@@ -6,43 +7,21 @@ import side from './side'
 import './index.scss'
 import util from '../../util'
 
-export default class AdminLayout extends Component {
+class AdminLayout extends Component {
     static defaultProps = {
         title: '用户中心',
         active: 1,
     }
-    state = {
-        user: {
-            phone: '--',
-            name: '--'
-        },
-        loading: false,
-    }
-    componentDidMount(){
-        this.init();
-    }
-    init=()=>{
-        if(!util.isLogin()){
-            util.logout();
-            return ;
-        }
-        this.setState({
-            user: util.getUser()
-        })
-    }
     logout=()=>{
         util.logout();
     }
-
     render() {
         const {
             title,
             active,
             children,
-        } = this.props;
-        const {
             user,
-        } = this.state;
+        } = this.props;
         const menus = (
             <ul className='user-menu'>
                 <li><Icon type="user"/> 个人信息</li>
@@ -92,3 +71,8 @@ export default class AdminLayout extends Component {
         )
     }
 }
+export default connect((state)=>{
+    return {
+        user: state.member,
+    }
+},null)(AdminLayout)

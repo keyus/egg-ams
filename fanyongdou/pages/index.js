@@ -1,12 +1,9 @@
 import Layout from '../components/layout';
 
-export default function Home(props) {
-    const {
-        user,
-    } = props;
+export default function Home() {
+
     return (
         <Layout title='首页'
-                user={user}
                 index>
             <>
                 <div className="main-container js-quickedit-main-content">
@@ -1627,8 +1624,4 @@ export default function Home(props) {
         </Layout>
     )
 }
-Home.getInitialProps = async (ctx) => {
-    return {
-        // user,
-    }
-}
+

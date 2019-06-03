@@ -27,12 +27,16 @@ export const QuanQiuGuZhi = ()=>{
 
 //获取平台信息
 export const getPlatform = ()=>{
-    return axios.post(`${config.baseURL}/webPlatform`)
+    return http.post(`/webPlatform`)
 }
 
 //获取登陆用户信息
-export const getLoginUser = ()=>{
-    return http.post('/webUser')
+export const getLoginUser = (token)=>{
+    return http.post('/webUser',{},{
+        headers: {
+            Authorization: token,
+        }
+    })
 }
 
 //获取登陆用户交易账号

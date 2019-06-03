@@ -6,13 +6,11 @@ import classnames from 'classnames'
 export default class PrimaryHeader extends Component {
     static defaultProps = {
         active: 1,
-        user: {},
     }
     render() {
         const {
             active,
             banner,
-            user,
         } = this.props;
         return (
             <header className="in-header primary-header">
@@ -35,7 +33,7 @@ export default class PrimaryHeader extends Component {
                         <b className="header-item-line" style={{opacity: '0', width: '51px', left: '216px'}}><i
                             className="header-light"/></b>
                     </div>
-                    <LoginBtn user={user}/>
+                    <LoginBtn/>
                 </nav>
                 <div className='primary-header-const'>
                     <p className='sub-title'>行情中心</p>

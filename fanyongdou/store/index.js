@@ -27,7 +27,9 @@ export function initializeStore (initialState = {}) {
     let token = undefined;
     if(isServer) {
         let cookieData = cookies(initialState);
-        member = cookieData.member;
+        try {
+            member = JSON.parse(cookieData.member)
+        }catch (e) {console.error(e)}
         token = cookieData.member_token;
         initialState = {
             member,
