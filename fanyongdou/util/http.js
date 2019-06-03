@@ -33,12 +33,20 @@ ins.interceptors.response.use(function (response) {
         return Promise.reject(data);
     }
 }, function (error) {
-    console.log('error',error)
-    if(error.response.status === 401){
-        message.error('登陆过期,请重新登录');
-        util.logout();
-    }else{
-        message.error(error.message)
+    if(error && typeof error === 'object'){
+        if(
+            error.response &&
+            error.response.config &&
+            error.response.config.adapter &&
+            error.response.config.adapter.name === 'xhrAdapter'
+        ){
+            if(error.response.status === 401){
+                message.error('登陆过期,请重新登录');
+                util.logout();
+            }else{
+                message.error(error.message)
+            }
+        }
     }
     return Promise.reject(error);
 });

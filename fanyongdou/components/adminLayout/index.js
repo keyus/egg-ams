@@ -40,6 +40,10 @@ class AdminLayout extends Component {
                 <div className='ff-header'>
                     <h1><img src="/static/images/logo-white.png"/></h1>
                     <div className='ff-header-user'>
+                        <a href="/" style={{
+                            marginRight: '20px',
+                            color: '#fff',
+                        }}>返佣豆首页</a>
                         <Popover placement="bottomRight"
                                  content={menus} trigger="click">
                             <Avatar src={util.getSex(user.sex)} />

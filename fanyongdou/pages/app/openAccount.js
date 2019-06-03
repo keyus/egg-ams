@@ -12,7 +12,7 @@ OpenAccount.getInitialProps = async ({req}) => {
     const props = {}
     if (req) {
         const res = await getPlatform();
-        props.platform = res.data.data;
+        props.platform = res.data;
     }
     return props
 }
