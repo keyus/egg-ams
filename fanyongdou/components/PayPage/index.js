@@ -4,7 +4,11 @@ import Open from './open'
 import Alipay from './alipay'
 import Bank from './bank'
 import util from "../../util";
+import cookie from "../../util/cookie";
 export default class PayPage extends Component {
+    static defaultProps = {
+        idCard: {}
+    }
     state = {
         user: {
             alipayActive: 0,
@@ -22,7 +26,7 @@ export default class PayPage extends Component {
     }
     init = () => {
         try {
-            const user = JSON.parse(localStorage.getItem('member')) || {};
+            const user = JSON.parse(cookie.getItem('member')) || {};
             this.setState({
                 user,
             })

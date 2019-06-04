@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import AdminLayout from '../../components/adminLayout'
 import {Table, Button, Icon, Avatar, Alert} from 'antd'
 import util from '../../util'
-import {getPlatform, getLoginUser} from '../../api'
+import {getPlatform, readIdCardAuth} from '../../api'
 
 const columns = [{
     title: '交易商',
@@ -125,8 +125,10 @@ Index.getInitialProps = async (ctx) => {
     const props = {};
     if (ctx.req) {
         const token = ctx.reduxStore.getState().token;
-        const [user, platform] = await Promise.all([getLoginUser(token), getPlatform()]);
-        props.user = user.data
+        const user = ctx.reduxStore.getState().member;
+        const [idCard, platform] = await Promise.all([readIdCardAuth(token), getPlatform()]);
+        props.user = user;
+        props.idCard = idCard.data;
         props.platform = platform.data;
     }
     return props;

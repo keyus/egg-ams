@@ -1,25 +1,11 @@
 import React, {Component} from 'react'
-import {Menu, Form, Input, Alert, Button, Upload, Icon, Select} from 'antd'
-import './index.scss'
-import {message} from "antd/lib/index";
-import {webIdCardAuth} from "../../api";
+import {connect} from 'react-redux'
+import {Form, Alert, Button, Upload, Icon, Select, Tooltip, message} from 'antd'
+import {webOpenAccount} from "../../api";
 import config from "../../util/config";
+import './index.scss'
 
 const Option = Select.Option;
-const fileList = [{
-    uid: '-1',
-    name: 'xxx.png',
-    status: 'done',
-    url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-}, {
-    uid: '-2',
-    name: 'yyy.png',
-    status: 'done',
-    url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-}];
-
 const formItemLayout = {
     labelCol: {
         xs: { span: 24 },
@@ -45,25 +31,18 @@ const tailFormItemLayout = {
 class OpenAccountPage extends Component {
     static defaultProps = {
         platform: [],
+        user: {},
+        idCard: {},
+        openAccount: null
     }
-    state = {
-        current: '1',
-    }
-    static getDerivedStateFromProps(props, state) {
-        return {
-
-        }
-    }
+    state = {};
     submit = () => {
-        if (this.state.disabled) {
-            return;
-        }
         this.props.form.validateFields((err, values) => {
             if (err) return;
-            ['idCardImg1', 'idCardImg2', 'idCardHandImg'].forEach(key => {
+            ['img1'].forEach(key => {
                 values[key] = values[key][0].response.data[0]
             })
-            this.fetch(values)
+            this.fetch(values);
         });
     }
     fetch = async (values) => {
@@ -71,8 +50,8 @@ class OpenAccountPage extends Component {
             loading: true,
         })
         try {
-            await webIdCardAuth(values);
-            message.success('保存成功');
+            await webOpenAccount(values);
+            message.success('提交开户资料成功，我们将尽快为您开户交易账户');
             this.setState({
                 loading: false,
             })
@@ -92,50 +71,97 @@ class OpenAccountPage extends Component {
     render() {
         const {
             platform,
+            idCard,
             form,
+            openAccount,
         }= this.props;
-        const {
-        } = this.state;
         const {getFieldDecorator} = form;
+        const {
+            status,
+        } = idCard;
+        if(!status || status ===2){
+            return (
+                <Alert
+                    message="未实名认证或实名认证未通过"
+                    description={
+                        <>
+                            请先提交实名认证资料，再访问此页面，我们将实用您的实名认证资料作为交易商账户人资料
+                            <a href="/app/idCard">去实名认证&gt;&gt;</a>
+                        </>
+                    }
+                    type="error"
+                    showIcon
+                />
+            )
+        }
         return (
             <>
-                <h2 className='pay-title'>在线开户</h2>
-                <Menu
-                    selectedKeys={[this.state.current]}
-                    className='open-menus'
-                    mode="horizontal"
-                >
-                    <Menu.Item key={1}>
-                        我要开户
-                    </Menu.Item>
-                    <Menu.Item key={2}>
-                        为他人开户
-                    </Menu.Item>
-                </Menu>
-                <div>
+                {
+                    Array.isArray(openAccount) &&
                     <Alert
-                        description="开户资料将使用此账号的实名认证资料，如为他人开户请使用为他人开户功能"
+                        message="正在处理您的开户资料，请耐心等待!"
+                        description={
+                            <>
+                                {
+                                    openAccount.map((it,key)=>(
+                                        <div key={key} className='open-list-item'>
+                                            <span>开户人姓名：{it.name}</span>
+                                            <span>身份证号：{it.idCard}</span>
+                                            <span>当前状态：
+                                                {it.status === 0 && '处理中'}
+                                                {it.status === 1 && '已通过，交易账号已绑定到您的会员旗下'}
+                                                {it.status === 2 && (it.note || '资料未通过')}
+                                            </span>
+                                        </div>
+                                    ))
+                                }
+                            </>
+                        }
                         type="warning"
-                        className='open-menus'
                         showIcon
                     />
+                }
+
+                <h2 className='pay-title'>在线开户</h2>
+                <div>
                     <Form {...formItemLayout}>
                         <Form.Item
                             label="姓名"
                         >
-                            <span>呆耨在</span>
+                            <span>{idCard.name}</span>
+                            {
+                                status === 0 &&
+                                <Tooltip title="实名认证中">
+                                    <Icon type="question-circle" style={{
+                                        fontSize: '20px',
+                                        color: '#faad14',
+                                        marginLeft: '10px',
+                                    }} />
+                                </Tooltip>
+                            }
+                            {
+                                status === 1 &&
+                                <Tooltip title="已通过实名认证">
+                                    <Icon type="idcard" style={{
+                                        fontSize: '20px',
+                                        color: '#52c41a',
+                                        marginLeft: '10px',
+                                    }} />
+                                </Tooltip>
+                            }
+
                         </Form.Item>
                         <Form.Item
                             label="身份证号码"
                         >
-                            <span>518399282899990111</span>
+                            <span>{idCard.idCard}</span>
                         </Form.Item>
                         <Form.Item
                             label="交易商"
                         >
-                            {getFieldDecorator('name', {
+                            {getFieldDecorator('platformId', {
                                 rules: [
-                                    {required: true, message: '请输入您的姓名'}
+                                    {required: true, message: '请选择交易商'}
                                 ]
                             })(
                                 <Select style={{ width: '520px' }}
@@ -150,13 +176,13 @@ class OpenAccountPage extends Component {
                         </Form.Item>
 
                         <Form.Item
-                            label="身份证件正面照片"
+                            label="手持协议照片"
                         >
-                            {getFieldDecorator('idCardImg1', {
+                            {getFieldDecorator('img1', {
                                 valuePropName: 'fileList',
                                 getValueFromEvent: this.normFile,
                                 rules: [
-                                    {required: true, message: '请上传身份证正面照片'}
+                                    {required: true, message: '请上传手持协议照片'}
                                 ]
                             })(
                                 <Upload name="files"
@@ -164,7 +190,7 @@ class OpenAccountPage extends Component {
                                         accept="image/png, image/jpeg, image/gif, image/jpg"
                                         action={config.uploadUrl}>
                                     <Button>
-                                        <Icon type="upload"/> 更新身份证正面照片
+                                        <Icon type="upload"/> 更新手持协议照片
                                     </Button>
                                 </Upload>
                             )}
@@ -180,4 +206,8 @@ class OpenAccountPage extends Component {
     }
 }
 
-export default Form.create()(OpenAccountPage)
+export default connect((state)=>{
+    return {
+        user: state.member,
+    }
+},null)(Form.create()(OpenAccountPage))

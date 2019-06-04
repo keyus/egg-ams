@@ -60,7 +60,29 @@ export const webIdCardAuth = (data)=>{
 }
 
 //读取实名认证信息
-export const readIdCardAuth = (data)=>{
-    return http.post(`/readIdCardAuth`, data)
+export const readIdCardAuth = (token)=>{
+    return http.post(`/readIdCardAuth`, null,{
+        headers: {
+            Authorization: token,
+        }
+    })
+}
+
+//为自己开户
+export const webOpenAccount = (data,token)=>{
+    return http.post(`/webOpenAccount`, data,{
+        headers: {
+            Authorization: token,
+        }
+    })
+}
+
+//读取实名认证资料
+export const readOpenAccount = (token)=>{
+    return http.post(`/readOpenAccount`, null,{
+        headers: {
+            Authorization: token,
+        }
+    })
 }
 

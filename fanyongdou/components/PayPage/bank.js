@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
-import {Form, Button, Input, Alert, Select} from 'antd'
+import {Form, Button, Input, Alert, Select, message} from 'antd'
 import {reg} from '../../util'
 import bank from '../../util/bank'
-import {message} from "antd/lib/index";
 import {updatePay} from "../../api";
 
 const { Option } = Select;
@@ -56,6 +55,21 @@ class Bank extends Component {
         const {
             loading,
         } = this.state;
+
+        if (!user.idCard) {
+            return <Alert
+                message="未实名认证或实名认证未通过"
+                description={
+                    <>
+                        请先完成实名认证，再访问此页面添加收款账户
+                        <a href="/app/idCard">去实名认证&gt;&gt;</a>
+                    </>
+                }
+                type="error"
+                showIcon
+            />
+        }
+
         return (
             <Form className="login-form">
                 <Alert message="提示：只能绑定实名认证的本人银行卡信息,如果使用银行卡方式提现成功，则不能再次更改银行卡收款账户" type="warning" style={{marginBottom: '20px'}} showIcon />

@@ -1,6 +1,6 @@
 import AdminLayout from '../../components/adminLayout'
 import OpenAccountPage from '../../components/openAccountPage'
-import {getPlatform} from "../../api";
+import {getPlatform,readIdCardAuth, readOpenAccount} from "../../api";
 export default function OpenAccount(props) {
     return (
         <AdminLayout active={6}>
@@ -8,11 +8,14 @@ export default function OpenAccount(props) {
         </AdminLayout>
     )
 }
-OpenAccount.getInitialProps = async ({req}) => {
+OpenAccount.getInitialProps = async (ctx) => {
     const props = {}
-    if (req) {
-        const res = await getPlatform();
-        props.platform = res.data;
+    if (ctx.req) {
+        const token = ctx.reduxStore.getState().token;
+        const [idCard, platform, openAccount]= await Promise.all([readIdCardAuth(token),getPlatform(), readOpenAccount(token)]);
+        props.platform = platform.data;
+        props.idCard = idCard.data;
+        props.openAccount = openAccount.data;
     }
-    return props
+    return props;
 }

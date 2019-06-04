@@ -87,6 +87,25 @@ class MemberController extends Controller {
         ctx.status = 200;
     }
 
+    //为自己开户
+    async webOpenAccount(){
+        const {ctx} = this;
+        const token = ctx.req.headers.authorization;
+        const body = ctx.request.body;
+        const data = await this.ctx.service.frontend.member.webOpenAccount(token,body);
+        ctx.body = data;
+        ctx.status = 200;
+    }
+
+    //读取自己的开户资料
+    async readOpenAccount(){
+        const {ctx} = this;
+        const token = ctx.req.headers.authorization;
+        const data = await this.ctx.service.frontend.member.readOpenAccount(token);
+        ctx.body = data;
+        ctx.status = 200;
+    }
+
 }
 
 module.exports = MemberController;

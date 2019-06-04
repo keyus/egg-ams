@@ -107,6 +107,32 @@
       "POST"
     ],
     "paramNames": [],
+    "path": "/api/webOpenAccount",
+    "regexp": "/^\\/api\\/webOpenAccount(?:\\/(?=$))?$/",
+    "stack": [
+      "authWeb",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
+    "path": "/api/readOpenAccount",
+    "regexp": "/^\\/api\\/readOpenAccount(?:\\/(?=$))?$/",
+    "stack": [
+      "authWeb",
+      "wrappedController"
+    ]
+  },
+  {
+    "name": null,
+    "methods": [
+      "POST"
+    ],
+    "paramNames": [],
     "path": "/api/webLogin",
     "regexp": "/^\\/api\\/webLogin(?:\\/(?=$))?$/",
     "stack": [

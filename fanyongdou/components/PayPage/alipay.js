@@ -5,44 +5,46 @@ import {updatePay} from '../../api'
 import util from "../../util";
 
 class Alipay extends Component {
-    static defaultProps ={
+    static defaultProps = {
         user: {},
-        updateUser(){},
+        updateUser() {
+        },
     }
     state = {
         loading: false,
     }
-    submit=()=>{
+    submit = () => {
         this.props.form.validateFields((err, values) => {
-            if (err) return ;
+            if (err) return;
             this.fetch(values)
         });
     }
-    fetch =async (values)=>{
+    fetch = async (values) => {
         this.setState({
             loading: true,
         })
         try {
-            await updatePay('alipay',values);
+            await updatePay('alipay', values);
             message.success('保存成功');
             this.updateStorage(values)
             this.setState({
                 loading: false,
             })
-        }catch (e) {
+        } catch (e) {
             this.setState({
                 loading: false,
             })
         }
     }
-    updateStorage=(values)=>{
+    updateStorage = (values) => {
         const user = {...this.props.user};
         user.alipay = values.alipay;
         localStorage.setItem('member', JSON.stringify(user));
         this.props.updateUser(user);
     }
+
     render() {
-        const { getFieldDecorator } = this.props.form;
+        const {getFieldDecorator} = this.props.form;
         const {
             user,
         } = this.props;
@@ -50,9 +52,25 @@ class Alipay extends Component {
         const {
             loading,
         } = this.state;
+
+        if (!user.idCard) {
+            return <Alert
+                message="未实名认证或实名认证未通过"
+                description={
+                    <>
+                        请先完成实名认证，再访问此页面添加收款账户
+                        <a href="/app/idCard">去实名认证&gt;&gt;</a>
+                    </>
+                }
+                type="error"
+                showIcon
+            />
+        }
+
         return (
             <Form className="login-form">
-                <Alert message="提示：只能绑定实名认证的本人支付宝信息,如果使用支付宝方式提现成功，则不能再次更改支付宝收款账户" type="warning" style={{marginBottom: '20px'}} showIcon />
+                <Alert message="提示：只能绑定实名认证的本人支付宝信息,如果使用支付宝方式提现成功，则不能再次更改支付宝收款账户" type="warning"
+                       style={{marginBottom: '20px'}} showIcon/>
                 <Form.Item label="支付宝姓名">
                     {getFieldDecorator('name', {
                         initialValue: user.name,
@@ -67,8 +85,8 @@ class Alipay extends Component {
                     {getFieldDecorator('alipay', {
                         initialValue: user.alipay,
                         rules: [
-                            { required: true, message: '请输入支付宝账号' },
-                            { pattern: reg.alipay, message: '支付宝账号必须是手机或者邮箱'},
+                            {required: true, message: '请输入支付宝账号'},
+                            {pattern: reg.alipay, message: '支付宝账号必须是手机或者邮箱'},
                         ],
                     })(
                         <Input
@@ -89,4 +107,5 @@ class Alipay extends Component {
         )
     }
 }
+
 export default Form.create()(Alipay);

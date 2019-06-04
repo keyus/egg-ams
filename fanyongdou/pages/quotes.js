@@ -18,7 +18,7 @@ export default function Quotes(props) {
         <Layout title='大宗行情'
                 header='primary'
                 active={7}>
-            <div className="sub-floor sub-sort">
+            <div className="sub-floor sub-sort sub-page">
                 <div className="sub-cont">
                     <div className="sort-cont">
                         <div>

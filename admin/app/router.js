@@ -15,7 +15,9 @@ module.exports = app => {
     router.post('/api/userMoneyDetails', authWeb, controller.frontend.api.member.userMoneyDetails);     //获取登陆会员资金明细
     router.post('/api/setPay/:key', authWeb, controller.frontend.api.member.setPay);                    //会员更新收款方式 [key: payType, alipay, bank]
     router.post('/api/webIdCardAuth', authWeb, controller.frontend.api.member.webIdCardAuth);           //会员实名认证
-    router.post('/api/readIdCardAuth', authWeb, controller.frontend.api.member.readIdCardAuth);          //读取会员实名认证资料
+    router.post('/api/readIdCardAuth', authWeb, controller.frontend.api.member.readIdCardAuth);         //读取会员实名认证资料
+    router.post('/api/webOpenAccount', authWeb, controller.frontend.api.member.webOpenAccount);         //为自己开户
+    router.post('/api/readOpenAccount', authWeb, controller.frontend.api.member.readOpenAccount);       //读取开户资料
     router.post('/api/webLogin', controller.frontend.api.member.login);                                 //会员登陆
     router.post('/api/webPlatform', controller.frontend.api.member.platform);                           //获取平台
 

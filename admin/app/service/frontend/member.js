@@ -263,6 +263,67 @@ class MemberService extends BaseService {
         }
     }
 
+    //读取实名认证
+    async webOpenAccount(token,body){
+        const decode = jwt.decode(token);
+        const { memberId, phone} = decode.data;
+        const {
+            platformId,
+            img1,
+        } = body;
+        const isOpening = await this.sql.select(`${this.tablePrefix}openAccount`,{
+            memberId,
+        })
+        let pass = true;
+        if(isOpening){
+            isOpening.forEach(it=>{
+                if(it.platformId === platformId && (it.status === 0 || it.status === 1)){
+                    pass = false;
+                }
+            })
+        }
+        if(!pass){
+            return {
+                code: -1,
+                message: '有正在处理的开户审核，请勿重复提交'
+            }
+        }
+
+        //读取实名认证
+        const idCard = await this.sql.get(`${this.tablePrefix}idCardAuth`,{
+            memberId,
+        })
+        if(!idCard || idCard.status === 2) return {code: -1, message: '实名认证资料错误，请检查'}
+        const res = await this.sql.insert(`${this.tablePrefix}openAccount`,{
+            memberId,
+            platformId,
+            idCard: idCard.idCard,
+            memberPhone: phone,
+            name: idCard.name,
+            img1,
+        })
+        return {
+            code: 200,
+            data: res,
+        }
+    }
+
+     //读取开户资料
+    async readOpenAccount(token){
+        const decode = jwt.decode(token);
+        const { memberId ,} = decode.data;
+        const res = await this.sql.select(`${this.tablePrefix}openAccount`,{
+            where: {
+                memberId
+            }
+        })
+        console.log(res)
+        return {
+            code: 200,
+            data: res,
+        }
+    }
+
 
 }
 

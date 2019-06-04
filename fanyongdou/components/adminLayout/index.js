@@ -24,8 +24,8 @@ class AdminLayout extends Component {
         } = this.props;
         const menus = (
             <ul className='user-menu'>
-                <li><Icon type="user"/> 个人信息</li>
-                <li><Icon type="credit-card"/> 银行卡资料</li>
+                <li><a href="/app"><Icon type="user"/> 个人信息</a></li>
+                <li><a href="/app/pay"><Icon type="credit-card" /> 收款信息</a></li>
                 <li onClick={this.logout}><Icon type="logout"/> 退出登录</li>
             </ul>
         )

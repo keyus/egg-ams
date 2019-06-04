@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-06-01 12:26:55 +0000
+# Generation Time: 2019-06-04 08:50:40 +0000
 # ************************************************************
 
 
@@ -197,7 +197,7 @@ VALUES
 	(1,'刘不齐吵',23,'15743654836','518377218727772371',NULL,NULL,NULL,0,NULL,'2019-05-27 11:47:25','2019-05-27 11:47:25',0),
 	(2,'吵城扔',8,'17273775743','518377218727277371',NULL,NULL,NULL,2,'fdafda','2019-05-27 11:48:17','2019-05-27 11:48:17',NULL),
 	(3,'刘强东',11,'13678645788','513818277393848245',NULL,NULL,NULL,1,NULL,'2019-05-27 13:02:46','2019-05-27 13:02:46',NULL),
-	(5,'叮当猫',12,'15743654836','543858358438345','/public/upload/images/39cd47e06ca0815b62df6e9d98c82d4c.png','/public/upload/images/4de4ee2c30624503e85b1861cdaf50e8.png','/public/upload/images/c281d35c48ddb04ead098694fcbda153.png',0,NULL,'2019-05-31 17:57:09','2019-05-31 17:57:09',0);
+	(5,'叮当猫',12,'15743654836','543858358438345','/public/upload/images/39cd47e06ca0815b62df6e9d98c82d4c.png','/public/upload/images/4de4ee2c30624503e85b1861cdaf50e8.png','/public/upload/images/c281d35c48ddb04ead098694fcbda153.png',1,NULL,'2019-05-31 17:57:09','2019-05-31 17:57:09',0);
 
 /*!40000 ALTER TABLE `pme_idCardAuth` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -367,6 +367,7 @@ CREATE TABLE `pme_openAccount` (
   `memberId` int(11) NOT NULL COMMENT '开户会员账号ID',
   `memberPhone` varchar(11) NOT NULL DEFAULT '' COMMENT '会员手机号',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0：处理中    1：开户成功   2：开户失败',
+  `idCard` varchar(20) DEFAULT NULL COMMENT '身份证号码',
   `idcardImg1` varchar(100) DEFAULT NULL COMMENT '身份证照片1',
   `idcardImg2` varchar(100) DEFAULT NULL COMMENT '身份证照片2',
   `idcardHandImg` varchar(100) DEFAULT NULL COMMENT '手持身份证照片',
@@ -386,11 +387,13 @@ CREATE TABLE `pme_openAccount` (
 LOCK TABLES `pme_openAccount` WRITE;
 /*!40000 ALTER TABLE `pme_openAccount` DISABLE KEYS */;
 
-INSERT INTO `pme_openAccount` (`id`, `name`, `platformId`, `memberId`, `memberPhone`, `status`, `idcardImg1`, `idcardImg2`, `idcardHandImg`, `bankImg1`, `bankImg2`, `img1`, `img2`, `img3`, `img4`, `img5`, `note`, `create_time`, `update_time`)
+INSERT INTO `pme_openAccount` (`id`, `name`, `platformId`, `memberId`, `memberPhone`, `status`, `idCard`, `idcardImg1`, `idcardImg2`, `idcardHandImg`, `bankImg1`, `bankImg2`, `img1`, `img2`, `img3`, `img4`, `img5`, `note`, `create_time`, `update_time`)
 VALUES
-	(1,'吵右地',8,1,'15802816168',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'fdsafdsa','2019-05-24 19:39:32','2019-05-24 19:39:32'),
-	(2,'吵不地',8,1,'15802816168',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'lkjbhgvcvx','2019-05-24 19:39:38','2019-05-24 19:39:38'),
-	(3,'刘强东	',8,11,'13678645788',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-05-27 13:37:21','2019-05-27 13:37:21');
+	(1,'吵右地',8,1,'15802816168',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'fdsafdsa','2019-05-24 19:39:32','2019-05-24 19:39:32'),
+	(2,'吵不地',8,1,'15802816168',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'lkjbhgvcvx','2019-05-24 19:39:38','2019-05-24 19:39:38'),
+	(3,'刘强东	',8,11,'13678645788',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-05-27 13:37:21','2019-05-27 13:37:21'),
+	(4,'叮当猫',8,12,'15743654836',0,'518372758743543',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/d3b351d8aed7d3a10acc1a82c0dca9eb.png',NULL,NULL,NULL,NULL,NULL,'2019-06-04 15:41:17','2019-06-04 15:41:17'),
+	(9,'叮当猫',7,12,'15743654836',0,'543858358438345',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/8f80cb9b6f173223c99d5e0b6458fff6.png',NULL,NULL,NULL,NULL,NULL,'2019-06-04 16:29:39','2019-06-04 16:29:39');
 
 /*!40000 ALTER TABLE `pme_openAccount` ENABLE KEYS */;
 UNLOCK TABLES;
