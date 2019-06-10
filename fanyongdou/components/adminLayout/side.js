@@ -32,4 +32,10 @@ export default [
         icon: 'safety-certificate',
         index: 6,
     },
+    {
+        name: '为他人开户',
+        path: '/app/openOnline',
+        icon: 'robot',
+        index: 7,
+    },
 ]
