@@ -55,6 +55,7 @@ class OpenAccountPage extends Component {
             this.setState({
                 loading: false,
             })
+            location.reload()
         } catch (e) {
             this.setState({
                 loading: false,
@@ -98,6 +99,7 @@ class OpenAccountPage extends Component {
             <>
                 {
                     Array.isArray(openAccount) &&
+                    Boolean(openAccount.length) &&
                     <Alert
                         message="正在处理您的开户资料，请耐心等待!"
                         description={
@@ -107,6 +109,7 @@ class OpenAccountPage extends Component {
                                         <div key={key} className='open-list-item'>
                                             <span>开户人姓名：{it.name}</span>
                                             <span>身份证号：{it.idCard}</span>
+                                            <span>选择交易商：{it.platformName}</span>
                                             <span>当前状态：
                                                 {it.status === 0 && '处理中'}
                                                 {it.status === 1 && '已通过，交易账号已绑定到您的会员旗下'}

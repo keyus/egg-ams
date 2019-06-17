@@ -1,6 +1,6 @@
 import AdminLayout from '../../components/adminLayout'
 import OpenOnline from '../../components/openOnline'
-import {getPlatform,readIdCardAuth, readOpenAccount} from "../../api";
+import {getPlatform, readOpenAccountOther} from "../../api";
 
 export default function Index(props) {
     return (
@@ -13,9 +13,8 @@ Index.getInitialProps = async (ctx) => {
     const props = {}
     if (ctx.req) {
         const token = ctx.reduxStore.getState().token;
-        const [idCard, platform, openAccount]= await Promise.all([readIdCardAuth(token),getPlatform(), readOpenAccount(token)]);
+        const [platform, openAccount]= await Promise.all([getPlatform(), readOpenAccountOther(token)]);
         props.platform = platform.data;
-        props.idCard = idCard.data;
         props.openAccount = openAccount.data;
     }
     return props;

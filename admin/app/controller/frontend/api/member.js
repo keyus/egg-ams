@@ -96,12 +96,30 @@ class MemberController extends Controller {
         ctx.body = data;
         ctx.status = 200;
     }
+    //为他人开户
+    async webOpenAccountOther(){
+        const {ctx} = this;
+        const token = ctx.req.headers.authorization;
+        const body = ctx.request.body;
+        const data = await this.ctx.service.frontend.member.webOpenAccountOther(token,body);
+        ctx.body = data;
+        ctx.status = 200;
+    }
 
     //读取自己的开户资料
     async readOpenAccount(){
         const {ctx} = this;
         const token = ctx.req.headers.authorization;
         const data = await this.ctx.service.frontend.member.readOpenAccount(token);
+        ctx.body = data;
+        ctx.status = 200;
+    }
+
+    //读取他人的开户资料
+    async readOpenAccountOther(){
+        const {ctx} = this;
+        const token = ctx.req.headers.authorization;
+        const data = await this.ctx.service.frontend.member.readOpenAccountOther(token);
         ctx.body = data;
         ctx.status = 200;
     }

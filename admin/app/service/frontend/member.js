@@ -263,7 +263,7 @@ class MemberService extends BaseService {
         }
     }
 
-    //读取实名认证
+    //为自己开户
     async webOpenAccount(token,body){
         const decode = jwt.decode(token);
         const { memberId, phone} = decode.data;
@@ -271,29 +271,35 @@ class MemberService extends BaseService {
             platformId,
             img1,
         } = body;
-        const isOpening = await this.sql.select(`${this.tablePrefix}openAccount`,{
+        //读取实名认证
+        const idCard = await this.sql.get(`${this.tablePrefix}idCardAuth`,{
             memberId,
+            status: 1,
         })
-        let pass = true;
-        if(isOpening){
-            isOpening.forEach(it=>{
-                if(it.platformId === platformId && (it.status === 0 || it.status === 1)){
-                    pass = false;
-                }
-            })
+        if(!idCard) return {code: -1, message: '实名认证资料错误，请先完成实名认证'}
+
+        const hasAccount = await this.sql.get(`${this.tablePrefix}openAccount`,{
+            memberId,
+            idCard: idCard.idCard,
+            platformId,
+            status: 1,
+        })
+        if(hasAccount) return {
+            code: -1,
+            message: '您在该交易商旗下已拥有交易账户，请更换交易商重试'
         }
-        if(!pass){
+        const isOpening = await this.sql.get(`${this.tablePrefix}openAccount`,{
+            memberId,
+            idCard: idCard.idCard,
+            platformId,
+            status: 0,
+        })
+        if(isOpening){
             return {
                 code: -1,
                 message: '有正在处理的开户审核，请勿重复提交'
             }
         }
-
-        //读取实名认证
-        const idCard = await this.sql.get(`${this.tablePrefix}idCardAuth`,{
-            memberId,
-        })
-        if(!idCard || idCard.status === 2) return {code: -1, message: '实名认证资料错误，请检查'}
         const res = await this.sql.insert(`${this.tablePrefix}openAccount`,{
             memberId,
             platformId,
@@ -308,16 +314,103 @@ class MemberService extends BaseService {
         }
     }
 
-     //读取开户资料
+    //为他人开户
+    async webOpenAccountOther(token,body){
+        const decode = jwt.decode(token);
+        const { memberId, phone} = decode.data;
+        const {
+            name,
+            idCard,
+            platformId,
+            idCardImg1,
+            idCardImg2,
+            bankImg1,
+            idCardHandImg,
+        } = body;
+        const member = await this.sql.select(`${this.tablePrefix}member`,{
+            memberId,
+        })
+        if(member.idCard === idCard) return {
+            code: -1,
+            message: '身份证信息与与账号主体实名认证身份ID相同请在[在线开户]功能页面完成提交'
+        }
+        const isOpening = await this.sql.get(`${this.tablePrefix}openAccount`,{
+            idCard,
+            platformId,
+        })
+        if(isOpening){
+            if(isOpening.status === 0) return {
+                code: -1,
+                message: '正在处理此用户开户申请，请勿重复提交'
+            }
+            if(isOpening.status === 1) return {
+                code: -1,
+                message: '该用户已经在此交易商下开立交易账户，请更换开户人资料重新提交'
+            }
+        }
+        const count = await this.sql.count(`${this.tablePrefix}openAccount`,{
+            memberId,
+            status: 0,
+        })
+        if(count > 10){
+            return {
+                code: -1,
+                message: '正在处理中的开户申请已经达10位，请先等待客服处理完成，再重试'
+            }
+        }
+        const res = await this.sql.insert(`${this.tablePrefix}openAccount`,{
+            name,
+            idCard,
+            platformId,
+            memberId,
+            memberPhone: phone,
+            idCardImg1,
+            idCardImg2,
+            bankImg1,
+            idCardHandImg,
+        })
+        return {
+            code: 200,
+            data: res,
+        }
+    }
+
+     //读取自己开户资料
     async readOpenAccount(token){
         const decode = jwt.decode(token);
         const { memberId ,} = decode.data;
-        const res = await this.sql.select(`${this.tablePrefix}openAccount`,{
-            where: {
-                memberId
-            }
-        })
-        console.log(res)
+        const find = await this.sql.get(`${this.tablePrefix}member`,{id: memberId});
+        const idCard = find.idCard;
+        const sql = `
+            select a.*, b.name as platformName from ${this.tablePrefix}openAccount as a 
+            left join ${this.tablePrefix}platform as b
+            on a.platformId = b.id
+            where a.memberId = ${memberId}
+            and idCard = ${idCard}
+        `;
+        const res = await this.sql.query(sql);
+
+        return {
+            code: 200,
+            data: res,
+        }
+    }
+
+    //读取他人开户资料
+    async readOpenAccountOther(token){
+        const decode = jwt.decode(token);
+        const { memberId ,} = decode.data;
+        const find = await this.sql.get(`${this.tablePrefix}member`,{id: memberId});
+        const memberIdCard = find.idCard;
+        const sql = `
+                        select a.*, b.name as platformName from ${this.tablePrefix}openAccount as a 
+                        left join ${this.tablePrefix}platform as b 
+                        on a.platformId = b.id
+                        where a.memberId = ${memberId}
+                        and a.idCard <> ${memberIdCard}
+                        limit 0,20
+                    `;
+        const res = await this.sql.query(sql);
         return {
             code: 200,
             data: res,

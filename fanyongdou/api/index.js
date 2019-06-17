@@ -3,6 +3,14 @@ import iconv from "iconv-lite";
 import http from "../util/http";
 import config from '../util/config'
 
+/**
+ * api分为服务端调用，与客户端调用
+ * 1.服务端调用，需付带token信息
+ * 2.客户端调用，会自动读取token发送
+ * @returns {Promise<AxiosResponse<T>>}
+ * @constructor
+ */
+
 //全球期货
 export const QuanQiuQiHuo = ()=>{
     const url = `http://qt.gtimg.cn/q=hf_GC,hf_HG,hf_SI,hf_CL,hf_OIL,hf_NG,hf_XAG,hf_XAU,hf_XPD,hf_XPT,hf_AHD,hf_CAD,hf_NID,hf_PBD,hf_SND,hf_ZSD,hf_DXF&r=${Math.random()}`
@@ -77,9 +85,27 @@ export const webOpenAccount = (data,token)=>{
     })
 }
 
+//为他人开户
+export const webOpenAccountOther = (data,token)=>{
+    return http.post(`/webOpenAccountOther`, data,{
+        headers: {
+            Authorization: token,
+        }
+    })
+}
+
 //读取实名认证资料
 export const readOpenAccount = (token)=>{
     return http.post(`/readOpenAccount`, null,{
+        headers: {
+            Authorization: token,
+        }
+    })
+}
+
+//读取为他人开户的信息
+export const readOpenAccountOther = (token)=>{
+    return http.post(`/readOpenAccountOther`, null,{
         headers: {
             Authorization: token,
         }

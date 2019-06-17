@@ -49,7 +49,7 @@ class IdCardPage extends Component {
         return (
             <span>
                 实名认证资料用于开立交易商账户的部分必须资料,认证成功后将不允许修改.认证信息将作为该账号信息主体.<br/>
-                如需新开不同身份认证的交易商账号，请使用<a href=''>[为他人开户]</a>功能, 该账号将自动升级为经纪人级别账号,您将获得更加丰厚的佣金回报<Icon type="pay-circle"/>
+                如需新开不同身份认证的交易商账号，请使用<a href='/app/openOnline'>[为他人开户]</a>功能, 该账号将自动升级为经纪人级别账号,您将获得更加丰厚的佣金回报<Icon type="pay-circle"/>
             </span>
         )
     }
