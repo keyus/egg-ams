@@ -124,6 +124,20 @@ class MemberController extends Controller {
         ctx.status = 200;
     }
 
+    //修改密码
+    async updatePassword(){
+        const {ctx} = this;
+        const token = ctx.req.headers.authorization;
+        const body = ctx.request.body;
+        ctx.validate({
+            password: 'string',
+            newPassword: 'string',
+            confirmPassword: 'string',
+        }, body);
+        const data = await this.ctx.service.frontend.member.updatePassword(token, body);
+        ctx.body = data;
+        ctx.status = 200;
+    }
 }
 
 module.exports = MemberController;

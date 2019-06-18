@@ -22,6 +22,7 @@ module.exports = app => {
     router.post('/api/readOpenAccountOther', authWeb, controller.frontend.api.member.readOpenAccountOther);     //读取为他人开户资料
     router.post('/api/webLogin', controller.frontend.api.member.login);                                         //会员登陆
     router.post('/api/webPlatform', controller.frontend.api.member.platform);                                   //获取平台
+    router.post('/api/updatePassword', controller.frontend.api.member.updatePassword);                          //修改密码
 
 
     //后台api

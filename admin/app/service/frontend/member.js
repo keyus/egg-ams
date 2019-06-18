@@ -417,7 +417,45 @@ class MemberService extends BaseService {
         }
     }
 
-
+    async updatePassword(token,body){
+        const decode = jwt.decode(token);
+        const { memberId} = decode.data;
+        const {
+            password,
+            newPassword,
+            confirmPassword,
+        } = body;
+        if(newPassword !== confirmPassword){
+            return {
+                code: -1,
+                message: '新密码输入不一致'
+            }
+        }
+        const find = await this.sql.get(`${this.tablePrefix}member`,{id: memberId});
+        if(find.password !== md5(password)){
+            return {
+                code: -1,
+                message: '原密码输入不正确'
+            }
+        }
+        const res = await this.sql.update(`${this.tablePrefix}member`,{
+            password: md5(newPassword),
+        },{
+            where: {
+                id: memberId,
+            }
+        })
+        if(res.affectedRows === 1){
+            return {
+                code: 200,
+                message: '修改成功'
+            }
+        }
+        return {
+            code: -1,
+            message: '修改失败,请稍候再试'
+        }
+    }
 }
 
 module.exports = MemberService;

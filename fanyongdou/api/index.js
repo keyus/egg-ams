@@ -112,3 +112,12 @@ export const readOpenAccountOther = (token)=>{
     })
 }
 
+//修改密码
+export const updatePassword = (data,token)=>{
+    return http.post(`/updatePassword`, data,{
+        headers: {
+            Authorization: token,
+        }
+    })
+}
+

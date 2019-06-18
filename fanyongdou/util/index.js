@@ -37,8 +37,8 @@ class Util {
 
     //退出
     logout() {
-        cookie.removeItem(config.localMember);
-        cookie.removeItem(config.localToken);
+        cookie.removeItem(config.localMember,'/');
+        cookie.removeItem(config.localToken,'/');
         window.location.href = '/account/login'
     }
 

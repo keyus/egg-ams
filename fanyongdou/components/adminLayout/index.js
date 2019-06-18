@@ -12,6 +12,14 @@ class AdminLayout extends Component {
         title: '用户中心',
         active: 1,
     }
+    componentDidMount(){
+        this.checkLogin();
+    }
+    checkLogin= async ()=>{
+        if(!util.isLogin()){
+            util.logout();
+        }
+    }
     logout=()=>{
         util.logout();
     }
@@ -26,6 +34,7 @@ class AdminLayout extends Component {
             <ul className='user-menu'>
                 <li><a href="/app"><Icon type="user"/> 个人信息</a></li>
                 <li><a href="/app/pay"><Icon type="credit-card" /> 收款信息</a></li>
+                <li><a href="/app/modify"><Icon type="lock" /> 修改个人密码</a></li>
                 <li onClick={this.logout}><Icon type="logout"/> 退出登录</li>
             </ul>
         )

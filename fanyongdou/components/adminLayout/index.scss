@@ -38,10 +38,14 @@
 
   li{
     line-height: 30px;
-    &:hover{
-      color: #2f82ff;
-      cursor: pointer;
+    a{
+      color: #666;
+      &:hover{
+        color: #2f82ff;
+        cursor: pointer;
+      }
     }
+
     i{
       width: 40px;
     }
