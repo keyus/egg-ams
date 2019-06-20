@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.21)
 # Database: fanyongdou
-# Generation Time: 2019-06-04 08:50:40 +0000
+# Generation Time: 2019-06-20 11:51:43 +0000
 # ************************************************************
 
 
@@ -250,7 +250,7 @@ VALUES
 	(9,'15438975849','96e79218965eb72c92a549dd5a330112',NULL,NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,1,0.00,0,0,'2019-05-22 10:54:00','2019-05-22 10:54:00'),
 	(10,'18758375843','96e79218965eb72c92a549dd5a330112',NULL,NULL,0,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,1,0.00,0,0,'2019-05-22 10:54:08','2019-05-22 10:54:08'),
 	(11,'13678645788','96e79218965eb72c92a549dd5a330112','刘强东','513818277393848245',1,NULL,NULL,NULL,0.00,NULL,NULL,NULL,NULL,NULL,1,50,1,0.00,0,0,'2019-05-22 10:54:17','2019-05-22 10:54:17'),
-	(12,'15743654836','96e79218965eb72c92a549dd5a330112','刘不齐','518377218727772371',1,NULL,NULL,NULL,1300.00,'111fdsfda@163.com11','工商银行','ICBC','中国银行北京朝阳区支行吵中中中国','6127003828892871937',1,50,0,0.00,1,0,'2019-05-22 10:54:28','2019-05-22 10:54:28');
+	(12,'15743654836','e3ceb5881a0a1fdaad01296d7554868d','刘不齐','543858358438345',1,NULL,NULL,NULL,1300.00,'111fdsfda@163.com11','工商银行','ICBC','中国银行北京朝阳区支行吵中中中国','6127003828892871937',1,50,0,0.00,1,0,'2019-05-22 10:54:28','2019-05-22 10:54:28');
 
 /*!40000 ALTER TABLE `pme_member` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -368,9 +368,9 @@ CREATE TABLE `pme_openAccount` (
   `memberPhone` varchar(11) NOT NULL DEFAULT '' COMMENT '会员手机号',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0：处理中    1：开户成功   2：开户失败',
   `idCard` varchar(20) DEFAULT NULL COMMENT '身份证号码',
-  `idcardImg1` varchar(100) DEFAULT NULL COMMENT '身份证照片1',
-  `idcardImg2` varchar(100) DEFAULT NULL COMMENT '身份证照片2',
-  `idcardHandImg` varchar(100) DEFAULT NULL COMMENT '手持身份证照片',
+  `idCardImg1` varchar(100) DEFAULT NULL COMMENT '身份证照片1',
+  `idCardImg2` varchar(100) DEFAULT NULL COMMENT '身份证照片2',
+  `idCardHandImg` varchar(100) DEFAULT NULL COMMENT '手持身份证照片',
   `bankImg1` varchar(100) DEFAULT NULL COMMENT '银行卡照片1',
   `bankImg2` varchar(100) DEFAULT NULL COMMENT '银行卡照片2',
   `img1` varchar(100) DEFAULT NULL COMMENT '补充资料1',
@@ -387,13 +387,22 @@ CREATE TABLE `pme_openAccount` (
 LOCK TABLES `pme_openAccount` WRITE;
 /*!40000 ALTER TABLE `pme_openAccount` DISABLE KEYS */;
 
-INSERT INTO `pme_openAccount` (`id`, `name`, `platformId`, `memberId`, `memberPhone`, `status`, `idCard`, `idcardImg1`, `idcardImg2`, `idcardHandImg`, `bankImg1`, `bankImg2`, `img1`, `img2`, `img3`, `img4`, `img5`, `note`, `create_time`, `update_time`)
+INSERT INTO `pme_openAccount` (`id`, `name`, `platformId`, `memberId`, `memberPhone`, `status`, `idCard`, `idCardImg1`, `idCardImg2`, `idCardHandImg`, `bankImg1`, `bankImg2`, `img1`, `img2`, `img3`, `img4`, `img5`, `note`, `create_time`, `update_time`)
 VALUES
 	(1,'吵右地',8,1,'15802816168',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'fdsafdsa','2019-05-24 19:39:32','2019-05-24 19:39:32'),
 	(2,'吵不地',8,1,'15802816168',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'lkjbhgvcvx','2019-05-24 19:39:38','2019-05-24 19:39:38'),
 	(3,'刘强东	',8,11,'13678645788',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-05-27 13:37:21','2019-05-27 13:37:21'),
 	(4,'叮当猫',8,12,'15743654836',0,'518372758743543',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/d3b351d8aed7d3a10acc1a82c0dca9eb.png',NULL,NULL,NULL,NULL,NULL,'2019-06-04 15:41:17','2019-06-04 15:41:17'),
-	(9,'叮当猫',7,12,'15743654836',0,'543858358438345',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/8f80cb9b6f173223c99d5e0b6458fff6.png',NULL,NULL,NULL,NULL,NULL,'2019-06-04 16:29:39','2019-06-04 16:29:39');
+	(9,'叮当猫',7,12,'15743654836',0,'543858358438345',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/8f80cb9b6f173223c99d5e0b6458fff6.png',NULL,NULL,NULL,NULL,NULL,'2019-06-04 16:29:39','2019-06-04 16:29:39'),
+	(10,'叮当猫',7,12,'15743654836',0,'543858358438345',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/a0ab998c3b6036c4e20efb592915cd4c.png',NULL,NULL,NULL,NULL,NULL,'2019-06-17 17:50:09','2019-06-17 17:50:09'),
+	(11,'顺城',8,12,'15743654836',0,'517373737475958','/public/upload/images/a1c9b087162d918721f5b1de23d880f1.png','/public/upload/images/327d6e304f80df7650e3ee2883d730bb.png','/public/upload/images/b5466ee719a2d1616ecefbec41d014d4.png','/public/upload/images/63e0098a74d98db0a98d89cf3346a592.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-06-17 17:58:47','2019-06-17 17:58:47'),
+	(12,'中需要',7,12,'15743654836',0,'5432758437589347584','/public/upload/images/8c66eb6654858451cc8124138313561a.png','/public/upload/images/b2239d3712bd21804eff87a60ddf3095.png','/public/upload/images/9ec495ad0597c77cf57560028802b0d7.png','/public/upload/images/e7380cfbd7870cadb70697dc4ceda39b.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-06-17 19:07:53','2019-06-17 19:07:53'),
+	(13,'顺需要',7,12,'15743654836',0,'5432543254235432542','/public/upload/images/6f337cc31f4b99e8fd51f599dd7a6e37.png','/public/upload/images/dbec645fc2b214191f8fa6b2647144e1.png','/public/upload/images/053fa6fadb533a937412e55e1bbe4efa.png','/public/upload/images/173980f89b53ef05935974fd84b7e6e1.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2019-06-17 19:11:16','2019-06-17 19:11:16'),
+	(14,'叮当猫',7,12,'15743654836',0,'543858358438345',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/b2f8c90fb3dfee7bf297b9d90eba19ec.png',NULL,NULL,NULL,NULL,NULL,'2019-06-17 19:13:56','2019-06-17 19:13:56'),
+	(15,'叮当猫',7,12,'15743654836',0,'543858358438345',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/bbda78496168f64237e61b6536fe8fee.png',NULL,NULL,NULL,NULL,NULL,'2019-06-17 19:14:07','2019-06-17 19:14:07'),
+	(16,'叮当猫',7,12,'15743654836',0,'543858358438345',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/2670643e8774c20e5708acf7cb57e56b.png',NULL,NULL,NULL,NULL,NULL,'2019-06-17 19:15:19','2019-06-17 19:15:19'),
+	(17,'叮当猫',7,12,'15743654836',0,'543858358438345',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/6cf9382d4c3e60ef77fcbcf3646426e5.png',NULL,NULL,NULL,NULL,NULL,'2019-06-17 19:17:07','2019-06-17 19:17:07'),
+	(18,'叮当猫',7,12,'15743654836',1,'543858358438345',NULL,NULL,NULL,NULL,NULL,'/public/upload/images/5ec194cbad3f96001a99694d14a0cfef.png',NULL,NULL,NULL,NULL,NULL,'2019-06-17 19:19:05','2019-06-17 19:19:05');
 
 /*!40000 ALTER TABLE `pme_openAccount` ENABLE KEYS */;
 UNLOCK TABLES;
