@@ -89,7 +89,7 @@ class LoginForm extends Component{
                         登录
                     </Button>
                     <div className='login-bottom'>
-                        <a className="login-form-forgot" href="">
+                        <a className="login-form-forgot" href="/account/reg">
                             注册新会员
                         </a>
                         <a href="">忘记密码?</a>

@@ -4,6 +4,7 @@ import cookie from '../util/cookie'
 
 export const reg = {
     phone: /^1[3-9]\d{9}$/,
+    code: /^[a-zA-Z0-9]{6,8}$/,                          //验证码6-8位
     password: /^[a-zA-Z0-9]{6,20}$/,
     num: /^\d+$/,
     idCard: /^\d{15,19}[a-zA-Z]?$/,             //身份证号码
